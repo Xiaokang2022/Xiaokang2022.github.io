@@ -1,6 +1,8 @@
 # Xiaokang2022.github.io
 
-My AWESOME personal website!!! 🎉 Built with Mkdocs Material. ❤
+My AWESOME personal website! 🎉
+Built with [Mkdocs Material](https://github.com/squidfunk/mkdocs-material). ❤️
+Just take a look? [xiaokang2022.github.io](https://xiaokang2022.github.io/) 👀
 
 <p>
 <a href="https://github.com/Xiaokang2022/Xiaokang2022.github.io/watchers"><img alt="Watchers" src="https://img.shields.io/github/watchers/Xiaokang2022/Xiaokang2022.github.io?label=Watchers&logo=github&style=flat" title="Watchers" /></a>
