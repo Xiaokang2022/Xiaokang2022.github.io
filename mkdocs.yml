@@ -3,17 +3,17 @@ site_url: https://Xiaokang2022.github.io/ # 站点链接
 repo_url: https://github.com/Xiaokang2022/Xiaokang2022.github.io # 仓库地址
 repo_name: Xiaokang2022.github.io # 仓库名称
 edit_uri: edit/main/docs # 编辑地址
-edit_uri_template: null # 编辑地址模板（默认值）
+edit_uri_template: null # 编辑地址模板
 site_description: 小康2022的个人网站 # 站点描述
 site_author: Xiaokang2022 # 站点作者
 copyright: <a href="#__consent">修改 Cookie 设置</a><br/>Copyright &copy; 2024 小康2022 # 版权信息和 Cookie 设置
-# remote_branch: gh-pages # GitHub Pages 远程分支名称（默认值）
-# remote_name: origin # 远程名称（默认值）
-docs_dir: docs # 文档目录（默认值）
-site_dir: site # 网站目录（默认值）
-dev_addr: 127.0.0.1:8000 # 预览模式地址（默认值）
-use_directory_urls: true # URL 使用目录名还是文件名（默认值）
-strict: false # 警告级别（默认值），出现警告就终止程序
+remote_branch: gh-pages # GitHub Pages 远程分支名称
+remote_name: origin # 远程名称
+docs_dir: docs # 文档目录
+site_dir: site # 网站目录
+dev_addr: 127.0.0.1:8000 # 预览模式地址
+use_directory_urls: true # URL 使用目录名还是文件名
+strict: false # 警告级别，出现警告就终止程序
 
 markdown_extensions:
   ###### Python Markdown 配置（markdown 基础语法）
@@ -40,12 +40,12 @@ markdown_extensions:
   - toc: # 目录
       marker: "" # 目录替换文本，空字符串则不替换，缺省为 [TOC]
       # title: "" # 目录标题，material 主题会自动根据语言计算
-      anchorlink: false # 锚点链接（默认值），给标题自身锚定链接
+      anchorlink: false # 锚点链接，给标题自身锚定链接
       permalink: "&para;" # 锚点符号
       permalink_title: "" # 锚点链接提示词，空字符表示没有
-      permalink_leading: false # 前置锚点链接（默认值），将锚点放到标题前面
-      baselevel: 1 # 最高级别（默认值），往下顺延
-      separator: "-" # 分隔符（默认值），替换空格字符
+      permalink_leading: false # 前置锚点链接，将锚点放到标题前面
+      baselevel: 1 # 最高级别，往下顺延
+      separator: "-" # 分隔符，替换空格字符
       toc_depth: 4 # 目录显示级别
       slugify:
         !!python/object/apply:pymdownx.slugs.slugify # 锚点链接 URL 格式（小写）
@@ -83,17 +83,17 @@ markdown_extensions:
 
   - pymdownx.snippets: # 外部片段插入
       url_download: true # 远程文件下载
-      url_timeout: 10.0 # 超时时长（默认值）
-      url_max_size: 33554432 # 文件大小限制（默认值），32MiB
+      url_timeout: 10.0 # 超时时长
+      url_max_size: 33554432 # 文件大小限制，32MiB
 
   - pymdownx.escapeall: # 转义一切
       hardbreak: true # 转义换行符会变成间断 <br>
       nbsp: true # 空格转义会变成无间隔空格 &nbsp;
 
   - pymdownx.magiclink: # 魔术链接，自动识别链接
-      user: "" # 可缺省的用户名（默认值）
-      repo: "" # 可缺省的仓库名（默认值）
-      hide_protocol: false # 隐藏链接协议头（默认值）
+      user: "" # 可缺省的用户名
+      repo: "" # 可缺省的仓库名
+      hide_protocol: false # 隐藏链接协议头
       repo_url_shorthand: true # 识别仓库提交等链接
       repo_url_shortener: true # 仓库提交等链接简短显示
       social_url_shorthand: true # 识别社交账号等链接
@@ -109,7 +109,7 @@ markdown_extensions:
 
   - pymdownx.highlight: # 代码高亮
       use_pygments: true # 使用 Pygments 而不是 JavaScript 来渲染高亮
-      linenums: true # 显示行号（默认值）
+      linenums: true # 显示行号
       linenums_style: table # 行号样式 pymdownx-inline 或者 inline 和 table
       anchor_linenums: true # 用锚链接包装代码行号，便于超链接和共享（就是行号可以像锚点一样被点击）
       line_spans: __span # 这对于高亮功能正常工作至关重要
@@ -121,7 +121,7 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
   - pymdownx.superfences: # 各种嵌套
-      disable_indented_code_blocks: false # 禁用缩进代码块（默认值）
+      disable_indented_code_blocks: false # 禁用缩进代码块
       preserve_tabs: true # 嵌套块格式化表格（实验性）
       custom_fences:
         - name: mermaid # 允许 mermaid 图表语法
@@ -131,7 +131,7 @@ markdown_extensions:
   - pymdownx.tabbed: # 选项卡
       alternate_style: true # 实验性样式
       combine_header_slug: true # 选项卡 URL 带上父标题的前缀
-      separator: "-" # 分隔符（默认值），替换空格字符
+      separator: "-" # 分隔符，替换空格字符
       slugify: !!python/object/apply:pymdownx.slugs.slugify {}
 
 theme: # 此项各个设定因主题而异
@@ -200,14 +200,14 @@ extra: # 额外设定
     json: [.s2]
   social: # 社交联系方式（页面右下角内容）
     - icon: fontawesome/brands/github
-      link: https://github.com/Xiaokang2022/Xiaokang2022.github.io/
-      name: GitHub 存储库
+      link: https://github.com/Xiaokang2022/
+      name: GitHub
     - icon: fontawesome/brands/bilibili
       link: https://space.bilibili.com/498105668
       name: 哔哩哔哩
     - icon: fontawesome/solid/paper-plane
       link: mailto:2951256653@qq.com
-      name: 联系作者
+      name: 联系我
   consent:
     actions:
       - accept
@@ -268,7 +268,7 @@ plugins:
   - git-committers:
       repository: Xiaokang2022/Xiaokang2022.github.io
       branch: main
-      token: !ENV ["GH_TOKEN"] # 需要自行在终端中设置临时环境变量，强烈不建议显式地在此处设置 token
+      token: !ENV GH_TOKEN # 需要自行在终端中设置临时环境变量，强烈不建议显式地在此处设置 token
   - minify:
       minify_html: true
       htmlmin_opts:

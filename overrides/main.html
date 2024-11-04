@@ -7,15 +7,9 @@
 
 {% block content %}
 
-{% if config.theme.language == "zh" %}
-    <a href="javascript:void(window.print());" class="md-content__button md-icon" title="下载此页">
-        {% include ".icons/material/file-download.svg" %}
-    </a>
-{% else %}
-    <a href="javascript:void(window.print());" class="md-content__button md-icon" title="Download this page">
-        {% include ".icons/material/file-download.svg" %}
-    </a>
-{% endif %}
+<a href="javascript:void(window.print());" class="md-content__button md-icon" title="下载此页">
+    {% include ".icons/material/file-download.svg" %}
+</a>
 
 {{ super() }}
 {% endblock content %}
