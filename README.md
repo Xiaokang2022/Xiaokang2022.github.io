@@ -2,7 +2,8 @@
 
 My AWESOME personal website! 🎉
 Built with [Mkdocs Material](https://github.com/squidfunk/mkdocs-material). ❤️
-Just take a look? [xiaokang2022.github.io](https://xiaokang2022.github.io/) 👀
+Just take a look? [xiaokang2022.github.io](https://xiaokang2022.github.io/) 👀  
+我的逆天究极牛逼的个人网站！🎉 基于 [Mkdocs Material](https://github.com/squidfunk/mkdocs-material) ❤️ 进来瞄一眼不？[xiaokang2022.github.io](https://xiaokang2022.github.io/) 👀
 
 <p>
 <a href="https://github.com/Xiaokang2022/Xiaokang2022.github.io/watchers"><img alt="Watchers" src="https://img.shields.io/github/watchers/Xiaokang2022/Xiaokang2022.github.io?label=Watchers&logo=github&style=flat" title="Watchers" /></a>
