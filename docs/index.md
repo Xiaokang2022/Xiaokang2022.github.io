@@ -4,13 +4,6 @@ comments: true
 icon: material/home
 ---
 
-<p align="center"><a href="https://github.com/Xiaokang2022"><img src="logo.png" width="128" /></a></p>
-
-<p align="center">
-    <!-- https://github.com/DenverCoder1/readme-typing-svg -->
-    <img width="800" src="https://readme-typing-svg.demolab.com?font=Orbitron&size=22&pause=1000&center=true&vCenter=true&random=false&width=600&lines=Welcome+to+my+GitHub+profile+page!;I+am+super+obsessed+with+programming!" />
-</p>
-
 <p align="center">
     <!-- https://github.com/badges/shields -->
     <a href="https://github.com/Xiaokang2022"><img src="https://img.shields.io/badge/GitHub-Xiaokang2022-blue?logo=github" /></a>
