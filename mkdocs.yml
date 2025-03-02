@@ -11,7 +11,7 @@ remote_branch: gh-pages # GitHub Pages 远程分支名称
 remote_name: origin # 远程名称
 docs_dir: docs # 文档目录
 site_dir: site # 网站目录
-dev_addr: 127.0.0.1:8000 # 预览模式地址
+dev_addr: 127.0.0.1:8080 # 预览模式地址
 use_directory_urls: true # URL 使用目录名还是文件名
 strict: false # 警告级别，出现警告就终止程序
 
@@ -40,12 +40,12 @@ markdown_extensions:
   - toc: # 目录
       marker: "" # 目录替换文本，空字符串则不替换，缺省为 [TOC]
       # title: "" # 目录标题，material 主题会自动根据语言计算
-      anchorlink: false # 锚点链接，给标题自身锚定链接
-      permalink: "&para;" # 锚点符号
+      anchorlink: false # 锚点链接（默认值），给标题自身锚定链接
+      permalink: ¶ # 锚点符号
       permalink_title: "" # 锚点链接提示词，空字符表示没有
-      permalink_leading: false # 前置锚点链接，将锚点放到标题前面
-      baselevel: 1 # 最高级别，往下顺延
-      separator: "-" # 分隔符，替换空格字符
+      permalink_leading: false # 前置锚点链接（默认值），将锚点放到标题前面
+      baselevel: 1 # 最高级别（默认值），往下顺延
+      separator: "-" # 分隔符（默认值），替换空格字符
       toc_depth: 4 # 目录显示级别
       slugify:
         !!python/object/apply:pymdownx.slugs.slugify # 锚点链接 URL 格式（小写）
@@ -59,8 +59,9 @@ markdown_extensions:
 
   # - pymdownx.progressbar # 进度条（暂不支持）
 
+  # - pymdownx.striphtml # 去除 HTML 中不需要的注释和 / 或标记属性，与插件 minify 有交叉但没有完全覆盖【别启用，大坑】
+
   - pymdownx.extra # 见上面 Python Markdown 配置说明
-  - pymdownx.striphtml # 去除 HTML 中不需要的注释和 / 或标记属性，与插件 minify 有交叉但没有完全覆盖
 
   - pymdownx.blocks.tab # 支持更高级的标签块写法（可能与 pymdownx.tabbed 混淆）
   - pymdownx.blocks.html # 支持一些更高级的 Markdown 内嵌 HTML 语法（pymdownx.blocks 默认开启）
@@ -83,17 +84,17 @@ markdown_extensions:
 
   - pymdownx.snippets: # 外部片段插入
       url_download: true # 远程文件下载
-      url_timeout: 10.0 # 超时时长
-      url_max_size: 33554432 # 文件大小限制，32MiB
+      url_timeout: 10.0 # 超时时长（默认值）
+      url_max_size: 33554432 # 文件大小限制（默认值），32MiB
 
   - pymdownx.escapeall: # 转义一切
       hardbreak: true # 转义换行符会变成间断 <br>
       nbsp: true # 空格转义会变成无间隔空格 &nbsp;
 
   - pymdownx.magiclink: # 魔术链接，自动识别链接
-      user: "" # 可缺省的用户名
-      repo: "" # 可缺省的仓库名
-      hide_protocol: false # 隐藏链接协议头
+      user: "" # 可缺省的用户名（默认值）
+      repo: "" # 可缺省的仓库名（默认值）
+      hide_protocol: false # 隐藏链接协议头（默认值）
       repo_url_shorthand: true # 识别仓库提交等链接
       repo_url_shortener: true # 仓库提交等链接简短显示
       social_url_shorthand: true # 识别社交账号等链接
@@ -109,7 +110,7 @@ markdown_extensions:
 
   - pymdownx.highlight: # 代码高亮
       use_pygments: true # 使用 Pygments 而不是 JavaScript 来渲染高亮
-      linenums: true # 显示行号
+      linenums: true # 显示行号（默认值）
       linenums_style: table # 行号样式 pymdownx-inline 或者 inline 和 table
       anchor_linenums: true # 用锚链接包装代码行号，便于超链接和共享（就是行号可以像锚点一样被点击）
       line_spans: __span # 这对于高亮功能正常工作至关重要
@@ -121,7 +122,7 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
   - pymdownx.superfences: # 各种嵌套
-      disable_indented_code_blocks: false # 禁用缩进代码块
+      disable_indented_code_blocks: false # 禁用缩进代码块（默认值）
       preserve_tabs: true # 嵌套块格式化表格（实验性）
       custom_fences:
         - name: mermaid # 允许 mermaid 图表语法
@@ -131,12 +132,12 @@ markdown_extensions:
   - pymdownx.tabbed: # 选项卡
       alternate_style: true # 实验性样式
       combine_header_slug: true # 选项卡 URL 带上父标题的前缀
-      separator: "-" # 分隔符，替换空格字符
+      separator: "-" # 分隔符（默认值），替换空格字符
       slugify: !!python/object/apply:pymdownx.slugs.slugify {}
 
 theme: # 此项各个设定因主题而异
   name: material # 主题名称
-  custom_dir: overrides # 覆盖目录
+  custom_dir: docs/overrides # 覆盖目录
   language: zh # 主题语言
   features:
     # - header.autohide # 顶栏自动隐藏
@@ -171,7 +172,7 @@ theme: # 此项各个设定因主题而异
     - media: "(prefers-color-scheme: light)" # 亮色主题
       scheme: default
       primary: white
-      accent: orange
+      accent: green
       toggle:
         icon: material/weather-sunny
         name: 明亮主题
@@ -183,12 +184,14 @@ theme: # 此项各个设定因主题而异
         icon: material/weather-night
         name: 暗黑主题
   font: false # 避免从谷歌加载字体导致网页加载变慢（具体参数可以在自定义 CSS 中指定）
+  logo: logo.png # 页面左上角徽标
   favicon: logo.png # 网页的图标
   icon: # 替换掉默认的图标
-    logo: simple/materialformkdocs # 页面左上角徽标
-    repo: fontawesome/brands/github # 页面右上角仓库图标
+    repo: fontawesome/brands/github # 右上角仓库图标
     edit: material/file-edit # 页面编辑的图标
     view: material/file-eye # 页面查看源代码的图标
+    tag:
+      default: material/tag
 
 extra: # 额外设定
   generator: false # 页面底部不显示生成信息
@@ -196,8 +199,8 @@ extra: # 额外设定
     new: 最近添加
     deprecated: 已废弃
   homepage: . # 左上角徽标链接的地址
-  annotate: # 允许代码块非注释内的提示，貌似是可以在代码里面加悬浮提示框，而不只是在注释中（感觉这样不好，虽然我不用，但不能没有）
-    json: [.s2]
+  tags:
+    _: _
   social: # 社交联系方式（页面右下角内容）
     - icon: fontawesome/brands/github
       link: https://github.com/Xiaokang2022/
@@ -259,8 +262,25 @@ extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.5.0/style.min.css # 设置字体（霞鹜文楷）【版本不能再更高了，会导致公式字体变小】
 
 plugins:
-  - search
-  - statistics
+  # 内置插件
+  - search:
+  - meta:
+  - tags:
+  - blog:
+      blog_toc: true
+      post_readtime: false
+      pagination_keep_content: true
+      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+  # 第三方插件
+  - statistics:
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
+      comments_path: "#__comments"
   - glightbox:
       background: none
       auto_themed: true
@@ -271,13 +291,12 @@ plugins:
       repository: Xiaokang2022/Xiaokang2022.github.io
       branch: main
       token: !ENV GH_TOKEN # 需要自行在终端中设置临时环境变量，强烈不建议显式地在此处设置 token
+      exclude_committers:
+        - web-flow
   - minify:
       minify_html: true
       htmlmin_opts:
         remove_comments: true
-
-watch:
-  - overrides/
 
 nav:
   - 主页:

@@ -9,15 +9,15 @@ icon: material/link-variant
 
 <div class="grid cards" markdown>
 
--   <img width="24" class="middle" src="https://xiaokang2022.github.io/tkintertools/logo.png" /> [**tkintertools**](https://xiaokang2022.github.io/tkintertools/)
+-   <img width="24" class="middle" src="https://xiaokang2022.github.io/maliang/logo.png" /> [**maliang**](https://xiaokang2022.github.io/maliang/)
 
     ---
 
-    ![](https://img.shields.io/github/stars/Xiaokang2022/tkintertools?label=Stars&color=gold&logo=github&style=flat "星标")
-    ![](https://img.shields.io/github/forks/Xiaokang2022/tkintertools?label=Forks&logo=github&style=flat "复刻")
-    ![](https://img.shields.io/github/watchers/Xiaokang2022/tkintertools?label=Watchers&logo=github&style=flat "关注")
+    ![](https://img.shields.io/github/stars/Xiaokang2022/maliang?label=Stars&color=gold&logo=github&style=flat "星标")
+    ![](https://img.shields.io/github/forks/Xiaokang2022/maliang?label=Forks&logo=github&style=flat "复刻")
+    ![](https://img.shields.io/github/watchers/Xiaokang2022/maliang?label=Watchers&logo=github&style=flat "关注")
 
-    `tkintertools` 是一个基于 `tkinter` 的 `Canvas` 类的 UI 框架。换句话说，一切 UI 都是用画布绘制出来的！
+    `maliang` 是一个基于 `tkinter` 的 `Canvas` 类的 UI 框架。换句话说，一切 UI 都是用画布绘制出来的！
 
 -   <img width="24" class="middle" src="https://xiaokang2022.github.io/Fucking-Code/logo.png" /> [**Fucking Code**](https://xiaokang2022.github.io/Fucking-Code/)
 
