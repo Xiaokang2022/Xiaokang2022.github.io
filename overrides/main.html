@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block announce %}
+{{ super() }}
+当你看到这条公告时，你就已经看到这条公告啦~ (●'◡'●)
+{% endblock %}
+
+{% block content %}
+
+<a href="javascript:void(window.print());" class="md-content__button md-icon" title="下载此页">
+    {% include ".icons/material/file-download.svg" %}
+</a>
+
+{{ super() }}
+{% endblock content %}
