@@ -1,11 +1,11 @@
 ---
 comments: true
-icon: material/link-variant
+icon: octicons/project-24
 ---
 
-!!! tip "说明一下"
+!!! tip "小贴士"
 
-    下面的都是我一些项目的网站，大家随便看看吧！
+    下面的都是我一些项目的网站，按星标数量排序，大家随便看看吧！
 
 <div class="grid cards" markdown>
 
@@ -29,24 +29,20 @@ icon: material/link-variant
 
     关于可恶代码的一切！（以前的笔记本，目前处于半弃坑状态，已暂时托管给他人，本站将作为新个人笔记本！）
 
--   :simple-materialformkdocs:{ .middle } [**Pretty Mkdocs**](https://xiaokang2022.github.io/Pretty-Mkdocs/)
+-   :simple-materialformkdocs:{ .middle } [**Oh My Mkdocs**](https://oh-my-mkdocs.github.io/oh-my-mkdocs/)
 
     ---
 
-    ![](https://img.shields.io/github/stars/Xiaokang2022/Pretty-Mkdocs?label=Stars&color=gold&logo=github&style=flat "星标")
-    ![](https://img.shields.io/github/forks/Xiaokang2022/Pretty-Mkdocs?label=Forks&logo=github&style=flat "复刻")
-    ![](https://img.shields.io/github/watchers/Xiaokang2022/Pretty-Mkdocs?label=Watchers&logo=github&style=flat "关注")
+    ![](https://img.shields.io/github/stars/oh-my-mkdocs/oh-my-mkdocs?label=Stars&color=gold&logo=github&style=flat "星标")
+    ![](https://img.shields.io/github/forks/oh-my-mkdocs/oh-my-mkdocs?label=Forks&logo=github&style=flat "复刻")
+    ![](https://img.shields.io/github/watchers/oh-my-mkdocs/oh-my-mkdocs?label=Watchers&logo=github&style=flat "关注")
 
     基于 GitHub Pages 的超级好看的文档或博客网站模板！（或者说是测试用，一切可能的功能会在这里先尝试）
 
--   <img width="24" class="middle" src="https://xiaokang2022.github.io/logo.png" /> [**Xiaokang2022**](https://xiaokang2022.github.io/)
+-   :simple-materialformkdocs:{ .middle } 还没有更新哦~
 
     ---
 
-    ![](https://img.shields.io/github/stars/Xiaokang2022/Xiaokang2022.github.io?label=Stars&color=gold&logo=github&style=flat "星标")
-    ![](https://img.shields.io/github/forks/Xiaokang2022/Xiaokang2022.github.io?label=Forks&logo=github&style=flat "复刻")
-    ![](https://img.shields.io/github/watchers/Xiaokang2022/Xiaokang2022.github.io?label=Watchers&logo=github&style=flat "关注")
-
-    这个就是本网站啦！（分支 `main` 是这个网站的源代码，分支 `gh-pages` 就是这个网站本体啦）
+    更多内容！敬请期待……
 
 </div>

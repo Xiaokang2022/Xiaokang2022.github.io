@@ -1,5 +1,4 @@
 ---
-comments: true
 icon: material/scale-balance
 ---
 

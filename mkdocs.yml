@@ -298,8 +298,9 @@ plugins:
 nav:
   - 主页:
       - 个人简介: index.md
+      - 我的项目: projects.md
+      - 友情链接: friends.md
       - 开源许可: LICENSE.md
-      - 相关链接: links.md
   - 博客:
       - blog/index.md
       - 标签索引: blog/tags.md
