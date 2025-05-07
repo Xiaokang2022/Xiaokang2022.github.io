@@ -3,9 +3,11 @@ comments: true
 icon: octicons/project-24
 ---
 
-!!! tip "小贴士"
+/// tip | 小贴士
 
-    下面的都是我一些项目的网站，按星标数量排序，大家随便看看吧！
+下面的都是我一些项目的网站，按星标数量排序，大家随便看看吧！
+
+///
 
 <div class="grid cards" markdown>
 
