@@ -8,9 +8,9 @@ hide:
 
 <br/>
 
-<h1 align="center">小康个人站</h1>
+<h1 align="center">小康笔记本</h1>
 
-<p align="center"><a href="https://xiaokang2022.github.io/">https://xiaokang2022.github.io/</a></p>
+<p align="center"><img src="logo.png" alt="Logo" title="Logo" /></p>
 
 <p align="center">基于 <a href="https://github.com/mkdocs/mkdocs">Mkdocs</a> 框架和 <a href="https://github.com/squidfunk/mkdocs-material">Material</a> 主题，依托 <a href="https://docs.github.com/zh/pages">GitHub Pages</a> 零成本构建</p>
 

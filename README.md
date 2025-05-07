@@ -1,4 +1,6 @@
-<h1 align="center">小康个人站</h1>
+<h1 align="center">小康笔记本</h1>
+
+<p align="center"><img src="docs/logo.png" alt="Logo" title="Logo" /></p>
 
 <p align="center"><a href="https://xiaokang2022.github.io/">https://xiaokang2022.github.io/</a></p>
 
