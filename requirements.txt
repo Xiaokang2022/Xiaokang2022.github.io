@@ -6,3 +6,5 @@ mkdocs-git-revision-date-localized-plugin
 mkdocs-statistics-plugin
 mkdocs-minify-plugin
 mkdocs-rss-plugin
+mkdocs-autorefs
+markdown-exec[ansi]
