@@ -7,11 +7,11 @@ icon: material/language-python
 
 ## 一、Python 简介
 
-<div align="center">
-<img src="./images/Python.png" alt="png" width="200" />
-<br/>
-<small>Python Logo</small>
-</div>
+![Python Logo](./images/Python.png)
+
+/// figure-caption
+Python Logo
+///
 
 ### 1.1 什么是 Python
 
@@ -39,11 +39,11 @@ Python 名称来源于 Python 创始人 _Guido van Rossum_ 对 _Monty Python_ �
 
 #### 1.2.2 Guido van Rossum
 
-<div align="center">
-<img src="./images/Guido van Rossum.png" alt="png" />
-<br/>
-<small >Guido van Rossum</small>
-</div>
+![Guido van Rossum](./images/Guido van Rossum.png)
+
+/// figure-caption
+Guido van Rossum
+///
 
 _Guido van Rossum_ 是一名荷兰计算机科学家，被誉为是 Python 编程语言的创始人（实际创始人也是他），根据名字的发音(1)，国内常简称他为“龟叔”。他于 1982 年在荷兰莱顿大学获得了计算机科学学士学位，之后在荷兰国家数学与计算机科学研究所从事了 8 年的研究工作。在 1990 年代初，他开始开发 Python 编程语言，并于 1991 年公开发布了第一个 Python 版本。他在 Python 社区中担任着重要的领导角色，带领着该社区不断地发展壮大。他也曾在 Google 工作，担任技术研究员和软件工程师，并在 Google 期间继续对 Python 的开发和推广做出了重要贡献。
 { .annotate }
@@ -54,11 +54,11 @@ _Guido van Rossum_ 是一名荷兰计算机科学家，被誉为是 Python 编�
 
 在国内，Python 的口号是 “人生苦短，我用 Python”。_Bruce Eckel_ 原话是 “Life is short, you need Python"，但 “我用 Python” 是 _Guido van Rossum_ 穿的 T 恤上印的话（见下图）。
 
-<div align="center">
-<img src="./images/Python slogan.png" alt="png" />
-<br/>
-<small>右上三是 “龟叔”</small>
-</div>
+![右上三是 “龟叔”](./images/Python slogan.png)
+
+/// figure-caption
+右上三是 “龟叔”
+///
 
 这句口号简短地表明了 Python 最主要的特征，就是简单！人生并不是很长，如果你选择把时间花费在复杂冗长的语法上，而不是有用的逻辑上，岂不是十分的不值得？
 
@@ -100,9 +100,9 @@ Python 的学习资料非常多，包括此教程，也是 Python 学习资料�
 
 官方中文版文档链接（强烈建议多看几遍文档）：[Python Documentation](https://docs.python.org/zh-cn/3/)
 
-!!! question "猜你想问：既然有那么多教学资料，那为什么选择这个教程呢？"
-
-    首先，这篇教程属于基于我个人理解编写而成的，我会从初学者的角度来进行讲述，但同时兼具深度和难度（保证和其他教程有很大不同）。此外，我会及时对文章的评论做出回答，及时形成反馈。
+/// question | 猜你想问：既然有那么多教学资料，那为什么选择这个教程呢？
+首先，这篇教程属于基于我个人理解编写而成的，我会从初学者的角度来进行讲述，但同时兼具深度和难度（保证和其他教程有很大不同）。此外，我会及时对文章的评论做出回答，及时形成反馈。
+///
 
 #### 1.3.3 Python 流行广泛
 
@@ -110,11 +110,11 @@ Python 主要方向有网络开发、网络爬虫、人工智能、大数据、�
 
 Pythoon 的宗旨是简单明确且优雅，什么事情能够快速且准确地实现，速度或许会相对于其它编程语言要慢一些，但它开发速度快，出错的概率低，这不正是编写程序的一大目标吗？就算它比较慢，但 Python 官方近些年来一直尝试加快 Python 的运行速度（典型的就是 Python 3.11 版本更新极大地加快了运行速度，见下图）
 
-<div align="center">
-<img src="./images/Python311 Logo.png" alt="png" />
-<br/>
-<small>Python 3.11 更新说明的宣传 Logo</small>
-</div>
+![Python 3.11 更新说明的宣传 Logo](./images/Python311 Logo.png)
+
+/// figure-caption
+Python 3.11 更新说明的宣传 Logo
+///
 
 在我看来，Python 若是运行速度能与主流编译型语言靠齐，那便是最好的编程语言，没有之一了。Python 社区也十分地活跃，每天都有很多的内容在产出。
 
@@ -130,10 +130,10 @@ Python 历年流行趋势图：[TIOBE Index - TIOBE](https://www.tiobe.com/tiobe
 
 Python 编程语言实际有一个“前置”语言作为启发，那就是 ABC 语言。
 
-!!! info "扩展知识：ABC 语言"
-
-    ABC 语言是在 NWO（荷兰科学研究组织）旗下 CWI（荷兰国家数学与计算机科学研究中心）的 _Leo Grurts_，_Lambert Meertens_，_Steven Pemberton_ 主导研发一种交互式，结构化高级语言，旨在替代 BASIC，Pascal 等语言，用于教学及原型软件设计。Python 创始人 _Guido van Rossum_ 于20 世纪 80 年代曾在 ABC 系统开发中工作了数年。
-    <p align="right">—— [ABC 语言 - 百度百科](https://baike.baidu.com/item/ABC%E8%AF%AD%E8%A8%80/334996)</p>
+/// info | 扩展知识：ABC 语言
+ABC 语言是在 NWO（荷兰科学研究组织）旗下 CWI（荷兰国家数学与计算机科学研究中心）的 _Leo Grurts_，_Lambert Meertens_，_Steven Pemberton_ 主导研发一种交互式，结构化高级语言，旨在替代 BASIC，Pascal 等语言，用于教学及原型软件设计。Python 创始人 _Guido van Rossum_ 于20 世纪 80 年代曾在 ABC 系统开发中工作了数年。
+<p markdown align="right">—— [ABC 语言 - 百度百科](https://baike.baidu.com/item/ABC%E8%AF%AD%E8%A8%80/334996)</p>
+///
 
 Python 有很多特点都是借鉴于 ABC 语言，或者说早期的 Python 就是 ABC 的改良版。  但 ABC 语言最后失败了，没有流行下去，就 _Guido_ 本人看来，ABC 失败的原因是高级语言为时过早，并且平台迁移能力弱，难以添加新功能，仅仅专注于编程初学者，没有把有经验的编程人员纳入其中，其通过 Python  解决了其一些问题，让拓展模块的编写非常容易，并且可以在多平台进行运行。
 
@@ -155,11 +155,11 @@ Python 有很多特点都是借鉴于 ABC 语言，或者说早期的 Python 就
 
 下面是截至 2024 年 3 月，[Python 的发布周期](https://devguide.python.org/versions/)：
 
-<div align="center">
-<img src="./images/Python Circle.png" alt="png" />
-<br/>
-<small>Python 发布周期</small>
-</div>
+![Python 发布周期](./images/Python Circle.png)
+
+/// figure-caption
+Python 发布周期
+///
 
 ---
 
