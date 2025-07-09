@@ -356,6 +356,10 @@ nav:
           - 10. 模板模式: Design-Patterns/Behavioral-Patterns/Template-Pattern.md
           - 11. 访问者模式: Design-Patterns/Behavioral-Patterns/Visitor-Pattern.md
           # - 12. 空对象模式: Design-Patterns/Behavioral-Patterns/Null-Object-Pattern.md
+  - 数据结构:
+      - Data-Structures/index.md
+  - 算法:
+      - Algorithms/index.md
   - Python:
       - Python/index.md
       - Python/01.md
