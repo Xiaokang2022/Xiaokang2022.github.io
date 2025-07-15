@@ -12,7 +12,7 @@ remote_name: origin # 远程名称
 docs_dir: docs # 文档目录
 site_dir: site # 网站目录
 dev_addr: 127.0.0.1:8080 # 预览模式地址
-use_directory_urls: true # URL 使用目录名还是文件名
+use_directory_urls: false # URL 使用目录名还是文件名
 strict: false # 警告级别，出现警告就终止程序
 
 markdown_extensions:
@@ -360,6 +360,13 @@ nav:
       - Data-Structures/index.md
   - 算法:
       - Algorithms/index.md
+      - 排序:
+          - Algorithms/Sort/index.md
+          - 1. 选择排序: Algorithms/Sort/Selection-Sort.md
+          - 2. 冒泡排序: Algorithms/Sort/Bubble-Sort.md
+          - 3. 插入排序: Algorithms/Sort/Insertion-Sort.md
+      - 搜索:
+          - Algorithms/Search/index.md
   - Python:
       - Python/index.md
       - Python/01.md
