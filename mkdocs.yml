@@ -263,6 +263,7 @@ extra_javascript:
   - js/click-colorful.js # 鼠标点击效果
   - js/shortcuts.js # 绑定左右键换页的键盘快捷键
   - js/mathjax.js # 数学表达式
+  - js/thebe.js
   - js/tablesort.js # 表格排序功能
   - https://unpkg.com/mathjax@latest/es5/tex-mml-chtml.js # 数学表达式运行环境
   - https://unpkg.com/tablesort@latest/dist/tablesort.min.js # 表格排序功能运行环境（默认文本类型）
