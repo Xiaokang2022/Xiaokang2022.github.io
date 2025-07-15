@@ -117,3 +117,7 @@ figcaption {
         display: none;
     }
 }
+
+.thebe-controls {
+    display: none;
+}

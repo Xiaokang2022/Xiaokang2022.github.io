@@ -64,7 +64,10 @@ markdown_extensions:
   - pymdownx.blocks.definition # 支持更高级的定义块语法（可能与 def_list 混淆）
   - pymdownx.blocks.details # 支持更高级的提示框布局（可能与 pymdownx.details 混淆）
   - pymdownx.blocks.html # 支持一些更高级的 Markdown 内嵌 HTML 语法（pymdownx.blocks 默认开启）
-  - pymdownx.blocks.tab # 支持更高级的标签块写法（可能与 pymdownx.tabbed 混淆）
+  - pymdownx.blocks.tab: # 支持更高级的标签块写法（可能与 pymdownx.tabbed 混淆）
+      alternate_style: True
+      combine_header_slug: True
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   - pymdownx.blocks.admonition: # 支持更高级提示框语法（可能与 admonition 混淆）
       types:
         - new
@@ -289,6 +292,7 @@ plugins:
       pagination_keep_content: true
       pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
   # 第三方插件
+  - macros:
   - statistics:
   - rss:
       match_path: blog/posts/.*
