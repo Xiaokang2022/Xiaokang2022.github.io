@@ -396,6 +396,6 @@ if __name__ == "__main__":
 
 ///
 
-[^1]: [11.2   选择排序 - Hello 算法](https://www.hello-algo.com/chapter_sorting/selection_sort/)
-[^2]: [选择排序 - OI Wiki](https://oiwiki.org/basic/selection-sort/)
-[^3]: [算法讲解004【入门】选择、冒泡、插入排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12P41147to/)
+[^1]: [11.2   选择排序 - Hello 算法](https://www.hello-algo.com/chapter_sorting/selection_sort/){target="_blank"}
+[^2]: [选择排序 - OI Wiki](https://oiwiki.org/basic/selection-sort/){target="_blank"}
+[^3]: [算法讲解004【入门】选择、冒泡、插入排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12P41147to/){target="_blank"}

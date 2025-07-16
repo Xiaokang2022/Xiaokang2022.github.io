@@ -161,9 +161,5 @@ Python 有很多特点都是借鉴于 ABC 语言，或者说早期的 Python 就
 Python 发布周期
 ///
 
----
-
-参考资料：
-
-1. [Python 的发展简史](https://zhuanlan.zhihu.com/p/659988096)
-2. [Python 早期设计与开发：从 ABC 到 Python](https://zhuanlan.zhihu.com/p/60077260)
+[^1]: [Python 的发展简史](https://zhuanlan.zhihu.com/p/659988096){target="_blank"}
+[^2]: [Python 早期设计与开发：从 ABC 到 Python](https://zhuanlan.zhihu.com/p/60077260){target="_blank"}
