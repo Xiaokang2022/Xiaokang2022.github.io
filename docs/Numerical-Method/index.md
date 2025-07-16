@@ -3,4 +3,4 @@ comments: true
 icon: material/alphabet-greek
 ---
 
-# 数值方法（Numerical Method）
+# 数值方法

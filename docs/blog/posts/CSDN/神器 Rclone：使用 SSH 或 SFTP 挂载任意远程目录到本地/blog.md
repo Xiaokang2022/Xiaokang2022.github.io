@@ -54,7 +54,7 @@ Xiaomi 我没搞 root 权限，所有很多东西无法访问，但也能凑合�
 
 挂载工具一般是一个比较小的程序，可以实现将各类互联网的“类磁盘资源”作为“本地磁盘”挂载到本地，基本功能效果和本地磁盘一样，比如文件的移动、复制、粘贴、剪切和重命名等等，理论上，只要你的网速和服务器的网速足够快，使用起来就和本地磁盘没有任何区别！
 
-### 2.2 挂载磁盘和网盘有什么区别
+### 2.2 挂载磁盘和网盘的区别
 
 显而易见，网盘少有能够自动同步文件的功能，而且大多限速，挂载磁盘没有程序上的限速，限制的只有网速，而且它会几乎实时地对你的操作进行同步。你对挂载磁盘干了什么，对应的网络磁盘也会进行修改，不就相当于自动同步了吗？而且，挂载磁盘不需要额外再启动一个什么网盘客户端，启动脚本直接使用！
 
@@ -72,17 +72,11 @@ Rclone，开源，成熟，完全免费，对于国内外的都几乎全支持�
 
 #### 3.1.2 Rclone 的缺点
 
-Rclone 这么好，为什么还有其他的挂载工具出现呢？因为 Rclone 有个唯一的缺点，没得图形界面，它的一切操作都是在终端中进行的……先别急着走，虽然这样，但你只要按照我下面的操作来，你几乎不需要做任何事情，复制粘贴代码回车运行就行！人人可能不都是程序员，但人人都可以成为一个合格甚至优秀的 CV 工程师（附：CV 指 Ctrl+C 和 Ctrl+V）！
+Rclone 这么好，为什么还有其他的挂载工具出现呢？因为 Rclone 有个唯一的缺点，没得图形界面，它的一切操作都是在终端中进行的……先别急着走，虽然这样，但你只要按照我下面的操作来，你几乎不需要做任何事情，复制粘贴代码回车运行就行！人人可能不都是程序员，但人人都可以成为一个合格甚至优秀的 CV 工程师（附：CV 指 ++ctrl+c++ 和 ++ctrl+v++）！
 
-#### 3.2 Rclone 下载
+### 3.2 Rclone 下载
 
-Rclone 建议在官方位置下载安装，即在其 GitHub 仓库找到文件。
-
-GitHub repo：rclone/rclone: "rsync for cloud storage" - Google Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Wasabi, Google Cloud Storage, Yandex Files (github.com)
-
-也可以从我这里的蓝奏云中下载 1.66.0-windows-amd64 版本的：
-
-rclone-v1.66.0-windows-amd64.zip - 蓝奏云
+Rclone 建议在官方位置下载安装，即在其 GitHub 仓库找到文件：<https://github.com/rclone/rclone>
 
 打开页面后，在右侧找到 Releases 字样，点击下面的 Latest 发行版进去就是当前官方的最新发行版文件了，找到下面的 Assets，里面有很多文件，都是适配不同操作系统的版本，对于一般的 Windows 用户而言，选择 rclone-vX.X.X-windows-amd64.zip 并等待下载完成就可以了（X 是版本号，amd 别看成 arm 了！）。这玩意儿，下载完解压后就行了，无需安装。
 
@@ -120,7 +114,9 @@ Github repo：winfsp/winfsp: Windows File System Proxy - FUSE for Windows (githu
 
 找到我们存放 Rclone 的文件目录，在此文件夹中的空白位置打开右键菜单，点击在终端中打开（如果没有这一项，就自己手动打开终端，然后切换到该目录下），输入以下命令进行 Rclone 的配置：
 
+```shell linenums="0"
 rclone config
+```
 
 #### 4.2.1 添加服务器配置
 
@@ -129,11 +125,16 @@ rclone config
 注意：部分 Windows Server 没有 openssh server 服务，需手动开启。
 
 步骤 01
+
 输入命令进入 rclone 配置模式：
 
+```shell linenums="0"
 rclone config
+```
+
 会出现下面几个选项：
 
+```shell linenums="0"
 e) Edit existing remote
 n) New remote
 d) Delete remote
@@ -142,18 +143,26 @@ c) Copy remote
 s) Set configuration password
 q) Quit config
 e/n/d/r/c/s/q>
+```
+
 根据对应的英文，我们输入 n 来添加新的服务器配置。
 
 步骤 02
+
 输入 n 并回车之后，会出现下面的字样：
 
+```shell linenums="0"
 Enter name for new remote.
 name>
+```
+
 意思是要我们输入挂载位置的名称，这个名称由我们自己定义，与实际的服务器没有关系，这个名称就是到时候挂载时显示的名称（建议使用英文名称，我用中文它崩了）。
 
 步骤 03
+
 输入后回车，他会出现一大堆红绿相间的选项：
 
+```shell linenums="0"
  1 / 1Fichier
    \ (fichier)
  2 / Akamai NetStorage
@@ -265,41 +274,53 @@ name>
 55 / seafile
    \ (seafile)
 Storage>
+```
+
 最后一行有个 “Storage” 字样，我们在其后面输入对应选项的数字即可。这些选项代表各种模式。
 
 一般而言我们使用 SSH/SFTP，找到该选项的数字，输入并回车。SSH/SFTP 表示用 ssh 或者 sftp 进行连接并传输文件，是一种安全的网络传输协议。
 
-
-
-
-
 步骤 04
+
 选择模式之后，回车会显示下面的信息：
 
+```shell linenums="0"
 Option host.
 SSH host to connect to.
 E.g. "example.com".
 Enter a value.
 host>
+```
+
 这是要我们输入远程连接的地址，输入你要挂载文件对应的 IP 地址就行了。
 
 步骤 05
+
 之后它会要求你输入用户名（Linux 一般是 root，Windows 如果没设置，那一般是 Administrator）：
 
+```shell linenums="0"
 Option user.
 SSH username.
 Enter a string value. Press Enter for the default (XXX\xxx).
 user>
+```
+
 步骤 06
+
 之后会问你端口，这个一般不用管，端口用协议的默认值就行，直接回车。 
 
+```shell linenums="0"
 Option port.
 SSH port number.
 Enter a signed integer. Press Enter for the default (22).
 port>
+```
+
 步骤 07
+
 然后它会问你密码：
 
+```shell linenums="0"
 Option pass.
 SSH password, leave blank to use ssh-agent.
 Choose an alternative below. Press Enter for the default (n).
@@ -307,27 +328,32 @@ y) Yes, type in my own password
 g) Generate random password
 n) No, leave this optional password blank (default)
 y/g/n>
+```
+
 这个看你自己的需求：
-
-
-
 
 我反正是直接输入我服务器操作系统的密码了（按 y 输入自己的密码）。
 
 步骤 08
+
 之后它还会问你更多的可选选项，如 key_pem、key_file、key_file_pass、pubkey_file、key_use_agent、use_insecure_cipher、 disable_hashcheck 和 ssh 等。若是不懂，就直接回车，使用默认值即可。
 
 一直到出现下面这个界面：
 
+```shell linenums="0"
 Edit advanced config?
 y) Yes
 n) No (default)
 y/n>
+```
+
 这是在问你还需不需要配置高级选项。直接回车，不用配置（默认值就好）。
 
 步骤 09
+
 最后会出现这个：
 
+```shell linenums="0"
 Configuration complete.
 Options:
 - type: sftp
@@ -337,11 +363,15 @@ y) Yes this is OK (default)
 e) Edit this remote
 d) Delete this remote
 y/e/d>
+```
+
 表示配置完毕了，选择选项 y，保留该配置。
 
 步骤 10
+
 回车输入 y 之后就会回到一开始的界面了，此时会出现已经弄好的服务器配置了：
 
+```shell linenums="0"
 Current remotes:
 
 Name                 Type
@@ -356,18 +386,17 @@ c) Copy remote
 s) Set configuration password
 q) Quit config
 e/n/d/r/c/s/q>
+```
+
 可以退出这个程序了。
 
 #### 4.2.2 挂载磁盘
 
 再次从 rclone 所在文件夹下进入终端命令行，输入下面的命令就可以挂载服务器指定目录到本地磁盘了：
 
+```shell linenums="0"
 rclone mount ServerName:RemotePath TargetPath
-
-
-
-
-
+```
 
 成功后先别急着把终端窗口关闭，可以先按 Win + E 快捷键查看资源管理器中是否出现新的盘符，如果有，那么点进去看看，如果没有弹出任何报错，那说明你成功了。 
 
@@ -379,19 +408,26 @@ rclone mount ServerName:RemotePath TargetPath
 
 对于 Windows 操作系统，我们可以使用下面的命令使 Rclone 后台运行：
 
+```shell linenums="0"
 @echo off
 %1 start mshta vbscript:createobject("wscript.shell").run("""%~0"" ::",0)(window.close)&&exit
 start /b 在这里输入你的第一条命令
 start /b 在这里输入你的第二条命令
+```
+
 更多的命令，以此类推。 你可以将上面的代码修改成自己想要的，然后新建一个文本文档文件，保存代码到里面，并重命名文件的扩展名为 bat 类型。双击它就可以运行了。
 
-4.3.2 终止挂载服务
+#### 4.3.2 终止挂载服务
+
 如果想终止，也很简单：
 
+```shell linenums="0"
 @echo off
 taskkill /im rclone.exe /f
 pause
-和启动后台同样的操作，只不过代码改成了上面这样。 
+```
+
+和启动后台同样的操作，只不过代码改成了上面这样。
 
 ### 4.4 开机自启
 
