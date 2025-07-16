@@ -7,7 +7,7 @@ icon: material/language-python
 
 ## 一、Python 简介
 
-![Python Logo](./images/Python.png)
+![Python Logo](../python/images/Python.png)
 
 /// figure-caption
 Python Logo
