@@ -4,7 +4,7 @@ tags:
     - 排序
 ---
 
-# 选择排序（Selection Sort）
+# 选择排序
 
 /// success | 一句话解释
 
