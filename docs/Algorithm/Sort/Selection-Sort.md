@@ -198,9 +198,8 @@ graph TD
 
 /// tab | 🔵 Python
 
-```python hl_lines="4 7 8"
+```python hl_lines="3 6 7"
 def selection_sort(arr: list[int]) -> None:
-    """选择排序"""
     for i in range(len(arr)):
         min_index = i
         for j in range(i + 1, len(arr)):
@@ -213,14 +212,13 @@ def selection_sort(arr: list[int]) -> None:
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
-    <iframe width="1080" height="540" frameborder="0" src="{{ src_python }}"></iframe>
+    <iframe width="800" height="500" frameborder="0" src="{{ src_python }}"></iframe>
 
 ///
 
 /// tab | 🔴 C++
 
-```cpp hl_lines="4 7 10"
-// 选择排序
+```cpp hl_lines="3 6 9"
 void selectionSort(std::vector<int> &arr) {
     for (int i = 0, minIndex; i < arr.size(); ++i) {
         minIndex = i;
@@ -238,55 +236,114 @@ void selectionSort(std::vector<int> &arr) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
-    <iframe width="1080" height="540" frameborder="0" src="{{ src_cpp }}"></iframe>
+    <iframe width="800" height="500" frameborder="0" src="{{ src_cpp }}"></iframe>
 
 ///
 
 /// tab | 🟠 Java
 
-```java
-public static void selectionSort(arr) {
-    
+```java hl_lines="3 6 9"
+public static void selectionSort(int[] arr) {
+    for (int i = 0, minIndex; i < arr.length; i++) {
+        minIndex = i;
+        for (int j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr, i, minIndex); //(1)!
+    }
 }
 ```
 
-{% set src_java = "#" %}
+1. 方法 `swap` 的定义如下：
+```java
+public static void swap(int[] arr, int i, int j) {
+    int tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+}
+```
+
+{% set src_java = "https://pythontutor.com/iframe-embed.html#code=public%20class%20Main%20%7B%0A%20%20%20%20public%20static%20void%20swap%28int%5B%5D%20arr,%20int%20i,%20int%20j%29%20%7B%0A%20%20%20%20%20%20%20%20int%20tmp%20%3D%20arr%5Bi%5D%3B%0A%20%20%20%20%20%20%20%20arr%5Bi%5D%20%3D%20arr%5Bj%5D%3B%0A%20%20%20%20%20%20%20%20arr%5Bj%5D%20%3D%20tmp%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20public%20static%20void%20selectionSort%28int%5B%5D%20arr%29%20%7B%0A%20%20%20%20%20%20%20%20for%20%28int%20i%20%3D%200,%20minIndex%3B%20i%20%3C%20arr.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.length%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20swap%28arr,%20i,%20minIndex%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%5B%5D%20arr%20%3D%20%7B%204,%206,%203,%202,%207,%201,%205%20%7D%3B%0A%20%20%20%20%20%20%20%20selectionSort%28arr%29%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20i%20%3A%20arr%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.printf%28%22%25d%20%22,%20i%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
-    <iframe width="1080" height="540" frameborder="0" src="{{ src_java }}"></iframe>
+    <iframe width="800" height="500" frameborder="0" src="{{ src_java }}"></iframe>
 
 ///
 
 /// tab | 🟡 JavaScript
 
-```javascript
+```javascript hl_lines="3 6 9"
+function selectionSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let minIndex = i;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+    }
+}
 ```
 
-{% set src_javascript = "#" %}
+{% set src_javascript = "https://pythontutor.com/iframe-embed.html#code=function%20selectionSort%28arr%29%20%7B%0A%20%20%20%20for%20%28let%20i%20%3D%200%3B%20i%20%3C%20arr.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20let%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28let%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.length%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%5Barr%5Bi%5D,%20arr%5BminIndex%5D%5D%20%3D%20%5Barr%5BminIndex%5D,%20arr%5Bi%5D%5D%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aconst%20arr%20%3D%20%5B4,%206,%203,%202,%207,%201,%205%5D%3B%0AselectionSort%28arr%29%3B%0Aconsole.log%28arr.join%28%22%20%22%29%29%3B&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=133&heapPrimitives=nevernest&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
-    <iframe width="1080" height="540" frameborder="0" src="{{ src_javascript }}"></iframe>
+    <iframe width="800" height="500" frameborder="0" src="{{ src_javascript }}"></iframe>
 
 ///
 
 /// tab | 🟤 C
 
-```c
+```c hl_lines="3 6 9"
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr, i, minIndex); //(1)!
+    }
+}
 ```
 
-{% set src_c = "#" %}
+1. 函数 `swap` 的定义如下：
+```c
+void swap(int arr[], int i, int j) {
+    int tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+}
+```
+
+{% set src_c = "https://pythontutor.com/iframe-embed.html#code=%23include%20%3Cstdio.h%3E%0A%0Avoid%20swap%28int%20arr%5B%5D,%20int%20i,%20int%20j%29%20%7B%0A%20%20%20%20int%20tmp%20%3D%20arr%5Bi%5D%3B%0A%20%20%20%20arr%5Bi%5D%20%3D%20arr%5Bj%5D%3B%0A%20%20%20%20arr%5Bj%5D%20%3D%20tmp%3B%0A%7D%0A%0Avoid%20selectionSort%28int%20arr%5B%5D,%20int%20n%29%20%7B%0A%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20int%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20n%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20swap%28arr,%20i,%20minIndex%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aint%20main%28%29%20%7B%0A%20%20%20%20int%20arr%5B%5D%20%3D%20%7B4,%206,%203,%202,%207,%201,%205%7D%3B%0A%20%20%20%20int%20n%20%3D%20sizeof%28arr%29%20/%20sizeof%28int%29%3B%0A%20%20%20%20selectionSort%28arr,%20n%29%3B%0A%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20printf%28%22%25d%20%22,%20arr%5Bi%5D%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=144&heapPrimitives=nevernest&origin=opt-frontend.js&py=c_gcc9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 
-    <iframe width="1080" height="540" frameborder="0" src="{{ src_c }}"></iframe>
+    <iframe width="800" height="500" frameborder="0" src="{{ src_c }}"></iframe>
 
 ///
 
 /// tab | 🟢 C#
 
-```csharp
+```csharp hl_lines="3 6 9"
+static void SelectionSort(int[] arr) {
+    for (int i = 0, minIndex; i < arr.Length; i++) {
+        minIndex = i;
+        for (int j = i + 1; j < arr.Length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        (arr[i], arr[minIndex]) = (arr[minIndex], arr[i]);
+    }
+}
 ```
 
 !!! failure "可视化代码"
@@ -297,7 +354,18 @@ public static void selectionSort(arr) {
 
 /// tab | 🟣 Go
 
-```go
+```go hl_lines="3 6 9"
+func SelectionSort(arr []int) {
+    for i := 0; i < len(arr); i++ {
+        minIndex := i
+        for j := i + 1; j < len(arr); j++ {
+            if arr[j] < arr[minIndex] {
+                minIndex = j
+            }
+        }
+        arr[i], arr[minIndex] = arr[minIndex], arr[i]
+    }
+}
 ```
 
 !!! failure "可视化代码"
@@ -328,5 +396,6 @@ if __name__ == "__main__":
 
 ///
 
-[^1]: <https://www.bilibili.com/video/BV12P41147to/>
-[^2]: <https://www.hello-algo.com/chapter_sorting/selection_sort/>
+[^1]: [11.2   选择排序 - Hello 算法](https://www.hello-algo.com/chapter_sorting/selection_sort/)
+[^2]: [选择排序 - OI Wiki](https://oiwiki.org/basic/selection-sort/)
+[^3]: [算法讲解004【入门】选择、冒泡、插入排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12P41147to/)

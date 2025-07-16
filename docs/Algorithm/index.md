@@ -3,4 +3,4 @@ comments: true
 icon: material/map-marker-path
 ---
 
-# 算法（Algorithms）
+# 算法（Algorithm）

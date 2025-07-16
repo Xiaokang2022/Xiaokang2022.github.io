@@ -3,4 +3,4 @@ comments: true
 icon: material/graph-outline
 ---
 
-# 数据结构（Data Structures）
+# 数据结构（Data Structure）
