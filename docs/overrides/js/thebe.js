@@ -9,10 +9,6 @@ const _thebe_options = {
     },
     mountActivateWidget: false,
     mountStatusWidget: false,
-    mountRunButton: true,
-    mountRunAllButton: false,
-    mountRestartButton: false,
-    mountRestartAllButton: false,
     kernelOptions: {
         kernelName: "python3",
     },

@@ -118,6 +118,12 @@ figcaption {
     }
 }
 
+/*隐藏 Thebe 单元表格自带的按钮*/
 .thebe-controls {
     display: none;
+}
+
+/*Thebe 输入框 100% 宽度，对齐单元格*/
+.jp-Stdin-input {
+    width: 100%;
 }
