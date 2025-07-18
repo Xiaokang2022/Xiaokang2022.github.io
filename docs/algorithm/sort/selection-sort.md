@@ -1,6 +1,7 @@
 ---
 comments: true
 tags:
+    - 算法
     - 排序
 ---
 
@@ -8,7 +9,7 @@ tags:
 
 /// success | 一句话解释
 
-在 $i$ 到 $n-1$ 范围上，选出最小值并通过交换的方式放到 $i$ 位置上，然后再在 $i+1$ 到 $n-1$ 范围上继续。
+每轮从未排序序列中选最小值，与未排序首元素交换，将其纳入已排序序列尾部，直至完全有序。
 
 ///
 
@@ -188,7 +189,7 @@ graph TD
 
 ### 2.3 其它性质
 
-* 不稳定排序：无法保证相邻顺序不变；
+稳定性与具体实现有关。
 
 ## 三、算法实现
 
@@ -198,7 +199,7 @@ graph TD
 
 /// tab | 🔵 Python
 
-```python hl_lines="3 6 7"
+```python
 def selection_sort(arr: list[int]) -> None:
     for i in range(len(arr)):
         min_index = i
@@ -218,11 +219,11 @@ def selection_sort(arr: list[int]) -> None:
 
 /// tab | 🔴 C++
 
-```cpp hl_lines="3 6 9"
+```cpp
 void selectionSort(std::vector<int> &arr) {
-    for (int i = 0, minIndex; i < arr.size(); ++i) {
+    for (int i = 0, minIndex; i < arr.size(); i++) {
         minIndex = i;
-        for (int j = i + 1; j < arr.size(); ++j) {
+        for (int j = i + 1; j < arr.size(); j++) {
             if (arr[j] < arr[minIndex]) {
                 minIndex = j;
             }
@@ -232,7 +233,7 @@ void selectionSort(std::vector<int> &arr) {
 }
 ```
 
-{% set src_cpp = "https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0A%23include%20%3Cutility%3E%0A%23include%20%3Cvector%3E%0A%0Avoid%20selectionSort%28std%3A%3Avector%3Cint%3E%20%26arr%29%20%7B%0A%20%20%20%20for%20%28int%20i%20%3D%200,%20minIndex%3B%20i%20%3C%20arr.size%28%29%3B%20%2B%2Bi%29%20%7B%0A%20%20%20%20%20%20%20%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.size%28%29%3B%20%2B%2Bj%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20std%3A%3Aswap%28arr%5Bi%5D,%20arr%5BminIndex%5D%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aint%20main%28%29%7B%0A%20%20%20%20std%3A%3Avector%3Cint%3E%20arr%7B4,%206,%203,%202,%207,%201,%205%7D%3B%0A%20%20%20%20selectionSort%28arr%29%3B%0A%20%20%20%20for%20%28int%20%26i%20%3A%20arr%29%20%7B%0A%20%20%20%20%20%20%20%20std%3A%3Acout%20%3C%3C%20i%20%3C%3C%20'%20'%3B%0A%20%20%20%20%7D%0A%20%20%20%20std%3A%3Acout%20%3C%3C%20std%3A%3Aendl%3B%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" %}
+{% set src_cpp = "https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0A%23include%20%3Cutility%3E%0A%23include%20%3Cvector%3E%0A%0Avoid%20selectionSort%28std%3A%3Avector%3Cint%3E%20%26arr%29%20%7B%0A%20%20%20%20for%20%28int%20i%20%3D%200,%20minIndex%3B%20i%20%3C%20arr.size%28%29%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.size%28%29%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20std%3A%3Aswap%28arr%5Bi%5D,%20arr%5BminIndex%5D%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aint%20main%28%29%7B%0A%20%20%20%20std%3A%3Avector%3Cint%3E%20arr%7B4,%206,%203,%202,%207,%201,%205%7D%3B%0A%20%20%20%20selectionSort%28arr%29%3B%0A%20%20%20%20for%20%28int%20%26i%20%3A%20arr%29%20%7B%0A%20%20%20%20%20%20%20%20std%3A%3Acout%20%3C%3C%20i%20%3C%3C%20'%20'%3B%0A%20%20%20%20%7D%0A%20%20%20%20std%3A%3Acout%20%3C%3C%20std%3A%3Aendl%3B%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
@@ -242,7 +243,7 @@ void selectionSort(std::vector<int> &arr) {
 
 /// tab | 🟠 Java
 
-```java hl_lines="3 6 9"
+```java
 public static void selectionSort(int[] arr) {
     for (int i = 0, minIndex; i < arr.length; i++) {
         minIndex = i;
@@ -251,7 +252,7 @@ public static void selectionSort(int[] arr) {
                 minIndex = j;
             }
         }
-        swap(arr, i, minIndex); //(1)!
+        swap(arr, i, minIndex);//(1)!
     }
 }
 ```
@@ -275,7 +276,7 @@ public static void swap(int[] arr, int i, int j) {
 
 /// tab | 🟡 JavaScript
 
-```javascript hl_lines="3 6 9"
+```javascript
 function selectionSort(arr) {
     for (let i = 0; i < arr.length; i++) {
         let minIndex = i;
@@ -299,7 +300,7 @@ function selectionSort(arr) {
 
 /// tab | 🟤 C
 
-```c hl_lines="3 6 9"
+```c
 void selectionSort(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         int minIndex = i;
@@ -308,7 +309,7 @@ void selectionSort(int arr[], int n) {
                 minIndex = j;
             }
         }
-        swap(arr, i, minIndex); //(1)!
+        swap(arr, i, minIndex);//(1)!
     }
 }
 ```
@@ -332,7 +333,7 @@ void swap(int arr[], int i, int j) {
 
 /// tab | 🟢 C#
 
-```csharp hl_lines="3 6 9"
+```csharp
 static void SelectionSort(int[] arr) {
     for (int i = 0, minIndex; i < arr.Length; i++) {
         minIndex = i;
@@ -346,15 +347,13 @@ static void SelectionSort(int[] arr) {
 }
 ```
 
-!!! failure "可视化代码"
-
-    抱歉！[pythontutor](https://pythontutor.com/) 暂时还不支持 C# 的可视化！
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 C# 的可视化！"
 
 ///
 
 /// tab | 🟣 Go
 
-```go hl_lines="3 6 9"
+```go
 func SelectionSort(arr []int) {
     for i := 0; i < len(arr); i++ {
         minIndex := i
@@ -368,9 +367,7 @@ func SelectionSort(arr []int) {
 }
 ```
 
-!!! failure "可视化代码"
-
-    抱歉！[pythontutor](https://pythontutor.com/) 暂时还不支持 Go 的可视化！
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Go 的可视化！"
 
 ///
 
