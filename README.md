@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/Xiaokang2022/Xiaokang2022.github.io/pulse"><img src="https://repobeats.axiom.co/api/embed/b4832e0ac90defe97c7e11e0c9e926793ec7135c.svg" /></a>
+<a href="https://github.com/Xiaokang2022/Xiaokang2022.github.io/pulse"><img src="https://repobeats.axiom.co/api/embed/440410aa2526f3aab4c8c4f43a3f5a65cca0dc91.svg" /></a>
 </p>
 
 <p align="center">
