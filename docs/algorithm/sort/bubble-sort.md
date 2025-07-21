@@ -31,7 +31,7 @@ tags:
 ```mermaid
 ```
 
-## 二、算法特性
+## 二、算法性质
 
 ### 2.1 时间复杂度
 
@@ -39,7 +39,7 @@ tags:
 
 ### 2.2 空间复杂度
 
-空间复杂度为 $O(1)$，不消耗额外的空间，即原地排序。
+空间复杂度为 $O(1)$。
 
 ### 2.3 其它性质
 
@@ -49,7 +49,7 @@ tags:
 
 ### 3.1 多语言代码
 
-下面提供了多种语言的版本，仅供参考。在每种编程语言下方均提供了可视化代码，但加载可能稍慢，请耐心等待。
+下面提供了多种语言的版本，仅供参考。部分编程语言下方提供了可视化代码，但加载可能稍慢，请耐心等待。
 
 /// tab | 🔵 Python
 
@@ -94,23 +94,14 @@ void bubbleSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-public static void bubbleSort(int[] arr) {
-    for (int i = arr.length; i > 0; i--) {
+public static void bubbleSort(ArrayList<Integer> arr) {
+    for (int i = arr.size(); i > 0; i--) {
         for (int j = 0; j < i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                swap(arr, j, j + 1);//(1)!
+            if (arr.get(j) > arr.get(j + 1)) {
+                Collections.swap(arr, j, j + 1);
             }
         }
     }
-}
-```
-
-1. 方法 `swap` 的定义如下：
-```java
-public static void swap(int[] arr, int i, int j) {
-    int tmp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = tmp;
 }
 ```
 
@@ -144,7 +135,7 @@ function bubbleSort(arr) {
 
 ///
 
-/// tab | 🟤 C
+/// tab | 🟣 C
 
 ```c
 void bubbleSort(int arr[], int n) {
@@ -178,8 +169,8 @@ void swap(int arr[], int i, int j) {
 /// tab | 🟢 C#
 
 ```csharp
-static void BubbleSort(int[] arr) {
-    for (int i = arr.Length; i > 0; i--) {
+static void BubbleSort(List<int> arr) {
+    for (int i = arr.Count; i > 0; i--) {
         for (int j = 0; j < i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
@@ -193,7 +184,7 @@ static void BubbleSort(int[] arr) {
 
 ///
 
-/// tab | 🟣 Go
+/// tab | 🔵 Go
 
 ```go
 func BubbleSort(arr []int) {
@@ -211,7 +202,201 @@ func BubbleSort(arr []int) {
 
 ///
 
-### 3.2 自我测试
+/// tab | 🟤 Rust
+
+```rust
+fn bubble_sort(arr: &mut Vec<i32>) {
+    for i in (1..=arr.len()).rev() {
+        for j in 0..i - 1 {
+            if arr[j] > arr[j + 1] {
+                arr.swap(j, j + 1);
+            }
+        }
+    }
+}
+```
+
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Rust 的可视化！"
+
+///
+
+### 3.2 改进代码
+
+冒泡排序还可以通过添加变量 `swapped` 标志当前循环是否存在交换，若没有任何交换，则可以提前退出循环（当前长度的循环都没有交换，那么其更短长度的子循环也不会存在交换），下面是改进后的代码：
+
+/// tab | 🔵 Python
+
+```python
+def bubble_sort(arr: list[int]) -> None:
+    for i in range(len(arr), 0, -1):
+        swapped = False
+        for j in range(i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+```
+
+///
+
+/// tab | 🔴 C++
+
+```cpp
+void bubbleSort(std::vector<int> &arr) {
+    for (int i = arr.size(); i > 0; i--) {
+        bool swapped = false;
+        for (int j = 0; j < i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                std::swap(arr[j], arr[j + 1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+    }
+}
+```
+
+///
+
+/// tab | 🟠 Java
+
+```java
+public static void bubbleSort(ArrayList<Integer> arr) {
+    for (int i = arr.size(); i > 0; i--) {
+        boolean swapped = false;
+        for (int j = 0; j < i - 1; j++) {
+            if (arr.get(j) > arr.get(j + 1)) {
+                Collections.swap(arr, j, j + 1);
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+    }
+}
+```
+
+///
+
+/// tab | 🟡 JavaScript
+
+```javascript
+function bubbleSort(arr) {
+    for (let i = arr.length; i > 0; i--) {
+        let swapped = false;
+        for (let j = 0; j < i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+    }
+}
+```
+
+///
+
+/// tab | 🟣 C
+
+```c
+void bubbleSort(int arr[], int n) {
+    for (int i = n; n > 0; i--) {
+        bool swapped = false;
+        for (int j = 0; j < i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr, j, j + 1);//(1)!
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+    }
+}
+```
+
+1. 函数 `swap` 的定义如下：
+```c
+void swap(int arr[], int i, int j) {
+    int tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+}
+```
+
+///
+
+/// tab | 🟢 C#
+
+```csharp
+static void BubbleSort(List<int> arr) {
+    for (int i = arr.Count; i > 0; i--) {
+        bool swapped = false;
+        for (int j = 0; j < i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+    }
+}
+```
+
+///
+
+/// tab | 🔵 Go
+
+```go
+func BubbleSort(arr []int) {
+    for i := len(arr); i > 0; i-- {
+        swapped := false;
+        for j := 0; j < i - 1; j++ {
+            if arr[j] > arr[j + 1] {
+                arr[j], arr[j + 1] = arr[j + 1], arr[j];
+                swapped = true;
+            }
+        }
+        if !swapped {
+            break;
+        }
+    }
+}
+```
+
+///
+
+/// tab | 🟤 Rust
+
+```rust
+fn bubble_sort(arr: &mut Vec<i32>) {
+    for i in (1..=arr.len()).rev() {
+        let mut swapped = false;
+        for j in 0..i - 1 {
+            if arr[j] > arr[j + 1] {
+                arr.swap(j, j + 1);
+                swapped = true;
+            }
+        }
+        if !swapped {
+            break;
+        }
+    }
+}
+```
+
+///
+
+### 3.3 自我测试
 
 下面是一个 Python 交互式环境，你可以在其中编写自己的代码进行一些测试。初次启动需要较长时间，请耐心等待！
 
@@ -226,9 +411,9 @@ def bubble_sort(arr: list[int]) -> None:
     pass  # 请将代码写在这里
 
 if __name__ == "__main__":
-    arr: list[int] = [4, 6, 3, 2, 7, 1, 5]
+    arr: list[int] = [7, 0, 6, 1, 5, 2, 4, 3]
     bubble_sort(arr)
-    print(*arr)
+    print(arr)
 </pre>
 
 ///

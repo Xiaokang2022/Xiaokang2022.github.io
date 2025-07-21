@@ -177,25 +177,28 @@ graph TD
     style L fill:#F007,stroke:#7777
 ```
 
-## 二、算法特性
+## 二、算法性质
 
 ### 2.1 时间复杂度
 
-时间复杂度为 $O(n^2)$，~~不愧是“三傻”排序之一~~。
+时间复杂度为 $O(n^2)$。
 
 ### 2.2 空间复杂度
 
-空间复杂度为 $O(1)$，不消耗额外的空间，即原地排序。
+空间复杂度为 $O(1)$。
 
 ### 2.3 其它性质
 
-稳定性与具体实现有关。
+- [X] 就地性，无额外空间开销
+- [X] 稳定性，与具体实现有关
+- [X] 自适应性
+- [X] 基于比较
 
 ## 三、算法实现
 
 ### 3.1 多语言代码
 
-下面提供了多种语言的版本，仅供参考。在每种编程语言下方均提供了可视化代码，但加载可能稍慢，请耐心等待。
+下面提供了多种语言的版本，仅供参考。部分编程语言下方提供了可视化代码，但加载可能稍慢，请耐心等待。
 
 /// tab | 🔵 Python
 
@@ -209,7 +212,7 @@ def selection_sort(arr: list[int]) -> None:
         arr[i], arr[min_index] = arr[min_index], arr[i]
 ```
 
-{% set src_python = "https://pythontutor.com/iframe-embed.html#code=def%20selection_sort%28arr%3A%20list%5Bint%5D%29%20-%3E%20None%3A%0A%20%20%20%20for%20i%20in%20range%28len%28arr%29%29%3A%0A%20%20%20%20%20%20%20%20min_index%20%3D%20i%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%28i%20%2B%201,%20len%28arr%29%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20arr%5Bj%5D%20%3C%20arr%5Bmin_index%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20min_index%20%3D%20j%0A%20%20%20%20%20%20%20%20arr%5Bi%5D,%20arr%5Bmin_index%5D%20%3D%20arr%5Bmin_index%5D,%20arr%5Bi%5D%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20arr%3A%20list%5Bint%5D%20%3D%20%5B4,%206,%203,%202,%207,%201,%205%5D%0A%20%20%20%20selection_sort%28arr%29%0A%20%20%20%20print%28*arr%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" %}
+{% set src_python = "https://pythontutor.com/iframe-embed.html#code=def%20selection_sort%28arr%3A%20list%5Bint%5D%29%20-%3E%20None%3A%0A%20%20%20%20for%20i%20in%20range%28len%28arr%29%29%3A%0A%20%20%20%20%20%20%20%20min_index%20%3D%20i%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%28i%20%2B%201,%20len%28arr%29%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20arr%5Bj%5D%20%3C%20arr%5Bmin_index%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20min_index%20%3D%20j%0A%20%20%20%20%20%20%20%20arr%5Bi%5D,%20arr%5Bmin_index%5D%20%3D%20arr%5Bmin_index%5D,%20arr%5Bi%5D%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20arr%3A%20list%5Bint%5D%20%3D%20%5B7,%200,%206,%201,%205,%202,%204,%203%5D%0A%20%20%20%20selection_sort%28arr%29%0A%20%20%20%20print%28arr%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
@@ -233,7 +236,7 @@ void selectionSort(std::vector<int> &arr) {
 }
 ```
 
-{% set src_cpp = "https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0A%23include%20%3Cutility%3E%0A%23include%20%3Cvector%3E%0A%0Avoid%20selectionSort%28std%3A%3Avector%3Cint%3E%20%26arr%29%20%7B%0A%20%20%20%20for%20%28int%20i%20%3D%200,%20minIndex%3B%20i%20%3C%20arr.size%28%29%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.size%28%29%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20std%3A%3Aswap%28arr%5Bi%5D,%20arr%5BminIndex%5D%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aint%20main%28%29%7B%0A%20%20%20%20std%3A%3Avector%3Cint%3E%20arr%7B4,%206,%203,%202,%207,%201,%205%7D%3B%0A%20%20%20%20selectionSort%28arr%29%3B%0A%20%20%20%20for%20%28int%20%26i%20%3A%20arr%29%20%7B%0A%20%20%20%20%20%20%20%20std%3A%3Acout%20%3C%3C%20i%20%3C%3C%20'%20'%3B%0A%20%20%20%20%7D%0A%20%20%20%20std%3A%3Acout%20%3C%3C%20std%3A%3Aendl%3B%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" %}
+{% set src_cpp = "https://pythontutor.com/iframe-embed.html#code=%23include%20%3Ciostream%3E%0A%23include%20%3Cutility%3E%0A%23include%20%3Cvector%3E%0A%0Avoid%20selectionSort%28std%3A%3Avector%3Cint%3E%20%26arr%29%20%7B%0A%20%20%20%20for%20%28int%20i%20%3D%200,%20minIndex%3B%20i%20%3C%20arr.size%28%29%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.size%28%29%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20std%3A%3Aswap%28arr%5Bi%5D,%20arr%5BminIndex%5D%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aint%20main%28%29%20%7B%0A%20%20%20%20std%3A%3Avector%3Cint%3E%20arr%7B4,%206,%203,%202,%207,%201,%205%7D%3B%0A%20%20%20%20selectionSort%28arr%29%3B%0A%20%20%20%20for%20%28int%20%26i%20%3A%20arr%29%20%7B%0A%20%20%20%20%20%20%20%20std%3A%3Acout%20%3C%3C%20i%20%3C%3C%20'%20'%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
@@ -244,29 +247,20 @@ void selectionSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-public static void selectionSort(int[] arr) {
-    for (int i = 0, minIndex; i < arr.length; i++) {
+public static void selectionSort(ArrayList<Integer> arr) {
+    for (int i = 0, minIndex; i < arr.size(); i++) {
         minIndex = i;
-        for (int j = i + 1; j < arr.length; j++) {
-            if (arr[j] < arr[minIndex]) {
+        for (int j = i + 1; j < arr.size(); j++) {
+            if (arr.get(j) < arr.get(minIndex)) {
                 minIndex = j;
             }
         }
-        swap(arr, i, minIndex);//(1)!
+        Collections.swap(arr, i, minIndex);
     }
 }
 ```
 
-1. 方法 `swap` 的定义如下：
-```java
-public static void swap(int[] arr, int i, int j) {
-    int tmp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = tmp;
-}
-```
-
-{% set src_java = "https://pythontutor.com/iframe-embed.html#code=public%20class%20Main%20%7B%0A%20%20%20%20public%20static%20void%20swap%28int%5B%5D%20arr,%20int%20i,%20int%20j%29%20%7B%0A%20%20%20%20%20%20%20%20int%20tmp%20%3D%20arr%5Bi%5D%3B%0A%20%20%20%20%20%20%20%20arr%5Bi%5D%20%3D%20arr%5Bj%5D%3B%0A%20%20%20%20%20%20%20%20arr%5Bj%5D%20%3D%20tmp%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20public%20static%20void%20selectionSort%28int%5B%5D%20arr%29%20%7B%0A%20%20%20%20%20%20%20%20for%20%28int%20i%20%3D%200,%20minIndex%3B%20i%20%3C%20arr.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.length%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20swap%28arr,%20i,%20minIndex%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20int%5B%5D%20arr%20%3D%20%7B%204,%206,%203,%202,%207,%201,%205%20%7D%3B%0A%20%20%20%20%20%20%20%20selectionSort%28arr%29%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20i%20%3A%20arr%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20System.out.printf%28%22%25d%20%22,%20i%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" %}
+{% set src_java = "https://pythontutor.com/iframe-embed.html#code=import%20java.util.ArrayList%3B%0Aimport%20java.util.Arrays%3B%0Aimport%20java.util.Collections%3B%0A%0Apublic%20class%20Main%20%7B%0A%20%20%20%20public%20static%20void%20selectionSort%28ArrayList%3CInteger%3E%20arr%29%20%7B%0A%20%20%20%20%20%20%20%20for%20%28int%20i%20%3D%200,%20minIndex%3B%20i%20%3C%20arr.size%28%29%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.size%28%29%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr.get%28j%29%20%3C%20arr.get%28minIndex%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20Collections.swap%28arr,%20i,%20minIndex%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20%20%20ArrayList%3CInteger%3E%20arr%20%3D%20new%20ArrayList%3C%3E%28Arrays.asList%284,%206,%203,%202,%207,%201,%205%29%29%3B%0A%20%20%20%20%20%20%20%20selectionSort%28arr%29%3B%0A%20%20%20%20%20%20%20%20System.out.println%28arr%29%3B%0A%20%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
@@ -290,7 +284,7 @@ function selectionSort(arr) {
 }
 ```
 
-{% set src_javascript = "https://pythontutor.com/iframe-embed.html#code=function%20selectionSort%28arr%29%20%7B%0A%20%20%20%20for%20%28let%20i%20%3D%200%3B%20i%20%3C%20arr.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20let%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28let%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.length%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%5Barr%5Bi%5D,%20arr%5BminIndex%5D%5D%20%3D%20%5Barr%5BminIndex%5D,%20arr%5Bi%5D%5D%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aconst%20arr%20%3D%20%5B4,%206,%203,%202,%207,%201,%205%5D%3B%0AselectionSort%28arr%29%3B%0Aconsole.log%28arr.join%28%22%20%22%29%29%3B&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=133&heapPrimitives=nevernest&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false" %}
+{% set src_javascript = "https://pythontutor.com/iframe-embed.html#code=function%20selectionSort%28arr%29%20%7B%0A%20%20%20%20for%20%28let%20i%20%3D%200%3B%20i%20%3C%20arr.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20let%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28let%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20arr.length%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%5Barr%5Bi%5D,%20arr%5BminIndex%5D%5D%20%3D%20%5Barr%5BminIndex%5D,%20arr%5Bi%5D%5D%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aconst%20arr%20%3D%20%5B4,%206,%203,%202,%207,%201,%205%5D%3B%0AselectionSort%28arr%29%3B%0Aconsole.log%28arr%29%3B&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
@@ -298,7 +292,7 @@ function selectionSort(arr) {
 
 ///
 
-/// tab | 🟤 C
+/// tab | 🟣 C
 
 ```c
 void selectionSort(int arr[], int n) {
@@ -323,7 +317,7 @@ void swap(int arr[], int i, int j) {
 }
 ```
 
-{% set src_c = "https://pythontutor.com/iframe-embed.html#code=%23include%20%3Cstdio.h%3E%0A%0Avoid%20swap%28int%20arr%5B%5D,%20int%20i,%20int%20j%29%20%7B%0A%20%20%20%20int%20tmp%20%3D%20arr%5Bi%5D%3B%0A%20%20%20%20arr%5Bi%5D%20%3D%20arr%5Bj%5D%3B%0A%20%20%20%20arr%5Bj%5D%20%3D%20tmp%3B%0A%7D%0A%0Avoid%20selectionSort%28int%20arr%5B%5D,%20int%20n%29%20%7B%0A%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20int%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20n%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20swap%28arr,%20i,%20minIndex%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aint%20main%28%29%20%7B%0A%20%20%20%20int%20arr%5B%5D%20%3D%20%7B4,%206,%203,%202,%207,%201,%205%7D%3B%0A%20%20%20%20int%20n%20%3D%20sizeof%28arr%29%20/%20sizeof%28int%29%3B%0A%20%20%20%20selectionSort%28arr,%20n%29%3B%0A%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20printf%28%22%25d%20%22,%20arr%5Bi%5D%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=144&heapPrimitives=nevernest&origin=opt-frontend.js&py=c_gcc9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" %}
+{% set src_c = "https://pythontutor.com/iframe-embed.html#code=%23include%20%3Cstdio.h%3E%0A%0Avoid%20swap%28int%20arr%5B%5D,%20int%20i,%20int%20j%29%20%7B%0A%20%20%20%20int%20tmp%20%3D%20arr%5Bi%5D%3B%0A%20%20%20%20arr%5Bi%5D%20%3D%20arr%5Bj%5D%3B%0A%20%20%20%20arr%5Bj%5D%20%3D%20tmp%3B%0A%7D%0A%0Avoid%20selectionSort%28int%20arr%5B%5D,%20int%20n%29%20%7B%0A%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20int%20minIndex%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20for%20%28int%20j%20%3D%20i%20%2B%201%3B%20j%20%3C%20n%3B%20j%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28arr%5Bj%5D%20%3C%20arr%5BminIndex%5D%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20minIndex%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20swap%28arr,%20i,%20minIndex%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aint%20main%28%29%20%7B%0A%20%20%20%20int%20arr%5B%5D%20%3D%20%7B4,%206,%203,%202,%207,%201,%205%7D%3B%0A%20%20%20%20int%20n%20%3D%20sizeof%28arr%29%20/%20sizeof%28int%29%3B%0A%20%20%20%20selectionSort%28arr,%20n%29%3B%0A%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20printf%28%22%25d%20%22,%20arr%5Bi%5D%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=c_gcc9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 
@@ -334,10 +328,10 @@ void swap(int arr[], int i, int j) {
 /// tab | 🟢 C#
 
 ```csharp
-static void SelectionSort(int[] arr) {
-    for (int i = 0, minIndex; i < arr.Length; i++) {
+static void SelectionSort(List<int> arr) {
+    for (int i = 0, minIndex; i < arr.Count; i++) {
         minIndex = i;
-        for (int j = i + 1; j < arr.Length; j++) {
+        for (int j = i + 1; j < arr.Count; j++) {
             if (arr[j] < arr[minIndex]) {
                 minIndex = j;
             }
@@ -351,7 +345,7 @@ static void SelectionSort(int[] arr) {
 
 ///
 
-/// tab | 🟣 Go
+/// tab | 🔵 Go
 
 ```go
 func SelectionSort(arr []int) {
@@ -371,6 +365,26 @@ func SelectionSort(arr []int) {
 
 ///
 
+/// tab | 🟤 Rust
+
+```rust
+fn selection_sort(arr: &mut Vec<i32>) {
+    for i in 0..arr.len() {
+        let mut min_index = i;
+        for j in i + 1..arr.len() {
+            if arr[j] < arr[min_index] {
+                min_index = j;
+            }
+        }
+        arr.swap(i, min_index);
+    }
+}
+```
+
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Rust 的可视化！"
+
+///
+
 ### 3.2 自我测试
 
 下面是一个 Python 交互式环境，你可以在其中编写自己的代码进行一些测试。初次启动需要较长时间，请耐心等待！
@@ -386,9 +400,9 @@ def selection_sort(arr: list[int]) -> None:
     pass  # 请将代码写在这里
 
 if __name__ == "__main__":
-    arr: list[int] = [4, 6, 3, 2, 7, 1, 5]
+    arr: list[int] = [7, 0, 6, 1, 5, 2, 4, 3]
     selection_sort(arr)
-    print(*arr)
+    print(arr)
 </pre>
 
 ///

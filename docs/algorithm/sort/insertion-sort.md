@@ -31,7 +31,7 @@ tags:
 ```mermaid
 ```
 
-## 二、算法特性
+## 二、算法性质
 
 ### 2.1 时间复杂度
 
@@ -39,7 +39,7 @@ tags:
 
 ### 2.2 空间复杂度
 
-空间复杂度为 $O(1)$，不消耗额外的空间，即原地排序。
+空间复杂度为 $O(1)$。
 
 ### 2.3 其它性质
 
@@ -49,7 +49,7 @@ tags:
 
 ### 3.1 多语言代码
 
-下面提供了多种语言的版本，仅供参考。在每种编程语言下方均提供了可视化代码，但加载可能稍慢，请耐心等待。
+下面提供了多种语言的版本，仅供参考。部分编程语言下方提供了可视化代码，但加载可能稍慢，请耐心等待。
 
 /// tab | 🔵 Python
 
@@ -98,25 +98,16 @@ void insertionSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-public static void insertionSort(int[] arr) {
-    for (int i = 0; i < arr.length; i++) {
+public static void insertionSort(ArrayList<Integer> arr) {
+    for (int i = 0; i < arr.size(); i++) {
         for (int j = i; j > 0; j--) {
-            if (arr[j] < arr[j - 1]) {
-                swap(arr, j, j - 1);//(1)!
+            if (arr.get(j) < arr.get(j - 1)) {
+                Collections.swap(arr, j, j - 1);
             } else {
                 break;
             }
         }
     }
-}
-```
-
-1. 方法 `swap` 的定义如下：
-```java
-public static void swap(int[] arr, int i, int j) {
-    int tmp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = tmp;
 }
 ```
 
@@ -152,7 +143,7 @@ function insertionSort(arr) {
 
 ///
 
-/// tab | 🟤 C
+/// tab | 🟣 C
 
 ```c
 void insertionSort(int arr[], int n) {
@@ -188,8 +179,8 @@ void swap(int arr[], int i, int j) {
 /// tab | 🟢 C#
 
 ```csharp
-static void InsertionSort(int[] arr) {
-    for (int i = 0; i < arr.Length; i++) {
+static void InsertionSort(List<int> arr) {
+    for (int i = 0; i < arr.Count; i++) {
         for (int j = i; j > 0; j--) {
             if (arr[j] < arr[j - 1]) {
                 (arr[j], arr[j - 1]) = (arr[j - 1], arr[j]);
@@ -205,7 +196,7 @@ static void InsertionSort(int[] arr) {
 
 ///
 
-/// tab | 🟣 Go
+/// tab | 🔵 Go
 
 ```go
 func InsertionSort(arr []int) {
@@ -225,6 +216,26 @@ func InsertionSort(arr []int) {
 
 ///
 
+/// tab | 🟤 Rust
+
+```rust
+fn insertion_sort(arr: &mut Vec<i32>) {
+    for i in 0..arr.len() {
+        for j in (1..=i).rev() {
+            if arr[j] < arr[j - 1] {
+                arr.swap(j, j - 1);
+            } else {
+                break;
+            }
+        }
+    }
+}
+```
+
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Rust 的可视化！"
+
+///
+
 ### 3.2 改进代码
 
 选择排序还可以通过二分的方式进行改进，下面是改进后的代码：
@@ -233,12 +244,11 @@ func InsertionSort(arr []int) {
 
 ```python
 def insertion_sort(arr: list[int]) -> None:
-    for i in range(len(arr)):
-        for j in range(i, 0, -1):
-            if arr[j] < arr[j - 1]:
-                arr[j], arr[j - 1] = arr[j - 1], arr[j]
-            else:
-                break
+    for i, v in enumerate(arr):
+        index = bisect.bisect_left(arr, v, 0, i)
+        for j in range(i, index, -1):
+            arr[j] = arr[j - 1]
+        arr[index] = v
 ```
 
 ///
@@ -247,14 +257,13 @@ def insertion_sort(arr: list[int]) -> None:
 
 ```cpp
 void insertionSort(std::vector<int> &arr) {
-    for (int i = 0; i < arr.size(); i++) {
-        for (int j = i; j > 0; j--) {
-            if (arr[j] < arr[j - 1]) {
-                std::swap(arr[j], arr[j - 1]);
-            } else {
-                break;
-            }
+    for (int i = 1; i < arr.size(); ++i) {
+        int key = arr[i];
+        auto index = std::upper_bound(arr.begin(), arr.begin() + i, key) - arr.begin();
+        for (int j = i; j > index; j--) {
+            arr[j] = arr[j - 1];
         }
+        arr[index] = key;
     }
 }
 ```
@@ -264,25 +273,18 @@ void insertionSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-public static void insertionSort(int[] arr) {
-    for (int i = 0; i < arr.length; i++) {
-        for (int j = i; j > 0; j--) {
-            if (arr[j] < arr[j - 1]) {
-                swap(arr, j, j - 1);//(1)!
-            } else {
-                break;
-            }
+public static void insertionSort(ArrayList<Integer> arr) {
+    for (int i = 0; i < arr.size(); i++) {
+        int key = arr.get(i);
+        int index = Collections.binarySearch(arr.subList(0, i), key);
+        if (index < 0) {
+            index = -index - 1;
         }
+        for (int j = i; j > index; j--) {
+            arr.set(j, arr.get(j - 1));
+        }
+        arr.set(index, key);
     }
-}
-```
-
-1. 方法 `swap` 的定义如下：
-```java
-public static void swap(int[] arr, int i, int j) {
-    int tmp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = tmp;
 }
 ```
 
@@ -292,42 +294,47 @@ public static void swap(int[] arr, int i, int j) {
 
 ```javascript
 function insertionSort(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = i; j > 0; j--) {
-            if (arr[j] < arr[j - 1]) {
-                [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let low = 0, high = i - 1;
+        while (low <= high) {
+            let mid = (low + high) >> 1;
+            if (arr[mid] <= key) {
+                low = mid + 1;
             } else {
-                break;
+                high = mid - 1;
             }
         }
+        for (let j = i; j > low; j--) {
+            arr[j] = arr[j - 1];
+        }
+        arr[low] = key;
     }
 }
 ```
 
 ///
 
-/// tab | 🟤 C
+/// tab | 🟣 C
 
 ```c
 void insertionSort(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        for (int j = i; j > 0; j--) {
-            if (arr[j] < arr[j - 1]) {
-                swap(arr, j, j - 1);//(1)!
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int low = 0, high = i - 1;
+        while (low <= high) {
+            int mid = (low + high) >> 1;
+            if (arr[mid] <= key) {
+                low = mid + 1;
             } else {
-                break;
+                high = mid - 1;
             }
         }
+        for (int j = i; j > low; j--) {
+            arr[j] = arr[j - 1];
+        }
+        arr[low] = key;
     }
-}
-```
-
-1. 函数 `swap` 的定义如下：
-```c
-void swap(int arr[], int i, int j) {
-    int tmp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = tmp;
 }
 ```
 
@@ -336,33 +343,73 @@ void swap(int arr[], int i, int j) {
 /// tab | 🟢 C#
 
 ```csharp
-static void InsertionSort(int[] arr) {
-    for (int i = 0; i < arr.Length; i++) {
-        for (int j = i; j > 0; j--) {
-            if (arr[j] < arr[j - 1]) {
-                (arr[j], arr[j - 1]) = (arr[j - 1], arr[j]);
+static void InsertionSort(List<int> arr) {
+    for (int i = 1; i < arr.Count; i++) {
+        int key = arr[i];
+        int low = 0, high = i - 1;
+        while (low <= high) {
+            int mid = (low + high) >> 1;
+            if (arr[mid] <= key) {
+                low = mid + 1;
             } else {
-                break;
+                high = mid - 1;
             }
         }
+        for (int j = i; j > low; j--) {
+            arr[j] = arr[j - 1];
+        }
+        arr[low] = key;
     }
 }
 ```
 
 ///
 
-/// tab | 🟣 Go
+/// tab | 🔵 Go
 
 ```go
 func InsertionSort(arr []int) {
-    for i := 0; i < len(arr); i++ {
-        for j := i; j > 0; j-- {
-            if arr[j] < arr[j - 1] {
-                arr[j], arr[j - 1] = arr[j - 1], arr[j];
+    for i := 1; i < len(arr); i++ {
+        key := arr[i]
+        low, high := 0, i - 1
+        for low <= high {
+            mid := (low + high) >> 1
+            if arr[mid] <= key {
+                low = mid + 1
             } else {
-                break;
+                high = mid - 1
             }
         }
+        for j := i; j > low; j-- {
+            arr[j] = arr[j - 1]
+        }
+        arr[low] = key
+    }
+}
+```
+
+///
+
+/// tab | 🟤 Rust
+
+```rust
+fn insertion_sort(arr: &mut Vec<i32>) {
+    for i in 1..arr.len() {
+        let key = arr[i];
+        let (mut low, mut high) = (0, i as i32 - 1);
+        while low <= high {
+            let mid = (low + high) >> 1;
+            if arr[mid as usize] <= key {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        let low = low as usize;
+        for j in (low + 1..=i).rev() {
+            arr[j] = arr[j - 1];
+        }
+        arr[low] = key;
     }
 }
 ```
@@ -384,9 +431,9 @@ def insertion_sort(arr: list[int]) -> None:
     pass  # 请将代码写在这里
 
 if __name__ == "__main__":
-    arr: list[int] = [4, 6, 3, 2, 7, 1, 5]
+    arr: list[int] = [7, 0, 6, 1, 5, 2, 4, 3]
     insertion_sort(arr)
-    print(*arr)
+    print(arr)
 </pre>
 
 ///
