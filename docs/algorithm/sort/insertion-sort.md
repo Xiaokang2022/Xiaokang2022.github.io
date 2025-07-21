@@ -29,6 +29,7 @@ tags:
 ### 1.2 Mermaid 流程图示意
 
 ```mermaid
+graph TD
 ```
 
 ## 二、算法性质

@@ -376,10 +376,12 @@ fn selection_sort(arr: &mut Vec<i32>) {
                 min_index = j;
             }
         }
-        arr.swap(i, min_index);
+        arr.swap(i, min_index);//(1)!
     }
 }
 ```
+
+1. 你也可以使用解构赋值 `(arr[i], arr[min_index]) = (arr[min_index], arr[i]);` 来交换两个变量，但这种方式在性能和安全上不如直接调用方法 `swap`。
 
 !!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Rust 的可视化！"
 

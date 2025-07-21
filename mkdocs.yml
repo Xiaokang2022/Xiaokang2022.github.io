@@ -206,7 +206,7 @@ theme: # 此项各个设定因主题而异
         icon: material/weather-night
         name: 暗黑主题
   font: false # 避免从谷歌加载字体导致网页加载变慢（具体参数可以在自定义 CSS 中指定）
-  favicon: bookshelf.svg # 网页的图标
+  favicon: favicon.svg # 网页的图标
   icon: # 替换掉默认的图标
     logo: material/bookshelf # 页面左上角徽标
     repo: fontawesome/brands/github # 右上角仓库图标
@@ -373,6 +373,8 @@ nav:
           - 3. 插入排序: algorithm/sort/insertion-sort.md
       - 搜索:
           - algorithm/search/index.md
+          - 1. 线性搜索: algorithm/search/linear-search.md
+          - 2. 二分搜索: algorithm/search/binary-search.md
   - 数值方法:
       - numerical-method/index.md
   - Python:
