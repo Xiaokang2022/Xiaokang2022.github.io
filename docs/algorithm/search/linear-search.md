@@ -92,7 +92,7 @@ int linearSearch(const std::vector<int> &arr, int target) {
 /// tab | 🟠 Java
 
 ```java
-public static int linearSearch(ArrayList<Integer> arr, Integer target) {
+int linearSearch(ArrayList<Integer> arr, Integer target) {
     for (int i = 0; i < arr.size(); i++) {
         if (arr.get(i).equals(target)) {
             return i;
@@ -155,7 +155,7 @@ int linearSearch(int arr[], int n, int target) {
 /// tab | 🟢 C#
 
 ```csharp
-static int LinearSearch(List<int> arr, int target) {
+int LinearSearch(List<int> arr, int target) {
     for (int i = 0; i < arr.Count; i++) {
         if (arr[i] == target) {
             return i;
@@ -165,14 +165,14 @@ static int LinearSearch(List<int> arr, int target) {
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 C# 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 C# 的可视化！"
 
 ///
 
 /// tab | 🔵 Go
 
 ```go
-func LinearSearch(arr []int, target int) int {
+func linearSearch(arr []int, target int) int {
     for i, v := range arr {
         if v == target {
             return i
@@ -182,7 +182,7 @@ func LinearSearch(arr []int, target int) int {
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Go 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Go 的可视化！"
 
 ///
 
@@ -199,7 +199,7 @@ fn linear_search(arr: &Vec<i32>, target: i32) -> i32 {
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Rust 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Rust 的可视化！"
 
 ///
 

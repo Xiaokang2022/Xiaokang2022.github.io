@@ -323,12 +323,12 @@ plugins:
 nav:
   - 主页:
       - 主页: index.md
+      - 标签索引: tags.md
       - 我的项目: projects.md
       - 友情链接: friends.md
       - 开源许可: LICENSE.md
   - 博客:
       - blog/index.md
-      - 标签索引: blog/tags.md
   - 设计模式:
       - design-pattern/index.md
       - 创建型模式:
@@ -377,6 +377,3 @@ nav:
           - 2. 二分搜索: algorithm/search/binary-search.md
   - 数值方法:
       - numerical-method/index.md
-  - Python:
-      - python/index.md
-      - python/01.md

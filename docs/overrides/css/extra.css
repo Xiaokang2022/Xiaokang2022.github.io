@@ -85,7 +85,7 @@ figcaption {
     margin: 0 0;
 }
 
-/*代码块非高亮行模糊，鼠标移上去变清晰*/
+/*代码块非高亮行模糊，鼠标移上去变清晰，需要 .blur 搭配 hl_lines="..." 否则无效*/
 .blur.highlight .hll {
     background-color: unset;
     box-shadow: unset;
@@ -126,4 +126,10 @@ figcaption {
 /*Thebe 输入框 100% 宽度，对齐单元格*/
 .jp-Stdin-input {
     width: 100%;
+}
+
+/* 代码块最大高度，需要 .limit 搭配 linenums="0" 否则行号错位*/
+/* https://github.com/squidfunk/mkdocs-material/issues/3444 */
+.limit pre>code {
+    max-height: 25rem;
 }

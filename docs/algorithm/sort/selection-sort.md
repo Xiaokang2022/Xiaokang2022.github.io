@@ -21,7 +21,7 @@ tags:
 
 /// details | Manim 动画演示源代码
 
-```python { .blur hl_lines="77 78 80 82 84 89" }
+```python { .limit .blur hl_lines="77 78 80 82 84 89" linenums="0" }
 """Manim Animation for Selection Sort."""
 
 from __future__ import annotations as _
@@ -247,7 +247,7 @@ void selectionSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-public static void selectionSort(ArrayList<Integer> arr) {
+void selectionSort(ArrayList<Integer> arr) {
     for (int i = 0, minIndex; i < arr.size(); i++) {
         minIndex = i;
         for (int j = i + 1; j < arr.size(); j++) {
@@ -328,7 +328,7 @@ void swap(int arr[], int i, int j) {
 /// tab | 🟢 C#
 
 ```csharp
-static void SelectionSort(List<int> arr) {
+void SelectionSort(List<int> arr) {
     for (int i = 0, minIndex; i < arr.Count; i++) {
         minIndex = i;
         for (int j = i + 1; j < arr.Count; j++) {
@@ -341,14 +341,14 @@ static void SelectionSort(List<int> arr) {
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 C# 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 C# 的可视化！"
 
 ///
 
 /// tab | 🔵 Go
 
 ```go
-func SelectionSort(arr []int) {
+func selectionSort(arr []int) {
     for i := 0; i < len(arr); i++ {
         minIndex := i
         for j := i + 1; j < len(arr); j++ {
@@ -361,7 +361,7 @@ func SelectionSort(arr []int) {
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Go 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Go 的可视化！"
 
 ///
 
@@ -383,7 +383,7 @@ fn selection_sort(arr: &mut Vec<i32>) {
 
 1. 你也可以使用解构赋值 `(arr[i], arr[min_index]) = (arr[min_index], arr[i]);` 来交换两个变量，但这种方式在性能和安全上不如直接调用方法 `swap`。
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Rust 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Rust 的可视化！"
 
 ///
 
@@ -409,6 +409,6 @@ if __name__ == "__main__":
 
 ///
 
-[^1]: [11.2   选择排序 - Hello 算法](https://www.hello-algo.com/chapter_sorting/selection_sort/){target="_blank"}
-[^2]: [选择排序 - OI Wiki](https://oiwiki.org/basic/selection-sort/){target="_blank"}
-[^3]: [算法讲解004【入门】选择、冒泡、插入排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12P41147to/){target="_blank"}
+[^1]: [11.2   选择排序 - Hello 算法](https://www.hello-algo.com/chapter_sorting/selection_sort/){target=_blank}
+[^2]: [选择排序 - OI Wiki](https://oiwiki.org/basic/selection-sort/){target=_blank}
+[^3]: [算法讲解004【入门】选择、冒泡、插入排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12P41147to/){target=_blank}

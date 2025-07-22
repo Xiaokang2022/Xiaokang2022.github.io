@@ -95,7 +95,7 @@ void bubbleSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-public static void bubbleSort(ArrayList<Integer> arr) {
+void bubbleSort(ArrayList<Integer> arr) {
     for (int i = arr.size(); i > 0; i--) {
         for (int j = 0; j < i - 1; j++) {
             if (arr.get(j) > arr.get(j + 1)) {
@@ -170,7 +170,7 @@ void swap(int arr[], int i, int j) {
 /// tab | 🟢 C#
 
 ```csharp
-static void BubbleSort(List<int> arr) {
+void BubbleSort(List<int> arr) {
     for (int i = arr.Count; i > 0; i--) {
         for (int j = 0; j < i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
@@ -181,25 +181,25 @@ static void BubbleSort(List<int> arr) {
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 C# 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 C# 的可视化！"
 
 ///
 
 /// tab | 🔵 Go
 
 ```go
-func BubbleSort(arr []int) {
+func bubbleSort(arr []int) {
     for i := len(arr); i > 0; i-- {
-        for j := 0; j < i - 1; j++ {
-            if arr[j] > arr[j + 1] {
-                arr[j], arr[j + 1] = arr[j + 1], arr[j];
+        for j := 0; j < i-1; j++ {
+            if arr[j] > arr[j+1] {
+                arr[j], arr[j+1] = arr[j+1], arr[j]
             }
         }
     }
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Go 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Go 的可视化！"
 
 ///
 
@@ -217,7 +217,7 @@ fn bubble_sort(arr: &mut Vec<i32>) {
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Rust 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Rust 的可视化！"
 
 ///
 
@@ -265,7 +265,7 @@ void bubbleSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-public static void bubbleSort(ArrayList<Integer> arr) {
+void bubbleSort(ArrayList<Integer> arr) {
     for (int i = arr.size(); i > 0; i--) {
         boolean swapped = false;
         for (int j = 0; j < i - 1; j++) {
@@ -337,7 +337,7 @@ void swap(int arr[], int i, int j) {
 /// tab | 🟢 C#
 
 ```csharp
-static void BubbleSort(List<int> arr) {
+void BubbleSort(List<int> arr) {
     for (int i = arr.Count; i > 0; i--) {
         bool swapped = false;
         for (int j = 0; j < i - 1; j++) {
@@ -358,17 +358,17 @@ static void BubbleSort(List<int> arr) {
 /// tab | 🔵 Go
 
 ```go
-func BubbleSort(arr []int) {
+func bubbleSort(arr []int) {
     for i := len(arr); i > 0; i-- {
-        swapped := false;
-        for j := 0; j < i - 1; j++ {
-            if arr[j] > arr[j + 1] {
-                arr[j], arr[j + 1] = arr[j + 1], arr[j];
-                swapped = true;
+        swapped := false
+        for j := 0; j < i-1; j++ {
+            if arr[j] > arr[j+1] {
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = true
             }
         }
         if !swapped {
-            break;
+            break
         }
     }
 }
@@ -419,6 +419,6 @@ if __name__ == "__main__":
 
 ///
 
-[^1]: [11.3   冒泡排序 - Hello 算法](https://www.hello-algo.com/chapter_sorting/bubble_sort/){target="_blank"}
-[^2]: [冒泡排序 - OI Wiki](https://oiwiki.org/basic/bubble-sort/){target="_blank"}
-[^3]: [算法讲解004【入门】选择、冒泡、插入排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12P41147to/){target="_blank"}
+[^1]: [11.3   冒泡排序 - Hello 算法](https://www.hello-algo.com/chapter_sorting/bubble_sort/){target=_blank}
+[^2]: [冒泡排序 - OI Wiki](https://oiwiki.org/basic/bubble-sort/){target=_blank}
+[^3]: [算法讲解004【入门】选择、冒泡、插入排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12P41147to/){target=_blank}

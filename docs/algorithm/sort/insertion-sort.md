@@ -99,7 +99,7 @@ void insertionSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-public static void insertionSort(ArrayList<Integer> arr) {
+void insertionSort(ArrayList<Integer> arr) {
     for (int i = 0; i < arr.size(); i++) {
         for (int j = i; j > 0; j--) {
             if (arr.get(j) < arr.get(j - 1)) {
@@ -180,7 +180,7 @@ void swap(int arr[], int i, int j) {
 /// tab | 🟢 C#
 
 ```csharp
-static void InsertionSort(List<int> arr) {
+void InsertionSort(List<int> arr) {
     for (int i = 0; i < arr.Count; i++) {
         for (int j = i; j > 0; j--) {
             if (arr[j] < arr[j - 1]) {
@@ -193,27 +193,27 @@ static void InsertionSort(List<int> arr) {
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 C# 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 C# 的可视化！"
 
 ///
 
 /// tab | 🔵 Go
 
 ```go
-func InsertionSort(arr []int) {
+func insertionSort(arr []int) {
     for i := 0; i < len(arr); i++ {
         for j := i; j > 0; j-- {
-            if arr[j] < arr[j - 1] {
-                arr[j], arr[j - 1] = arr[j - 1], arr[j];
+            if arr[j] < arr[j-1] {
+                arr[j], arr[j-1] = arr[j-1], arr[j]
             } else {
-                break;
+                break
             }
         }
     }
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Go 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Go 的可视化！"
 
 ///
 
@@ -233,7 +233,7 @@ fn insertion_sort(arr: &mut Vec<i32>) {
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Rust 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Rust 的可视化！"
 
 ///
 
@@ -244,7 +244,7 @@ fn insertion_sort(arr: &mut Vec<i32>) {
 /// tab | 🔵 Python
 
 ```python
-def insertion_sort(arr: list[int]) -> None:
+def binary_insertion_sort(arr: list[int]) -> None:
     for i, v in enumerate(arr):
         index = bisect.bisect_left(arr, v, 0, i)
         for j in range(i, index, -1):
@@ -257,7 +257,7 @@ def insertion_sort(arr: list[int]) -> None:
 /// tab | 🔴 C++
 
 ```cpp
-void insertionSort(std::vector<int> &arr) {
+void binaryInsertionSort(std::vector<int> &arr) {
     for (int i = 1; i < arr.size(); ++i) {
         int key = arr[i];
         auto index = std::upper_bound(arr.begin(), arr.begin() + i, key) - arr.begin();
@@ -274,7 +274,7 @@ void insertionSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-public static void insertionSort(ArrayList<Integer> arr) {
+void binaryInsertionSort(ArrayList<Integer> arr) {
     for (int i = 0; i < arr.size(); i++) {
         int key = arr.get(i);
         int index = Collections.binarySearch(arr.subList(0, i), key);
@@ -294,7 +294,7 @@ public static void insertionSort(ArrayList<Integer> arr) {
 /// tab | 🟡 JavaScript
 
 ```javascript
-function insertionSort(arr) {
+function binaryInsertionSort(arr) {
     for (let i = 1; i < arr.length; i++) {
         let key = arr[i];
         let low = 0, high = i - 1;
@@ -319,7 +319,7 @@ function insertionSort(arr) {
 /// tab | 🟣 C
 
 ```c
-void insertionSort(int arr[], int n) {
+void binaryInsertionSort(int arr[], int n) {
     for (int i = 1; i < n; i++) {
         int key = arr[i];
         int low = 0, high = i - 1;
@@ -344,7 +344,7 @@ void insertionSort(int arr[], int n) {
 /// tab | 🟢 C#
 
 ```csharp
-static void InsertionSort(List<int> arr) {
+void BinaryInsertionSort(List<int> arr) {
     for (int i = 1; i < arr.Count; i++) {
         int key = arr[i];
         int low = 0, high = i - 1;
@@ -369,10 +369,10 @@ static void InsertionSort(List<int> arr) {
 /// tab | 🔵 Go
 
 ```go
-func InsertionSort(arr []int) {
+func binaryInsertionSort(arr []int) {
     for i := 1; i < len(arr); i++ {
         key := arr[i]
-        low, high := 0, i - 1
+        low, high := 0, i-1
         for low <= high {
             mid := (low + high) >> 1
             if arr[mid] <= key {
@@ -382,7 +382,7 @@ func InsertionSort(arr []int) {
             }
         }
         for j := i; j > low; j-- {
-            arr[j] = arr[j - 1]
+            arr[j] = arr[j-1]
         }
         arr[low] = key
     }
@@ -394,7 +394,7 @@ func InsertionSort(arr []int) {
 /// tab | 🟤 Rust
 
 ```rust
-fn insertion_sort(arr: &mut Vec<i32>) {
+fn binary_insertion_sort(arr: &mut Vec<i32>) {
     for i in 1..arr.len() {
         let key = arr[i];
         let (mut low, mut high) = (0, i as i32 - 1);
@@ -439,6 +439,6 @@ if __name__ == "__main__":
 
 ///
 
-[^1]: [11.4   插入排序 - Hello 算法](https://www.hello-algo.com/chapter_sorting/insertion_sort/){target="_blank"}
-[^2]: [插入排序 - OI Wiki](https://oiwiki.org/basic/insertion-sort/){target="_blank"}
-[^3]: [算法讲解004【入门】选择、冒泡、插入排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12P41147to/){target="_blank"}
+[^1]: [11.4   插入排序 - Hello 算法](https://www.hello-algo.com/chapter_sorting/insertion_sort/){target=_blank}
+[^2]: [插入排序 - OI Wiki](https://oiwiki.org/basic/insertion-sort/){target=_blank}
+[^3]: [算法讲解004【入门】选择、冒泡、插入排序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12P41147to/){target=_blank}

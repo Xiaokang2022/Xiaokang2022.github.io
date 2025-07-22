@@ -10,7 +10,9 @@ hide:
 
 <h1 align="center">小康笔记本</h1>
 
-<p align="center">基于 <a href="https://github.com/mkdocs/mkdocs">Mkdocs</a> 框架和 <a href="https://github.com/squidfunk/mkdocs-material">Material</a> 主题，依托 <a href="https://docs.github.com/zh/pages">GitHub Pages</a> 构建</p>
+<p align="center" markdown>https://github.com/Xiaokang2022/Xiaokang2022.github.io</p>
+
+<p align="center">基于 <a href="https://github.com/mkdocs/mkdocs">Mkdocs</a> 框架和 <a href="https://github.com/squidfunk/mkdocs-material">Material</a> 主题，依托 <a href="https://docs.github.com/zh/pages">Pages</a> 构建</p>
 
 <p align="center">
 <a href="https://github.com/Xiaokang2022/Xiaokang2022.github.io/watchers"><img alt="关注" title="关注" src="https://img.shields.io/github/watchers/Xiaokang2022/Xiaokang2022.github.io?label=%e5%85%b3%e6%b3%a8&style=flat&logo=data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTggMmMxLjk4MSAwIDMuNjcxLjk5MiA0LjkzMyAyLjA3OCAxLjI3IDEuMDkxIDIuMTg3IDIuMzQ1IDIuNjM3IDMuMDIzYTEuNjIgMS42MiAwIDAgMSAwIDEuNzk4Yy0uNDUuNjc4LTEuMzY3IDEuOTMyLTIuNjM3IDMuMDIzQzExLjY3IDEzLjAwOCA5Ljk4MSAxNCA4IDE0Yy0xLjk4MSAwLTMuNjcxLS45OTItNC45MzMtMi4wNzhDMS43OTcgMTAuODMuODggOS41NzYuNDMgOC44OThhMS42MiAxLjYyIDAgMCAxIDAtMS43OThjLjQ1LS42NzcgMS4zNjctMS45MzEgMi42MzctMy4wMjJDNC4zMyAyLjk5MiA2LjAxOSAyIDggMlpNMS42NzkgNy45MzJhLjEyLjEyIDAgMCAwIDAgLjEzNmMuNDExLjYyMiAxLjI0MSAxLjc1IDIuMzY2IDIuNzE3QzUuMTc2IDExLjc1OCA2LjUyNyAxMi41IDggMTIuNWMxLjQ3MyAwIDIuODI1LS43NDIgMy45NTUtMS43MTUgMS4xMjQtLjk2NyAxLjk1NC0yLjA5NiAyLjM2Ni0yLjcxN2EuMTIuMTIgMCAwIDAgMC0uMTM2Yy0uNDEyLS42MjEtMS4yNDItMS43NS0yLjM2Ni0yLjcxN0MxMC44MjQgNC4yNDIgOS40NzMgMy41IDggMy41Yy0xLjQ3MyAwLTIuODI1Ljc0Mi0zLjk1NSAxLjcxNS0xLjEyNC45NjctMS45NTQgMi4wOTYtMi4zNjYgMi43MTdaTTggMTBhMiAyIDAgMSAxLS4wMDEtMy45OTlBMiAyIDAgMCAxIDggMTBaIj48L3BhdGg+PC9zdmc+" /></a>
@@ -25,5 +27,36 @@ hide:
 <a href="https://github.com/Xiaokang2022/Xiaokang2022.github.io/pulse"><img src="https://repobeats.axiom.co/api/embed/440410aa2526f3aab4c8c4f43a3f5a65cca0dc91.svg" /></a>
 </p>
 
-![light](https://api.star-history.com/svg?repos=Xiaokang2022/Xiaokang2022.github.io&type=Date&theme=light#only-light)
-![dark](https://api.star-history.com/svg?repos=Xiaokang2022/Xiaokang2022.github.io&type=Date&theme=dark#only-dark)
+<div class="grid cards" markdown>
+
+-   :material-tools:{.middle} [**设计模式**](./design-pattern/index.md)<small>（🚧施工中）</small>
+
+    ---
+
+    模式不是发明而是发现，它们凝结了开发者对抗软件复杂性的集体智慧。
+
+-   :material-graph-outline:{.middle} [**数据结构**](./data-structure/index.md)<small>（🚧施工中）</small>
+
+    ---
+
+    糟糕的程序员担心代码，优秀的程序员担心数据结构和它们之间的关系。
+
+-   :material-map-marker-path:{.middle} [**算法**](./algorithm/index.md)<small>（🕓更新中）</small>
+
+    ---
+
+    算法设计是人类理性的巅峰演绎：用有限步骤驯服混沌问题。
+
+-   :material-alphabet-greek:{.middle} [**数值方法**](./numerical-method/index.md)<small>（🚧施工中）</small>
+
+    ---
+
+    数值分析的终极悖论：计算的精确解往往是错的，而精心设计的近似解才是可靠的。
+
+</div>
+
+/// quote |
+
+<p align="center" markdown>《小康笔记本》目前共有 `{{ pages }}` 页，字数 `{{ words }}` 个，代码 `{{ codes }}` 行，图片 `{{ images }}` 张</p>
+
+///

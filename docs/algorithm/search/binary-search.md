@@ -3,6 +3,7 @@ comments: true
 tags:
     - 算法
     - 搜索
+    - 二分
 ---
 
 # 二分搜索
@@ -50,10 +51,12 @@ graph TD
 
 下面提供了多种语言的版本，仅供参考。部分编程语言下方提供了可视化代码，但加载可能稍慢，请耐心等待。
 
+!!! warning "适用条件：序列升序且无重复元素"
+
 /// tab | 🔵 Python
 
 ```python
-def binary_search(arr: list[int], target: int) -> bool:
+def binary_search(arr: list[int], target: int) -> int:
     left, right = 0, len(arr) - 1
     while left <= right:
         mid = (left + right) >> 1
@@ -62,8 +65,8 @@ def binary_search(arr: list[int], target: int) -> bool:
         elif arr[mid] > target:
             right = mid - 1
         else:
-            return True
-    return False
+            return mid
+    return -1
 ```
 
 {% set src_python = "" %}
@@ -77,7 +80,7 @@ def binary_search(arr: list[int], target: int) -> bool:
 /// tab | 🔴 C++
 
 ```cpp
-bool binarySearch(const std::vector<int> &arr, int target) {
+int binarySearch(const std::vector<int> &arr, int target) {
     int left = 0, right = arr.size() - 1;
     while (left <= right) {
         int mid = (left + right) >> 1;
@@ -86,10 +89,10 @@ bool binarySearch(const std::vector<int> &arr, int target) {
         } else if (arr[mid] > target) {
             right = mid - 1;
         } else {
-            return true;
+            return mid;
         }
     }
-    return false;
+    return -1;
 }
 ```
 
@@ -104,7 +107,7 @@ bool binarySearch(const std::vector<int> &arr, int target) {
 /// tab | 🟠 Java
 
 ```java
-public static boolean binarySearch(ArrayList<Integer> arr, Integer target) {
+int binarySearch(ArrayList<Integer> arr, Integer target) {
     int left = 0, right = arr.size() - 1;
     while (left <= right) {
         int mid = (left + right) >> 1;
@@ -113,10 +116,10 @@ public static boolean binarySearch(ArrayList<Integer> arr, Integer target) {
         } else if (arr.get(mid) > target) {
             right = mid - 1;
         } else {
-            return true;
+            return mid;
         }
     }
-    return false;
+    return -1;
 }
 ```
 
@@ -140,10 +143,10 @@ function binarySearch(arr, target) {
         } else if (arr[mid] > target) {
             right = mid - 1;
         } else {
-            return true;
+            return mid;
         }
     }
-    return false;
+    return -1;
 }
 ```
 
@@ -158,7 +161,7 @@ function binarySearch(arr, target) {
 /// tab | 🟣 C
 
 ```c
-bool binarySearch(int arr[], int n, int target) {
+int binarySearch(int arr[], int n, int target) {
     int left = 0, right = n - 1;
     while (left <= right) {
         int mid = (left + right) >> 1;
@@ -167,10 +170,10 @@ bool binarySearch(int arr[], int n, int target) {
         } else if (arr[mid] > target) {
             right = mid - 1;
         } else {
-            return true;
+            return mid;
         }
     }
-    return false;
+    return -1;
 }
 ```
 
@@ -185,7 +188,7 @@ bool binarySearch(int arr[], int n, int target) {
 /// tab | 🟢 C#
 
 ```csharp
-static bool BinarySearch(List<int> arr, int target) {
+int BinarySearch(List<int> arr, int target) {
     int left = 0, right = arr.Count - 1;
     while (left <= right) {
         int mid = (left + right) >> 1;
@@ -194,22 +197,22 @@ static bool BinarySearch(List<int> arr, int target) {
         } else if (arr[mid] > target) {
             right = mid - 1;
         } else {
-            return true;
+            return mid;
         }
     }
-    return false;
+    return -1;
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 C# 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 C# 的可视化！"
 
 ///
 
 /// tab | 🔵 Go
 
 ```go
-func BinarySearch(arr []int, target int) bool {
-    left, right := 0, len(arr) - 1
+func binarySearch(arr []int, target int) int {
+    left, right := 0, len(arr)-1
     for left <= right {
         mid := (left + right) >> 1
         if arr[mid] < target {
@@ -217,21 +220,21 @@ func BinarySearch(arr []int, target int) bool {
         } else if arr[mid] > target {
             right = mid - 1
         } else {
-            return true
+            return mid
         }
     }
-    return false
+    return -1
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Go 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Go 的可视化！"
 
 ///
 
 /// tab | 🟤 Rust
 
 ```rust
-fn binary_search(arr: &Vec<i32>, target: i32) -> bool {
+fn binary_search(arr: &Vec<i32>, target: i32) -> i32 {
     let (mut left, mut right) = (0, arr.len() as i32 - 1);
     while left <= right {
         let mid = (left + right) >> 1;
@@ -240,14 +243,14 @@ fn binary_search(arr: &Vec<i32>, target: i32) -> bool {
         } else if arr[mid as usize] > target {
             right = mid - 1;
         } else {
-            return true;
+            return mid;
         }
     }
-    return false;
+    return -1;
 }
 ```
 
-!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target="_blank"} 暂时还不支持 Rust 的可视化！"
+!!! failure "非常抱歉！[pythontutor](https://pythontutor.com/){target=_blank} 暂时还不支持 Rust 的可视化！"
 
 ///
 
@@ -274,11 +277,42 @@ if __name__ == "__main__":
 
 ## 四、算法扩展
 
-### 4.1 搜索上下界
+### 4.1 搜索左右边界
+
+上面给出的代码只能获取不包含重复元素的顺序序列 `arr` 中目标值 `target` 的索引，并不能处理包含重复元素的情况。但如果变换思路，获取顺序序列中满足某个条件的左边界或者右边界，就很容易根据问题得到想要的结果。
+
+- 左边界：满足 `>= target` 的最左元素
+- 右边界：满足 `<= target` 的最右元素
+
+对于包含重复元素的升序序列，左右边界可以准确地描述我们需要的内容。
+
+!!! warning "适用条件：序列升序"
 
 /// tab | 🔵 Python
 
 ```python
+def binary_search_left(arr: list[int], target: int) -> int:
+    left, right, index = 0, len(arr) - 1, -1
+    while left <= right:
+        mid = (left + right) >> 1
+        if arr[mid] >= target:
+            index = mid
+            right = mid - 1
+        else:
+            left = mid + 1
+    return index
+
+
+def binary_search_right(arr: list[int], target: int) -> int:
+    left, right, index = 0, len(arr) - 1, -1
+    while left <= right:
+        mid = (left + right) >> 1
+        if arr[mid] <= target:
+            index = mid
+            left = mid + 1
+        else:
+            right = mid - 1
+    return index
 ```
 
 ///
@@ -286,6 +320,33 @@ if __name__ == "__main__":
 /// tab | 🔴 C++
 
 ```cpp
+int binarySearchLeft(const std::vector<int> &arr, int target) {
+    int left = 0, right = arr.size() - 1, index = -1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid] >= target) {
+            index = mid;
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return index;
+}
+
+int binarySearchRight(const std::vector<int> &arr, int target) {
+    int left = 0, right = arr.size() - 1, index = -1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid] <= target) {
+            index = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -293,6 +354,33 @@ if __name__ == "__main__":
 /// tab | 🟠 Java
 
 ```java
+int binarySearchLeft(ArrayList<Integer> arr, Integer target) {
+    int left = 0, right = arr.size() - 1, index = -1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr.get(mid) >= target) {
+            index = mid;
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return index;
+}
+
+int binarySearchRight(ArrayList<Integer> arr, Integer target) {
+    int left = 0, right = arr.size() - 1, index = -1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr.get(mid) <= target) {
+            index = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -300,6 +388,33 @@ if __name__ == "__main__":
 /// tab | 🟡 JavaScript
 
 ```javascript
+function binarySearchLeft(arr, target) {
+    let left = 0, right = arr.length - 1, index = -1;
+    while (left <= right) {
+        const mid = (left + right) >> 1;
+        if (arr[mid] >= target) {
+            index = mid;
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return index;
+}
+
+function binarySearchRight(arr, target) {
+    let left = 0, right = arr.length - 1, index = -1;
+    while (left <= right) {
+        const mid = (left + right) >> 1;
+        if (arr[mid] <= target) {
+            index = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -307,6 +422,33 @@ if __name__ == "__main__":
 /// tab | 🟣 C
 
 ```c
+int binarySearchLeft(int arr[], int n, int target) {
+    int left = 0, right = n - 1, index = -1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid] >= target) {
+            index = mid;
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return index;
+}
+
+int binarySearchRight(int arr[], int n, int target) {
+    int left = 0, right = n - 1, index = -1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid] <= target) {
+            index = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -314,6 +456,33 @@ if __name__ == "__main__":
 /// tab | 🟢 C#
 
 ```csharp
+int BinarySearchLeft(List<int> arr, int target) {
+    int left = 0, right = arr.Count - 1, index = -1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid] >= target) {
+            index = mid;
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return index;
+}
+
+int BinarySearchRight(List<int> arr, int target) {
+    int left = 0, right = arr.Count - 1, index = -1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid] <= target) {
+            index = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -321,6 +490,33 @@ if __name__ == "__main__":
 /// tab | 🔵 Go
 
 ```go
+func binarySearchLeft(arr []int, target int) int {
+    left, right, index := 0, len(arr)-1, -1
+    for left <= right {
+        mid := (left + right) >> 1
+        if arr[mid] >= target {
+            index = mid
+            right = mid - 1
+        } else {
+            left = mid + 1
+        }
+    }
+    return index
+}
+
+func binarySearchRight(arr []int, target int) int {
+    left, right, index := 0, len(arr)-1, -1
+    for left <= right {
+        mid := (left + right) >> 1
+        if arr[mid] <= target {
+            index = mid
+            left = mid + 1
+        } else {
+            right = mid - 1
+        }
+    }
+    return index
+}
 ```
 
 ///
@@ -328,15 +524,79 @@ if __name__ == "__main__":
 /// tab | 🟤 Rust
 
 ```rust
+fn binary_search_left(arr: &Vec<i32>, target: i32) -> i32 {
+    let (mut left, mut right, mut index) = (0, arr.len() as i32 - 1, -1);
+    while left <= right {
+        let mid = (left + right) >> 1;
+        if arr[mid as usize] >= target {
+            index = mid;
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return index;
+}
+
+fn binary_search_right(arr: &Vec<i32>, target: i32) -> i32 {
+    let (mut left, mut right, mut index) = (0, arr.len() as i32 - 1, -1);
+    while left <= right {
+        let mid = (left + right) >> 1;
+        if arr[mid as usize] <= target {
+            index = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return index;
+}
 ```
 
 ///
 
 ### 4.2 搜索峰谷值
 
+二分搜索除了可以搜索左右边界之外，还可以搜索序列中的峰值和谷值。
+
+- 峰值：严格大于其左右相邻元素的值
+- 谷值：严格小于其左右相邻元素的值
+
+对于序列的边界值，一般只考虑其存在元素的那一边，但有时也认为它们既不是峰值，也不是谷值，依具体进行分析。此处仅按照前者，考虑其存在元素的一边。
+
+!!! warning "适用条件：序列中相邻元素的值不相等"
+
 /// tab | 🔵 Python
 
 ```python
+def binary_search_peak(arr: list[int]) -> int:
+    left, right = 1, len(arr) - 2
+    index = 0 if arr[0] > arr[-1] else len(arr) - 1
+    while left <= right:
+        mid = (left + right) >> 1
+        if arr[mid - 1] > arr[mid]:
+            right = mid - 1
+        elif arr[mid + 1] > arr[mid]:
+            left = mid + 1
+        else:
+            index = mid
+            break
+    return index
+
+
+def binary_search_valley(arr: list[int]) -> int:
+    left, right = 1, len(arr) - 2
+    index = 0 if arr[0] < arr[-1] else len(arr) - 1
+    while left <= right:
+        mid = (left + right) >> 1
+        if arr[mid - 1] < arr[mid]:
+            right = mid - 1
+        elif arr[mid + 1] < arr[mid]:
+            left = mid + 1
+        else:
+            index = mid
+            break
+    return index
 ```
 
 ///
@@ -344,6 +604,39 @@ if __name__ == "__main__":
 /// tab | 🔴 C++
 
 ```cpp
+int binarySearchPeak(const std::vector<int> &arr) {
+    int left = 1, right = arr.size() - 2;
+    int index = arr.front() > arr.back() ? 0 : arr.size() - 1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid - 1] > arr[mid]) {
+            right = mid - 1;
+        } else if (arr[mid + 1] > arr[mid]) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
+
+int binarySearchValley(const std::vector<int> &arr) {
+    int left = 1, right = arr.size() - 2;
+    int index = arr.front() < arr.back() ? 0 : arr.size() - 1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid - 1] < arr[mid]) {
+            right = mid - 1;
+        } else if (arr[mid + 1] < arr[mid]) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -351,6 +644,39 @@ if __name__ == "__main__":
 /// tab | 🟠 Java
 
 ```java
+int binarySearchPeak(ArrayList<Integer> arr) {
+    int left = 1, right = arr.size() - 2;
+    int index = arr.get(0) > arr.get(arr.size() - 1) ? 0 : arr.size() - 1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr.get(mid - 1) > arr.get(mid)) {
+            right = mid - 1;
+        } else if (arr.get(mid + 1) > arr.get(mid)) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
+
+int binarySearchValley(ArrayList<Integer> arr) {
+    int left = 1, right = arr.size() - 2;
+    int index = arr.get(0) < arr.get(arr.size() - 1) ? 0 : arr.size() - 1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr.get(mid - 1) < arr.get(mid)) {
+            right = mid - 1;
+        } else if (arr.get(mid + 1) < arr.get(mid)) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -358,6 +684,39 @@ if __name__ == "__main__":
 /// tab | 🟡 JavaScript
 
 ```javascript
+function binarySearchPeak(arr) {
+    let left = 1, right = arr.length - 2;
+    let index = arr[0] > arr[arr.length - 1] ? 0 : arr.length - 1;
+    while (left <= right) {
+        const mid = (left + right) >> 1;
+        if (arr[mid - 1] > arr[mid]) {
+            right = mid - 1;
+        } else if (arr[mid + 1] > arr[mid]) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
+
+function binarySearchValley(arr) {
+    let left = 1, right = arr.length - 2;
+    let index = arr[0] < arr[arr.length - 1] ? 0 : arr.length - 1;
+    while (left <= right) {
+        const mid = (left + right) >> 1;
+        if (arr[mid - 1] < arr[mid]) {
+            right = mid - 1;
+        } else if (arr[mid + 1] < arr[mid]) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -365,6 +724,39 @@ if __name__ == "__main__":
 /// tab | 🟣 C
 
 ```c
+int binarySearchPeak(int arr[], int n) {
+    int left = 1, right = n - 2;
+    int index = arr[0] > arr[n - 1] ? 0 : n - 1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid - 1] > arr[mid]) {
+            right = mid - 1;
+        } else if (arr[mid + 1] > arr[mid]) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
+
+int binarySearchValley(int arr[], int n) {
+    int left = 1, right = n - 2;
+    int index = arr[0] < arr[n - 1] ? 0 : n - 1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid - 1] < arr[mid]) {
+            right = mid - 1;
+        } else if (arr[mid + 1] < arr[mid]) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -372,6 +764,39 @@ if __name__ == "__main__":
 /// tab | 🟢 C#
 
 ```csharp
+int BinarySearchPeak(List<int> arr) {
+    int left = 1, right = arr.Count - 2;
+    int index = arr.First() > arr.Last() ? 0 : arr.Count - 1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid - 1] > arr[mid]) {
+            right = mid - 1;
+        } else if (arr[mid + 1] > arr[mid]) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
+
+int BinarySearchValley(List<int> arr) {
+    int left = 1, right = arr.Count - 2;
+    int index = arr.First() < arr.Last() ? 0 : arr.Count - 1;
+    while (left <= right) {
+        int mid = (left + right) >> 1;
+        if (arr[mid - 1] < arr[mid]) {
+            right = mid - 1;
+        } else if (arr[mid + 1] < arr[mid]) {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
 ```
 
 ///
@@ -379,6 +804,45 @@ if __name__ == "__main__":
 /// tab | 🔵 Go
 
 ```go
+func BinarySearchPeak(arr []int) int {
+    left, right := 1, len(arr)-2
+    index := len(arr) - 1
+    if arr[0] > arr[len(arr)-1] {
+        index = 0
+    }
+    for left <= right {
+        mid := (left + right) >> 1
+        if arr[mid-1] > arr[mid] {
+            right = mid - 1
+        } else if arr[mid+1] > arr[mid] {
+            left = mid + 1
+        } else {
+            index = mid
+            break
+        }
+    }
+    return index
+}
+
+func BinarySearchValley(arr []int) int {
+    left, right := 1, len(arr)-2
+    index := len(arr) - 1
+    if arr[0] < arr[len(arr)-1] {
+        index = 0
+    }
+    for left <= right {
+        mid := (left + right) >> 1
+        if arr[mid-1] < arr[mid] {
+            right = mid - 1
+        } else if arr[mid+1] < arr[mid] {
+            left = mid + 1
+        } else {
+            index = mid
+            break
+        }
+    }
+    return index
+}
 ```
 
 ///
@@ -386,10 +850,47 @@ if __name__ == "__main__":
 /// tab | 🟤 Rust
 
 ```rust
+fn binary_search_peak(arr: &Vec<i32>) -> i32 {
+    let (mut left, mut right) = (1, arr.len() as i32 - 2);
+    let mut index = if arr.first() > arr.last() { 0 } else { arr.len() as i32 - 1 };
+    while left <= right {
+        let mid = (left + right) >> 1;
+        if arr[mid as usize - 1] > arr[mid as usize] {
+            right = mid - 1;
+        } else if arr[mid as usize + 1] > arr[mid as usize] {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
+
+fn binary_search_valley(arr: &Vec<i32>) -> i32 {
+    let (mut left, mut right) = (1, arr.len() as i32 - 2);
+    let mut index = if arr.first() < arr.last() { 0 } else { arr.len() as i32 - 1 };
+    while left <= right {
+        let mid = (left + right) >> 1;
+        if arr[mid as usize - 1] < arr[mid as usize] {
+            right = mid - 1;
+        } else if arr[mid as usize + 1] < arr[mid as usize] {
+            left = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
 ```
 
 ///
 
-[^1]: [10.1   二分查找 - Hello 算法](https://www.hello-algo.com/chapter_searching/binary_search/){target="_blank"}
-[^2]: [二分 - OI Wiki](https://oiwiki.org/basic/binary/){target="_blank"}
-[^3]: [算法讲解006【入门】二分搜索_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1bX4y177uT//){target="_blank"}
+[^1]: [10.1   二分查找 - Hello 算法](https://www.hello-algo.com/chapter_searching/binary_search/){target=_blank}
+[^2]: [二分 - OI Wiki](https://oiwiki.org/basic/binary/){target=_blank}
+[^3]: [算法讲解006【入门】二分搜索_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1bX4y177uT/){target=_blank}
+
+[^4]: [<small>:simple-leetcode:</small> 162. 寻找峰值](https://leetcode.cn/problems/find-peak-element/){target=_blank}
+[^5]: [<small>:simple-leetcode:</small> 1901. 寻找峰值 II](https://leetcode.cn/problems/find-a-peak-element-ii/){target=_blank}
+[^6]: [<small>:simple-leetcode:</small> 2951. 找出峰值](https://leetcode.cn/problems/find-the-peaks/){target=_blank}
