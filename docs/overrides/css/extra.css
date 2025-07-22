@@ -128,8 +128,15 @@ figcaption {
     width: 100%;
 }
 
-/* 代码块最大高度，需要 .limit 搭配 linenums="0" 否则行号错位*/
-/* https://github.com/squidfunk/mkdocs-material/issues/3444 */
+/*代码块最大高度，需要 .limit 搭配 linenums="0" 否则行号错位*/
+/*https://github.com/squidfunk/mkdocs-material/issues/3444*/
 .limit pre>code {
     max-height: 25rem;
+}
+
+/*可视化代码*/
+iframe {
+    width: 800px;
+    height: 500px;
+    border: none;
 }

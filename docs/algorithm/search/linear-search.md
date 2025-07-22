@@ -21,7 +21,7 @@ tags:
 
 /// details | Manim 动画演示源代码
 
-```python
+```python { .limit linenums="0" }
 ```
 
 ///
@@ -64,7 +64,7 @@ def linear_search(arr: list[int], target: int) -> int:
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_python }}"></iframe>
+    <iframe src="{{ src_python }}"></iframe>
 
 ///
 
@@ -85,7 +85,7 @@ int linearSearch(const std::vector<int> &arr, int target) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_cpp }}"></iframe>
+    <iframe src="{{ src_cpp }}"></iframe>
 
 ///
 
@@ -106,7 +106,7 @@ int linearSearch(ArrayList<Integer> arr, Integer target) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_java }}"></iframe>
+    <iframe src="{{ src_java }}"></iframe>
 
 ///
 
@@ -127,7 +127,7 @@ function linearSearch(arr, target) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_javascript }}"></iframe>
+    <iframe src="{{ src_javascript }}"></iframe>
 
 ///
 
@@ -148,7 +148,7 @@ int linearSearch(int arr[], int n, int target) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_c }}"></iframe>
+    <iframe src="{{ src_c }}"></iframe>
 
 ///
 
@@ -215,7 +215,7 @@ fn linear_search(arr: &Vec<i32>, target: i32) -> i32 {
 %reset -f
 
 def linear_search(arr: list[int], target: int) -> int:
-    pass  # 请将代码写在这里
+    pass
 
 if __name__ == "__main__":
     arr: list[int] = [7, 0, 6, 1, 5, 2, 4, 3]

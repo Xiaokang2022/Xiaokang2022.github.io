@@ -22,7 +22,7 @@ tags:
 
 /// details | Manim 动画演示源代码
 
-```python
+```python { .limit linenums="0" }
 ```
 
 ///
@@ -73,7 +73,7 @@ def binary_search(arr: list[int], target: int) -> int:
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_python }}"></iframe>
+    <iframe src="{{ src_python }}"></iframe>
 
 ///
 
@@ -100,7 +100,7 @@ int binarySearch(const std::vector<int> &arr, int target) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_cpp }}"></iframe>
+    <iframe src="{{ src_cpp }}"></iframe>
 
 ///
 
@@ -127,7 +127,7 @@ int binarySearch(ArrayList<Integer> arr, Integer target) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_java }}"></iframe>
+    <iframe src="{{ src_java }}"></iframe>
 
 ///
 
@@ -154,7 +154,7 @@ function binarySearch(arr, target) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_javascript }}"></iframe>
+    <iframe src="{{ src_javascript }}"></iframe>
 
 ///
 
@@ -181,7 +181,7 @@ int binarySearch(int arr[], int n, int target) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_c }}"></iframe>
+    <iframe src="{{ src_c }}"></iframe>
 
 ///
 
@@ -266,7 +266,7 @@ fn binary_search(arr: &Vec<i32>, target: i32) -> i32 {
 %reset -f
 
 def binary_search(arr: list[int], target: int) -> int:
-    pass  # 请将代码写在这里
+    pass
 
 if __name__ == "__main__":
     arr: list[int] = [0, 1, 2, 3, 4, 5, 6, 7]

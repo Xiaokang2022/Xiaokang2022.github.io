@@ -3,6 +3,7 @@ comments: true
 tags:
     - 算法
     - 排序
+    - 二分
 ---
 
 # 插入排序
@@ -21,7 +22,7 @@ tags:
 
 /// details | Manim 动画演示源代码
 
-```python
+```python { .limit linenums="0" }
 ```
 
 ///
@@ -68,7 +69,7 @@ def insertion_sort(arr: list[int]) -> None:
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_python }}"></iframe>
+    <iframe src="{{ src_python }}"></iframe>
 
 ///
 
@@ -92,7 +93,7 @@ void insertionSort(std::vector<int> &arr) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_cpp }}"></iframe>
+    <iframe src="{{ src_cpp }}"></iframe>
 
 ///
 
@@ -116,7 +117,7 @@ void insertionSort(ArrayList<Integer> arr) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_java }}"></iframe>
+    <iframe src="{{ src_java }}"></iframe>
 
 ///
 
@@ -140,7 +141,7 @@ function insertionSort(arr) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_javascript }}"></iframe>
+    <iframe src="{{ src_javascript }}"></iframe>
 
 ///
 
@@ -173,7 +174,7 @@ void swap(int arr[], int i, int j) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_c }}"></iframe>
+    <iframe src="{{ src_c }}"></iframe>
 
 ///
 
@@ -429,7 +430,7 @@ fn binary_insertion_sort(arr: &mut Vec<i32>) {
 %reset -f
 
 def insertion_sort(arr: list[int]) -> None:
-    pass  # 请将代码写在这里
+    pass
 
 if __name__ == "__main__":
     arr: list[int] = [7, 0, 6, 1, 5, 2, 4, 3]

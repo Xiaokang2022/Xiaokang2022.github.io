@@ -12,7 +12,7 @@ remote_name: origin # 远程名称
 docs_dir: docs # 文档目录
 site_dir: site # 网站目录
 dev_addr: 127.0.0.1:8080 # 预览模式地址
-use_directory_urls: false # URL 使用目录名还是文件名
+use_directory_urls: true # URL 使用目录名还是文件名
 strict: false # 警告级别，出现警告就终止程序
 
 markdown_extensions:
@@ -326,7 +326,7 @@ nav:
       - 标签索引: tags.md
       - 我的项目: projects.md
       - 友情链接: friends.md
-      - 开源许可: LICENSE.md
+      - 开源许可: copying.md
   - 博客:
       - blog/index.md
   - 设计模式:

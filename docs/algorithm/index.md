@@ -22,7 +22,7 @@ icon: material/map-marker-path
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_python }}"></iframe>
+    <iframe src="{{ src_python }}"></iframe>
 
 ///
 
@@ -35,7 +35,7 @@ icon: material/map-marker-path
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_cpp }}"></iframe>
+    <iframe src="{{ src_cpp }}"></iframe>
 
 ///
 
@@ -48,7 +48,7 @@ icon: material/map-marker-path
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_java }}"></iframe>
+    <iframe src="{{ src_java }}"></iframe>
 
 ///
 
@@ -61,7 +61,7 @@ icon: material/map-marker-path
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_javascript }}"></iframe>
+    <iframe src="{{ src_javascript }}"></iframe>
 
 ///
 
@@ -74,7 +74,7 @@ icon: material/map-marker-path
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_c }}"></iframe>
+    <iframe src="{{ src_c }}"></iframe>
 
 ///
 

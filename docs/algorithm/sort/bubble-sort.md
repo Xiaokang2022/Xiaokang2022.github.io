@@ -21,7 +21,7 @@ tags:
 
 /// details | Manim 动画演示源代码
 
-```python
+```python { .limit linenums="0" }
 ```
 
 ///
@@ -66,7 +66,7 @@ def bubble_sort(arr: list[int]) -> None:
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_python }}"></iframe>
+    <iframe src="{{ src_python }}"></iframe>
 
 ///
 
@@ -88,7 +88,7 @@ void bubbleSort(std::vector<int> &arr) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_cpp }}"></iframe>
+    <iframe src="{{ src_cpp }}"></iframe>
 
 ///
 
@@ -110,7 +110,7 @@ void bubbleSort(ArrayList<Integer> arr) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_java }}"></iframe>
+    <iframe src="{{ src_java }}"></iframe>
 
 ///
 
@@ -132,7 +132,7 @@ function bubbleSort(arr) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_javascript }}"></iframe>
+    <iframe src="{{ src_javascript }}"></iframe>
 
 ///
 
@@ -163,7 +163,7 @@ void swap(int arr[], int i, int j) {
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 
-    <iframe width="800" height="500" frameborder="0" src="{{ src_c }}"></iframe>
+    <iframe src="{{ src_c }}"></iframe>
 
 ///
 
@@ -228,7 +228,7 @@ fn bubble_sort(arr: &mut Vec<i32>) {
 /// tab | 🔵 Python
 
 ```python
-def bubble_sort(arr: list[int]) -> None:
+def bubble_sort_with_flag(arr: list[int]) -> None:
     for i in range(len(arr), 0, -1):
         swapped = False
         for j in range(i - 1):
@@ -244,7 +244,7 @@ def bubble_sort(arr: list[int]) -> None:
 /// tab | 🔴 C++
 
 ```cpp
-void bubbleSort(std::vector<int> &arr) {
+void bubbleSortWithFlag(std::vector<int> &arr) {
     for (int i = arr.size(); i > 0; i--) {
         bool swapped = false;
         for (int j = 0; j < i - 1; j++) {
@@ -265,7 +265,7 @@ void bubbleSort(std::vector<int> &arr) {
 /// tab | 🟠 Java
 
 ```java
-void bubbleSort(ArrayList<Integer> arr) {
+void bubbleSortWithFlag(ArrayList<Integer> arr) {
     for (int i = arr.size(); i > 0; i--) {
         boolean swapped = false;
         for (int j = 0; j < i - 1; j++) {
@@ -286,7 +286,7 @@ void bubbleSort(ArrayList<Integer> arr) {
 /// tab | 🟡 JavaScript
 
 ```javascript
-function bubbleSort(arr) {
+function bubbleSortWithFlag(arr) {
     for (let i = arr.length; i > 0; i--) {
         let swapped = false;
         for (let j = 0; j < i - 1; j++) {
@@ -307,7 +307,7 @@ function bubbleSort(arr) {
 /// tab | 🟣 C
 
 ```c
-void bubbleSort(int arr[], int n) {
+void bubbleSortWithFlag(int arr[], int n) {
     for (int i = n; n > 0; i--) {
         bool swapped = false;
         for (int j = 0; j < i - 1; j++) {
@@ -337,7 +337,7 @@ void swap(int arr[], int i, int j) {
 /// tab | 🟢 C#
 
 ```csharp
-void BubbleSort(List<int> arr) {
+void BubbleSortWithFlag(List<int> arr) {
     for (int i = arr.Count; i > 0; i--) {
         bool swapped = false;
         for (int j = 0; j < i - 1; j++) {
@@ -358,7 +358,7 @@ void BubbleSort(List<int> arr) {
 /// tab | 🔵 Go
 
 ```go
-func bubbleSort(arr []int) {
+func bubbleSortWithFlag(arr []int) {
     for i := len(arr); i > 0; i-- {
         swapped := false
         for j := 0; j < i-1; j++ {
@@ -379,7 +379,7 @@ func bubbleSort(arr []int) {
 /// tab | 🟤 Rust
 
 ```rust
-fn bubble_sort(arr: &mut Vec<i32>) {
+fn bubble_sort_with_flag(arr: &mut Vec<i32>) {
     for i in (1..=arr.len()).rev() {
         let mut swapped = false;
         for j in 0..i - 1 {
@@ -409,7 +409,7 @@ fn bubble_sort(arr: &mut Vec<i32>) {
 %reset -f
 
 def bubble_sort(arr: list[int]) -> None:
-    pass  # 请将代码写在这里
+    pass
 
 if __name__ == "__main__":
     arr: list[int] = [7, 0, 6, 1, 5, 2, 4, 3]
