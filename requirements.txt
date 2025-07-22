@@ -1,0 +1,16 @@
+mkdocs
+mkdocs-material
+mkdocs-glightbox
+mkdocs-git-committers-plugin-2
+mkdocs-git-revision-date-localized-plugin
+mkdocs-statistics-plugin
+mkdocs-minify-plugin
+mkdocs-macros-plugin
+mkdocs-rss-plugin
+mkdocs-autorefs
+mkdocs-gen-files
+mkdocs-literate-nav
+mkdocs-print-site-plugin
+mkdocstrings[python]
+markdown-exec[ansi]
+mike
