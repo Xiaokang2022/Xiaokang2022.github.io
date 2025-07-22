@@ -2,4 +2,4 @@
 comments: true
 ---
 
-# 空对象模式（Null Object Pattern）
+# 空对象模式
