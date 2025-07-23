@@ -147,6 +147,9 @@ markdown_extensions:
         - name: mermaid # 允许 mermaid 图表语法
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: markmap # 允许 markmap 图表语法
+          class: language-markmap
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
   - pymdownx.tabbed: # 选项卡
       alternate_style: true # 实验性样式
@@ -295,6 +298,8 @@ plugins:
   # 第三方插件
   - macros:
   - statistics:
+  - markdown-exec:
+  - markmap:
   - rss:
       match_path: blog/posts/.*
       date_from_meta:
@@ -306,6 +311,11 @@ plugins:
   - glightbox:
       background: none
       auto_themed: true
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+      theme:
+        light: material/green-light
+        dark: material/amber-dark
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
@@ -315,6 +325,8 @@ plugins:
       token: !ENV GH_TOKEN # 需要自行在终端中设置临时环境变量，强烈不建议显式地在此处设置 token
       exclude_committers:
         - web-flow
+  - autorefs:
+      resolve_closest: true
   - minify:
       minify_html: true
       htmlmin_opts:

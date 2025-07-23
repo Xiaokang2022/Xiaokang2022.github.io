@@ -140,3 +140,20 @@ iframe {
     height: 500px;
     border: none;
 }
+
+/*思维导图边框美化*/
+div.mkdocs-markmap {
+    border-radius: .2rem;
+}
+
+/*思维导图文本颜色暗色模式修复及字体修复*/
+.mkdocs-markmap div {
+    color: var(--md-typeset-color);
+    font-family: var(--md-code-font);
+}
+
+/*思维导图代码颜色暗色模式修复*/
+.mkdocs-markmap div code {
+    color: var(--md-code-fg-color);
+    background-color: var(--md-code-bg-color);
+}
