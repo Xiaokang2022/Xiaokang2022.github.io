@@ -11,6 +11,8 @@ mkdocs-autorefs
 mkdocs-gen-files
 mkdocs-literate-nav
 mkdocs-print-site-plugin
+mkdocs-markmap
+mkdocs_puml
 mkdocstrings[python]
 markdown-exec[ansi]
 mike
