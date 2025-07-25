@@ -345,35 +345,35 @@ nav:
       - design-pattern/index.md
       - 创建型模式:
           - design-pattern/creational-pattern/index.md
-          - 1. 工厂模式: design-pattern/creational-pattern/factory-pattern.md
-          - 2. 抽象工厂模式: design-pattern/creational-pattern/abstract-factory-pattern.md
-          - 3. 单例模式: design-pattern/creational-pattern/singleton-pattern.md
-          - 4. 建造者模式: design-pattern/creational-pattern/builder-pattern.md
-          - 5. 原型模式: design-pattern/creational-pattern/prototype-pattern.md
+          - 1. 工厂模式: design-pattern/creational-pattern/factory-pattern/index.md
+          - 2. 抽象工厂模式: design-pattern/creational-pattern/abstract-factory-pattern/index.md
+          - 3. 单例模式: design-pattern/creational-pattern/singleton-pattern/index.md
+          - 4. 建造者模式: design-pattern/creational-pattern/builder-pattern/index.md
+          - 5. 原型模式: design-pattern/creational-pattern/prototype-pattern/index.md
       - 结构型模式:
           - design-pattern/structural-pattern/index.md
-          - 1. 适配器模式: design-pattern/structural-pattern/adapter-pattern.md
-          - 2. 桥接模式: design-pattern/structural-pattern/bridge-pattern.md
-          - 3. 组合模式: design-pattern/structural-pattern/composite-pattern.md
-          - 4. 装饰器模式: design-pattern/structural-pattern/decorator-pattern.md
-          - 5. 外观模式: design-pattern/structural-pattern/facade-pattern.md
-          - 6. 享元模式: design-pattern/structural-pattern/flyweight-pattern.md
-          - 7. 代理模式: design-pattern/structural-pattern/proxy-pattern.md
-          # - 8. 过滤器模式: design-pattern/structural-pattern/filter-pattern.md
+          - 1. 适配器模式: design-pattern/structural-pattern/adapter-pattern/index.md
+          - 2. 桥接模式: design-pattern/structural-pattern/bridge-pattern/index.md
+          - 3. 组合模式: design-pattern/structural-pattern/composite-pattern/index.md
+          - 4. 装饰器模式: design-pattern/structural-pattern/decorator-pattern/index.md
+          - 5. 外观模式: design-pattern/structural-pattern/facade-pattern/index.md
+          - 6. 享元模式: design-pattern/structural-pattern/flyweight-pattern/index.md
+          - 7. 代理模式: design-pattern/structural-pattern/proxy-pattern/index.md
+          # - 8. 过滤器模式: design-pattern/structural-pattern/filter-pattern/index.md
       - 行为型模式:
           - design-pattern/behavioral-pattern/index.md
-          - 1. 责任链模式: design-pattern/behavioral-pattern/chain-of-responsibility-pattern.md
-          - 2. 命令模式: design-pattern/behavioral-pattern/command-pattern.md
-          - 3. 解释器模式: design-pattern/behavioral-pattern/interpreter-pattern.md
-          - 4. 迭代器模式: design-pattern/behavioral-pattern/iterator-pattern.md
-          - 5. 中介者模式: design-pattern/behavioral-pattern/mediator-pattern.md
-          - 6. 备忘录模式: design-pattern/behavioral-pattern/memento-pattern.md
-          - 7. 观察者模式: design-pattern/behavioral-pattern/observer-pattern.md
-          - 8. 状态模式: design-pattern/behavioral-pattern/state-pattern.md
-          - 9. 策略模式: design-pattern/behavioral-pattern/strategy-pattern.md
-          - 10. 模板模式: design-pattern/behavioral-pattern/template-pattern.md
-          - 11. 访问者模式: design-pattern/behavioral-pattern/visitor-pattern.md
-          # - 12. 空对象模式: design-pattern/behavioral-pattern/Null-Object-pattern.md
+          - 1. 责任链模式: design-pattern/behavioral-pattern/chain-of-responsibility-pattern/index.md
+          - 2. 命令模式: design-pattern/behavioral-pattern/command-pattern/index.md
+          - 3. 解释器模式: design-pattern/behavioral-pattern/interpreter-pattern/index.md
+          - 4. 迭代器模式: design-pattern/behavioral-pattern/iterator-pattern/index.md
+          - 5. 中介者模式: design-pattern/behavioral-pattern/mediator-pattern/index.md
+          - 6. 备忘录模式: design-pattern/behavioral-pattern/memento-pattern/index.md
+          - 7. 观察者模式: design-pattern/behavioral-pattern/observer-pattern/index.md
+          - 8. 状态模式: design-pattern/behavioral-pattern/state-pattern/index.md
+          - 9. 策略模式: design-pattern/behavioral-pattern/strategy-pattern/index.md
+          - 10. 模板模式: design-pattern/behavioral-pattern/template-pattern/index.md
+          - 11. 访问者模式: design-pattern/behavioral-pattern/visitor-pattern/index.md
+          # - 12. 空对象模式: design-pattern/behavioral-pattern/Null-Object-pattern/index.md
   - 数据结构:
       - data-structure/index.md
       - 线性结构:
@@ -388,12 +388,12 @@ nav:
       - algorithm/index.md
       - 排序:
           - algorithm/sort/index.md
-          - 1. 选择排序: algorithm/sort/selection-sort.md
-          - 2. 冒泡排序: algorithm/sort/bubble-sort.md
-          - 3. 插入排序: algorithm/sort/insertion-sort.md
+          - 1. 选择排序: algorithm/sort/selection-sort/index.md
+          - 2. 冒泡排序: algorithm/sort/bubble-sort/index.md
+          - 3. 插入排序: algorithm/sort/insertion-sort/index.md
       - 搜索:
           - algorithm/search/index.md
-          - 1. 线性搜索: algorithm/search/linear-search.md
-          - 2. 二分搜索: algorithm/search/binary-search.md
+          - 1. 线性搜索: algorithm/search/linear-search/index.md
+          - 2. 二分搜索: algorithm/search/binary-search/index.md
   - 数值方法:
       - numerical-method/index.md

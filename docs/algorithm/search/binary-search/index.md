@@ -18,7 +18,7 @@ tags:
 
 ### 1.1 Manim 动画演示
 
-![binary-search](./images/binary-search.webp)
+![binary-search](./binary-search.webp)
 
 /// details | Manim 动画演示源代码
 

@@ -17,7 +17,7 @@ tags:
 
 ### 1.1 Manim 动画演示
 
-![bubble-sort](./images/bubble-sort.webp)
+![bubble-sort](./bubble-sort.webp)
 
 /// details | Manim 动画演示源代码
 

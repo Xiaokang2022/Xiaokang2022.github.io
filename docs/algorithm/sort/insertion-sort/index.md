@@ -18,7 +18,7 @@ tags:
 
 ### 1.1 Manim 动画演示
 
-![insertion-sort](./images/insertion-sort.webp)
+![insertion-sort](./insertion-sort.webp)
 
 /// details | Manim 动画演示源代码
 

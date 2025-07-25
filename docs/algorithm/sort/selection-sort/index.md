@@ -17,7 +17,7 @@ tags:
 
 ### 1.1 Manim 动画演示
 
-![selection-sort](./images/selection-sort.webp)
+![selection-sort](./selection-sort.webp)
 
 /// details | Manim 动画演示源代码
 
