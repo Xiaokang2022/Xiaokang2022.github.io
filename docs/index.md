@@ -35,7 +35,7 @@ hide:
 
     模式不是发明而是发现，它们凝结了开发者对抗软件复杂性的集体智慧。
 
--   :material-graph-outline:{.middle} [**数据结构**](./data-structure/index.md)<small>（🚧施工中）</small>
+-   :material-graph-outline:{.middle} [**数据结构**](./data-structure/index.md)<small>（🕓更新中）</small>
 
     ---
 

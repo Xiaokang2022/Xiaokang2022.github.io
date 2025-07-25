@@ -376,6 +376,14 @@ nav:
           # - 12. 空对象模式: design-pattern/behavioral-pattern/Null-Object-pattern.md
   - 数据结构:
       - data-structure/index.md
+      - 线性结构:
+          - data-structure/linear-structure/index.md
+      - 树形结构:
+          - data-structure/tree-structure/index.md
+      - 图形结构:
+          - data-structure/graph-structure/index.md
+      - 混合结构:
+          - data-structure/hybrid-structure/index.md
   - 算法:
       - algorithm/index.md
       - 排序:
