@@ -27,10 +27,12 @@ tags:
 
 通过下面的文章，你将得到像下面的效果图：
 
-![Rclone 挂载目录到本地](1.png)
+![Rclone 挂载目录到本地](./1.png)
 
 /// figure-caption
+
 Rclone 挂载目录到本地
+
 ///
 
 图示中 ALCloud 是阿里云 Windows 服务器，JDCloud 是京东云 Linux 服务器（Ubuntu），Lenovo 是我另外一台 Windows 联想笔记本，Xiaomi 是我的小米手机……就问你酷不酷吧？
@@ -43,9 +45,9 @@ Xiaomi 我没搞 root 权限，所有很多东西无法访问，但也能凑合�
 
 完成后续的操作，你将需要：
 
-* 带有 Windows 操作系统的电脑；（理论上，其他操作系统也可以这样干，操作都差不多）
-* 广域网挂载：云服务器（平台不限）；
-* 局域网挂载：没有啥特殊要求；
+- 带有 Windows 操作系统的电脑；（理论上，其他操作系统也可以这样干，操作都差不多）
+- 广域网挂载：云服务器（平台不限）；
+- 局域网挂载：没有啥特殊要求；
 
 ## 二、挂载工具
 
@@ -71,35 +73,57 @@ Rclone，开源，成熟，完全免费，对于国内外的都几乎全支持�
 
 #### 3.1.2 Rclone 的缺点
 
-Rclone 这么好，为什么还有其他的挂载工具出现呢？因为 Rclone 有个唯一的缺点，没得图形界面，它的一切操作都是在终端中进行的……先别急着走，虽然这样，但你只要按照我下面的操作来，你几乎不需要做任何事情，复制粘贴代码回车运行就行！人人可能不都是程序员，但人人都可以成为一个合格甚至优秀的 CV 工程师（附：CV 指 ++ctrl+c++ 和 ++ctrl+v++）！
+Rclone 这么好，为什么还有其他的挂载工具出现呢？因为 Rclone 有个唯一的缺点，没得图形界面，它的一切操作都是在终端中进行的……先别急着走，虽然这样，但你只要按照我下面的操作来，你几乎不需要做任何事情，复制粘贴代码回车运行就行！
 
 ### 3.2 Rclone 下载
 
-Rclone 建议在官方位置下载安装，即在其 GitHub 仓库找到文件：<https://github.com/rclone/rclone>
+Rclone 建议在官方位置下载安装：
 
-打开页面后，在右侧找到 Releases 字样，点击下面的 Latest 发行版进去就是当前官方的最新发行版文件了，找到下面的 Assets，里面有很多文件，都是适配不同操作系统的版本，对于一般的 Windows 用户而言，选择 rclone-vX.X.X-windows-amd64.zip 并等待下载完成就可以了（X 是版本号，amd 别看成 arm 了！）。这玩意儿，下载完解压后就行了，无需安装。
+<div markdown class="grid cards">
 
-解压后的文件目录是这样的（版本 v1.66.0）：
+-   :material-github:{.lg .middle} <https://github.com/rclone/rclone>
 
+    ---
 
-Rclone
+    "rsync for cloud storage" - Google Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Wasabi, Google Cloud Storage, Azure Blob, Azure Files, Yandex Files
+
+    [:octicons-arrow-right-24:{.middle} Releases](https://github.com/rclone/rclone/releases){target=_blank}
+
+</div>
+
+打开页面后，在右侧找到 Releases 字样（也可以直接点击上面的 “Releases”），点击下面的 Latest 发行版进去就是当前官方的最新发行版文件了，找到下面的 Assets，里面有很多文件，都是适配不同操作系统的版本，对于一般的 Windows 用户而言，选择 rclone-vX.X.X-windows-amd64.zip 并等待下载完成就可以了（X 是版本号，amd 别看成 arm 了！）。这玩意儿，下载完解压后就行了，无需安装。
+
 把它找个地方放起来，记住这个存放位置，后面我们（可能）还需要用到。
 
-### 3.3 Winfsp 下载安装
+### 3.3 WinFsp 下载安装
+
+/// tip | 特别提示
 
 这个仅对 Windows 用户有效。
 
-有部分功能需要 Winfsp 这个小工具才能完成，此工具并非 Rclone 官方开发的，而是由另外一群人开发的，这里放出他们的 GitHub repo，下载操作和上面的 Rclone 类似（对应位置选择 msi 扩展名的文件就行），但是，这个是要安装的（双击下载的 msi 文件即可）。
+///
 
-Github repo：winfsp/winfsp: Windows File System Proxy - FUSE for Windows (github.com)
+有部分功能需要 WinFsp 这个小工具才能完成，此工具并非 Rclone 官方开发的，而是由另外一群人开发的，这里放出他们的 GitHub repo，下载操作和上面的 Rclone 类似（对应位置选择 msi 扩展名的文件就行），但是，这个是要安装的（双击下载的 msi 文件即可）。
 
-如果你使用 Rclone 的过程中没啥问题，那就不需要装这个了，等用某个功能时报了啥错再来安装这玩意儿也不迟。 
+<div markdown class="grid cards">
+
+-   :material-github:{.lg .middle} <https://github.com/winfsp/winfsp>
+
+    ---
+
+    Windows File System Proxy - FUSE for Windows
+
+    [:octicons-arrow-right-24:{.middle} Releases](https://github.com/winfsp/winfsp/releases){target=_blank}
+
+</div>
+
+如果你使用 Rclone 的过程中没啥问题，那就不需要装这个了，等用某个功能时报了啥错再来安装这玩意儿也不迟。
 
 ## 四、挂载服务器磁盘到本地
 
 ### 4.1 SSH
 
-一定要确保服务器拥有 ssh-server 的功能，Linux 一般自带，部分 Windows Server 不自带，需要手动开启。因为我们的功能是通过 ssh/sftp 协议实现的，所以要保证服务器有这个功能。
+一定要确保服务器拥有 ssh-server 的功能，Linux 一般自带，部分 Windows Server 不自带，需要手动开启。因为我们的功能是通过 SSH/SFTP 协议实现的，所以要保证服务器有这个功能。
 
 理论上，还需要保证客户端（也就是本地）有 ssh-client，但一般都自带了，就不提了。一般来说，局域网挂载的时候，需要手动开启 ssh server，因为家庭版 Windows 默认是不开启的。
 
@@ -107,7 +131,7 @@ Github repo：winfsp/winfsp: Windows File System Proxy - FUSE for Windows (githu
 
 控制面板 -> 程序 -> 程序和功能 -> 启用或关闭 Windows 功能（在界面左侧） -> openSSH Server（如果没开启这里就会有）。
 
-安装后，打开 服务（终端输入 services 打开），找到上面说的这玩意儿，然后启动它（修改属性为自动比较好，防止关机后没有自己启动）。
+安装后，打开“服务”（可在终端输入 `services` 打开），找到上面说的这玩意儿，然后启动它（修改属性为自动比较好，防止关机后没有自己启动）。
 
 ### 4.2 本地配置挂载磁盘
 
@@ -121,9 +145,13 @@ rclone config
 
 添加服务器的步骤较多，根据每个人的需求而变，此处以阿里云轻量级 Windows 云服务器为例，Rclone 的版本为 1.66.0。如果你懂一些英文，实际不需要太多教学，自己也能摸索出来。
 
-注意：部分 Windows Server 没有 openssh server 服务，需手动开启。
+/// warning | 注意
 
-步骤 01
+部分 Windows Server 没有 openssh server 服务，需手动开启。
+
+///
+
+1️⃣ 步骤 01
 
 输入命令进入 rclone 配置模式：
 
@@ -133,7 +161,7 @@ rclone config
 
 会出现下面几个选项：
 
-```shell linenums="0"
+```shell linenums="0" hl_lines="2"
 e) Edit existing remote
 n) New remote
 d) Delete remote
@@ -144,11 +172,11 @@ q) Quit config
 e/n/d/r/c/s/q>
 ```
 
-根据对应的英文，我们输入 n 来添加新的服务器配置。
+根据对应的英文，我们输入 ++n++ 来添加新的服务器配置。
 
-步骤 02
+2️⃣ 步骤 02
 
-输入 n 并回车之后，会出现下面的字样：
+输入 ++n++ 并回车之后，会出现下面的字样：
 
 ```shell linenums="0"
 Enter name for new remote.
@@ -157,11 +185,11 @@ name>
 
 意思是要我们输入挂载位置的名称，这个名称由我们自己定义，与实际的服务器没有关系，这个名称就是到时候挂载时显示的名称（建议使用英文名称，我用中文它崩了）。
 
-步骤 03
+3️⃣ 步骤 03
 
 输入后回车，他会出现一大堆红绿相间的选项：
 
-```shell linenums="0"
+```shell linenums="0" hl_lines="87-88"
  1 / 1Fichier
    \ (fichier)
  2 / Akamai NetStorage
@@ -275,11 +303,19 @@ name>
 Storage>
 ```
 
-最后一行有个 “Storage” 字样，我们在其后面输入对应选项的数字即可。这些选项代表各种模式。
+最后一行有个 `Storage>` 字样，我们在其后面输入对应选项的数字即可。这些选项代表各种模式。
 
-一般而言我们使用 SSH/SFTP，找到该选项的数字，输入并回车。SSH/SFTP 表示用 ssh 或者 sftp 进行连接并传输文件，是一种安全的网络传输协议。
+一般而言我们使用 SSH/SFTP，找到该选项的数字，输入并回车。SSH/SFTP 表示用 SSH 或者 SFTP 进行连接并传输文件，是一种安全的网络传输协议。
 
-步骤 04
+/// question | 为什么要用 SSH/SFTP ？
+
+1. SSH 非常方便，几乎所有平台都有
+2. SSH 操作起来非常简单
+3. 我本人对此比较熟悉（嘻嘻）
+
+///
+
+4️⃣ 步骤 04
 
 选择模式之后，回车会显示下面的信息：
 
@@ -293,9 +329,9 @@ host>
 
 这是要我们输入远程连接的地址，输入你要挂载文件对应的 IP 地址就行了。
 
-步骤 05
+5️⃣ 步骤 05
 
-之后它会要求你输入用户名（Linux 一般是 root，Windows 如果没设置，那一般是 Administrator）：
+之后它会要求你输入用户名（Linux 一般是 `root`，Windows 如果没设置，那一般是 `Administrator`）：
 
 ```shell linenums="0"
 Option user.
@@ -304,9 +340,9 @@ Enter a string value. Press Enter for the default (XXX\xxx).
 user>
 ```
 
-步骤 06
+6️⃣ 步骤 06
 
-之后会问你端口，这个一般不用管，端口用协议的默认值就行，直接回车。 
+之后会问你端口，这个一般不用管，端口用协议的默认值就行，直接回车。
 
 ```shell linenums="0"
 Option port.
@@ -315,7 +351,7 @@ Enter a signed integer. Press Enter for the default (22).
 port>
 ```
 
-步骤 07
+7️⃣ 步骤 07
 
 然后它会问你密码：
 
@@ -331,15 +367,19 @@ y/g/n>
 
 这个看你自己的需求：
 
-我反正是直接输入我服务器操作系统的密码了（按 y 输入自己的密码）。
+- 选项 `y`：输入你自己的密码
+- 选项 `g`：随机生成密码
+- 选项 `n`：不输入密码，保持为空
 
-步骤 08
+我反正是直接输入我服务器操作系统的密码了（按 ++y++ 输入自己的密码）。
 
-之后它还会问你更多的可选选项，如 key_pem、key_file、key_file_pass、pubkey_file、key_use_agent、use_insecure_cipher、 disable_hashcheck 和 ssh 等。若是不懂，就直接回车，使用默认值即可。
+8️⃣ 步骤 08
+
+之后它还会问你更多的可选选项，如 `key_pem`、`key_file`、`key_file_pass`、`pubkey_file`、`key_use_agent`、`use_insecure_cipher`、 `disable_hashcheck` 和 `ssh` 等。若是不懂，就直接回车，使用默认值即可。
 
 一直到出现下面这个界面：
 
-```shell linenums="0"
+```shell linenums="0" hl_lines="3"
 Edit advanced config?
 y) Yes
 n) No (default)
@@ -348,11 +388,11 @@ y/n>
 
 这是在问你还需不需要配置高级选项。直接回车，不用配置（默认值就好）。
 
-步骤 09
+9️⃣ 步骤 09
 
 最后会出现这个：
 
-```shell linenums="0"
+```shell linenums="0" hl_lines="6"
 Configuration complete.
 Options:
 - type: sftp
@@ -364,13 +404,13 @@ d) Delete this remote
 y/e/d>
 ```
 
-表示配置完毕了，选择选项 y，保留该配置。
+表示配置完毕了，输入 ++y++，保留该配置。
 
-步骤 10
+🔟 步骤 10
 
-回车输入 y 之后就会回到一开始的界面了，此时会出现已经弄好的服务器配置了：
+回车输入 ++y++ 之后就会回到一开始的界面了，此时会出现已经弄好的服务器配置了：
 
-```shell linenums="0"
+```shell linenums="0" hl_lines="5"
 Current remotes:
 
 Name                 Type
@@ -387,17 +427,31 @@ q) Quit config
 e/n/d/r/c/s/q>
 ```
 
-可以退出这个程序了。
+可以输入 ++q++ 退出这个程序了。
 
 #### 4.2.2 挂载磁盘
 
-再次从 rclone 所在文件夹下进入终端命令行，输入下面的命令就可以挂载服务器指定目录到本地磁盘了：
+再次从 Rclone 所在文件夹下进入终端命令行，输入下面的命令就可以挂载服务器指定目录到本地磁盘了：
 
 ```shell linenums="0"
 rclone mount ServerName:RemotePath TargetPath
 ```
 
-成功后先别急着把终端窗口关闭，可以先按 Win + E 快捷键查看资源管理器中是否出现新的盘符，如果有，那么点进去看看，如果没有弹出任何报错，那说明你成功了。 
+- `ServerName`：之前你定义的服务器名称，它会作为本地磁盘名称出现；
+- `RemotePath`：远程目录，不一定要是根目录，一个文件夹也是可以的，如果对应的文件夹不存在，那么会新建一个空文件夹；
+- `TargetPath`：目标文件夹目录，一般写个新的盘符即可，但实际上，你也可以将其挂载指定的文件夹内；
+
+给个示例（斜杠正反貌似都行）：`rclone mount MyCloudServer:C:\ Z:`
+
+/// danger | 特别注意
+
+别把原来的盘符给覆盖了，一般从 Z 盘符倒着来写！
+
+///
+
+灵活设置，怎样都行，你喜欢就好。
+
+成功后先别急着把终端窗口关闭，可以先按 ++windows+e++ 快捷键查看资源管理器中是否出现新的盘符，如果有，那么点进去看看，如果没有弹出任何报错，那说明你成功了。
 
 ### 4.3 后台运行
 
@@ -407,7 +461,7 @@ rclone mount ServerName:RemotePath TargetPath
 
 对于 Windows 操作系统，我们可以使用下面的命令使 Rclone 后台运行：
 
-```shell linenums="0"
+```bat linenums="0"
 @echo off
 %1 start mshta vbscript:createobject("wscript.shell").run("""%~0"" ::",0)(window.close)&&exit
 start /b 在这里输入你的第一条命令
@@ -420,7 +474,7 @@ start /b 在这里输入你的第二条命令
 
 如果想终止，也很简单：
 
-```shell linenums="0"
+```bat linenums="0"
 @echo off
 taskkill /im rclone.exe /f
 pause
@@ -430,12 +484,13 @@ pause
 
 ### 4.4 开机自启
 
-或许你还有开机让其自动启动的需求，其实也很简单，我们可以把写好的脚本，放在指定目录下就行，但这里要注意一点，不能直接把 bat 脚本放过去，还要修改一下路径，把命令中原来的 rclone 改成：
+或许你还有开机让其自动启动的需求，其实也很简单，我们可以把写好的脚本，放在指定目录 `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\` 下就行，但这里要注意一点，不能直接把 bat 脚本放过去，还要修改一下路径，把命令中原来的 `rclone` 改成对应的文件路径：
 
+```shell linenums="0"
 文件路径\rclone.exe
-不然系统会找不到 rclone 的位置。
+```
 
-对了，指定的目录是：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\
+不然系统会找不到 Rclone 的位置。
 
 然后系统开机就会自动调用该脚本，就实现开机自启的功能了。
 
@@ -459,15 +514,15 @@ pause
 
 ### 5.2 部分疑难
 
-#### 5.2.1 rclone 无法识别
+#### 5.2.1 Rclone 无法识别
 
-很显然，极大概率是因为你没有将终端切换到当前目录下。在默认目录下，没有 rclone 文件，那么系统就会认为：“这个调用命令的人在乱讲些啥有的没的啊，我怎么听不懂啊”……
+很显然，极大概率是因为你没有将终端切换到当前目录下。在默认目录下，没有 Rclone 文件，那么系统就会认为：“这个调用命令的人在乱讲些啥有的没的啊，我怎么听不懂啊”……
 
-将目录切换至 rclone 文件所在的目录可能有助于解决问题。
+将目录切换至 Rclone 文件所在的目录可能有助于解决问题。
 
-#### 5.2.2 一堆报错，出现了 winfsp 字眼
+#### 5.2.2 一堆报错，出现了 WinFsp 字眼
 
-winfsp 没有安装，或者 winfsp 安装不正确，去看看网上的教程吧。
+WinFsp 没有安装，或者 WinFsp 安装不正确，去看看网上的教程吧。
 
 #### 5.2.3 其它问题
 
