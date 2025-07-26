@@ -304,7 +304,7 @@ plugins:
       match_path: blog/.*
       date_from_meta:
         as_creation: date.created
-        as_update: git
+        as_update: date.updated
       categories:
         - categories
         - tags
