@@ -378,6 +378,11 @@ nav:
       - data-structure/index.md
       - 线性结构:
           - data-structure/linear-structure/index.md
+          - 1. 数组: data-structure/linear-structure/array/index.md
+          - 2. 链表: data-structure/linear-structure/linked-list/index.md
+          - 3. 栈: data-structure/linear-structure/stack/index.md
+          - 4. 队列: data-structure/linear-structure/queue/index.md
+          - 5. 双端队列: data-structure/linear-structure/deque/index.md
       - 树形结构:
           - data-structure/tree-structure/index.md
       - 图形结构:
