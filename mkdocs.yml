@@ -279,6 +279,9 @@ extra_javascript:
   - https://unpkg.com/tablesort@latest/dist/sorts/tablesort.filesize.min.js # 表格排序功能（文件大小类型）
   - https://unpkg.com/tablesort@latest/dist/sorts/tablesort.monthname.min.js # 表格排序功能（月份名称类型）
   - https://unpkg.com/tablesort@latest/dist/sorts/tablesort.number.min.js # 表格排序功能（数字类型）
+  - https://unpkg.com/d3@latest/dist/d3.min.js # markmap 运行环境
+  - https://unpkg.com/markmap-lib@latest/dist/browser/index.iife.js # markmap 运行环境
+  - https://unpkg.com/markmap-view@latest/dist/browser/index.js # markmap 运行环境
 
 extra_css:
   - css/extra.css # 加载自定义的样式
@@ -300,8 +303,11 @@ plugins:
   - statistics:
   - markdown-exec:
   - markmap:
+      d3_version: ""
+      lib_version: ""
+      view_version: ""
   - rss:
-      match_path: blog/.*
+      match_path: blog/posts/.*
       date_from_meta:
         as_creation: date.created
         as_update: date.updated
