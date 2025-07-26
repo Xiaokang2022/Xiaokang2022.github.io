@@ -4,6 +4,12 @@ icon: material/scale-balance
 
 # GNU GENERAL PUBLIC LICENSE
 
+/// warning | 警告
+
+任何人使用该项目的资源时均需遵守该项目的开源协议：[**GPL-3.0**](https://github.com/Xiaokang2022/Xiaokang2022.github.io/blob/main/COPYING)！
+
+///
+
 Version 3, 29 June 2007
 
 Copyright (C) 2007 Free Software Foundation, Inc.
