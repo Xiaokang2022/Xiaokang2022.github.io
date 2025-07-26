@@ -2,16 +2,15 @@
 comments: true
 date:
     created: 2024-03-17
-    updated: 2024-03-17
+    updated: 2025-07-26
 authors:
     - Xiaokang2022
 categories:
-    - CSDN
-tags:
     - 开源软件
-    - 工具类
+tags:
+    - 开源
+    - 工具
     - 网络相关
-draft: true
 ---
 
 # 神器 Rclone：使用 SSH 或 SFTP 挂载任意远程目录到本地
