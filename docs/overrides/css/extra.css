@@ -157,3 +157,8 @@ div.mkdocs-markmap {
     color: var(--md-code-fg-color);
     background-color: var(--md-code-bg-color);
 }
+
+/*公式字体略微减小*/
+.arithmatex {
+    font-size: small;
+}

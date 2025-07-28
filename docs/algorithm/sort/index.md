@@ -1,5 +1,7 @@
 ---
 comments: true
+hide:
+    - toc
 ---
 
 # 排序
@@ -42,3 +44,16 @@ comments: true
             - [3.2 改进代码](./insertion-sort/#32-改进代码)
             - [3.3 自我测试](./insertion-sort/#33-自我测试)
 ```
+
+| 排序算法    | 时间复杂度                                                 | 空间复杂度            | 稳定性 | 就地性 | 自适应性 | 基于比较 |
+| :---------- | :--------------------------------------------------------- | :-------------------- | :----- | :----- | :------- | :------- |
+| 1. 选择排序 | $\Theta(n^2)$, $\mathcal{O}(n^2)$, $\Omega(n^2)$           | $\mathcal{O}(1)$      | ✘      | ✔      | ✘        | ✔        |
+| 2. 冒泡排序 | $\Theta(n^2)$, $\mathcal{O}(n^2)$, $\Omega(n)$             | $\mathcal{O}(1)$      | ✔      | ✔      | ✔        | ✔        |
+| 3. 插入排序 | $\Theta(n^2)$, $\mathcal{O}(n^2)$, $\Omega(n)$             | $\mathcal{O}(1)$      | ✔      | ✔      | ✔        | ✔        |
+| 4. 希尔排序 | $\Theta(n \log n)$ ~ $\Theta(n^2)$                         | $\mathcal{O}(1)$      | ✘      | ✔      | ✘        | ✔        |
+| 5. 归并排序 | $\Theta(n \log n)$                                         | $\mathcal{O}(n)$      | ✔      | ✘      | ✘        | ✔        |
+| 6. 快速排序 | $\Theta(n \log n)$, $\mathcal{O}(n^2)$, $\Omega(n \log n)$ | $\mathcal{O}(\log n)$ | ✘      | ✔      | ✘        | ✔        |
+| 7. 堆排序   | $\Theta(n \log n)$                                         | $\mathcal{O}(1)$      | ✘      | ✔      | ✘        | ✔        |
+| 8. 计数排序 | $\Theta(n+k)$                                              | $\mathcal{O}(n+k)$    | ✔      | ✘      | ✘        | ✘        |
+| 9. 基数排序 | $\Theta(n+k)$, $\mathcal{O}(n^2)$, $\Omega(n+k)$           | $\mathcal{O}(n+k)$    | ✔      | ✘      | ✘        | ✘        |
+| 10. 桶排序  | $\Theta(d\times(n+k))$                                     | $\mathcal{O}(n+k)$    | ✔      | ✘      | ✘        | ✘        |
