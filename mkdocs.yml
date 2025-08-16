@@ -302,8 +302,9 @@ plugins:
       pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
   # 第三方插件
   - macros:
-  - statistics:
   - markdown-exec:
+  - statistics:
+      page_template: overrides\statistics_template.html
   - markmap:
       d3_version: ""
       lib_version: ""
