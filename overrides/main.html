@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block announce %}
+{{ super() }}
+欢迎来到《小康笔记本》！此赛博笔记本基于 <a href="https://github.com/mkdocs/mkdocs">Mkdocs</a> 框架和 <a href="https://github.com/squidfunk/mkdocs-material">Material</a> 主题，依托 <a href="https://docs.github.com/zh/pages">Pages</a> 构建！关注 <a href="https://github.com/Xiaokang2022">@Xiaokang2022</a> 获取更多内容！
+{% endblock %}
+
+{% block content %}
+
+<a href="javascript:void(window.print());" class="md-content__button md-icon" title="下载此页">
+    {% include ".icons/material/file-download.svg" %}
+</a>
+
+{{ super() }}
+{% endblock content %}
