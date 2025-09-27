@@ -163,8 +163,8 @@ div.mkdocs-markmap {
     --markmap-circle-open-bg: var(--md-code-bg-color) !important;
 }
 
-/*公式字体略微减小*/
-.arithmatex {
+/*内联公式字体略微减小*/
+span.arithmatex {
     font-size: small;
 }
 
