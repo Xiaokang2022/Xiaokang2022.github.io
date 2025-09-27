@@ -386,15 +386,15 @@ plugins:
             - griffe_typingdoc:
             - griffe_warnings_deprecated:
             - griffe_modernized_annotations:
+  - minify:
+      minify_html: true
+      htmlmin_opts:
+        remove_comments: true
   - print-site:
       print_page_title: Documentation
       print_page_basename: downloads
       enumerate_headings: false
       enumerate_figures: false
-  - minify:
-      minify_html: true
-      htmlmin_opts:
-        remove_comments: true
 
 nav:
   - 主页:
