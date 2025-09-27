@@ -1,7 +1,5 @@
 ---
 comments: true
-hide:
-    - toc
 ---
 
 # 排序

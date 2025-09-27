@@ -158,6 +158,11 @@ div.mkdocs-markmap {
     background-color: var(--md-code-bg-color);
 }
 
+/*思维导图节点颜色暗色模式修复*/
+.markmap {
+    --markmap-circle-open-bg: var(--md-code-bg-color) !important;
+}
+
 /*公式字体略微减小*/
 .arithmatex {
     font-size: small;

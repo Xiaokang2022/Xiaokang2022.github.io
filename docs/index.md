@@ -29,25 +29,25 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :material-tools:{.middle} [**设计模式**](./design-pattern/index.md)<small>（🚧施工中）</small>
+-   :material-tools: [**设计模式**](./design-pattern/index.md)<small>（🚧施工中）</small>
 
     ---
 
     模式不是发明而是发现，它们凝结了开发者对抗软件复杂性的集体智慧。
 
--   :material-graph-outline:{.middle} [**数据结构**](./data-structure/index.md)<small>（🕓更新中）</small>
+-   :material-graph-outline: [**数据结构**](./data-structure/index.md)<small>（🕓更新中）</small>
 
     ---
 
     糟糕的程序员担心代码，优秀的程序员担心数据结构和它们之间的关系。
 
--   :material-map-marker-path:{.middle} [**算法**](./algorithm/index.md)<small>（🕓更新中）</small>
+-   :material-map-marker-path: [**算法**](./algorithm/index.md)<small>（🕓更新中）</small>
 
     ---
 
     算法设计是人类理性的巅峰演绎：用有限步骤驯服混沌问题。
 
--   :material-alphabet-greek:{.middle} [**数值方法**](./numerical-method/index.md)<small>（🚧施工中）</small>
+-   :material-alphabet-greek: [**数值方法**](./numerical-method/index.md)<small>（🚧施工中）</small>
 
     ---
 

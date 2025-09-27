@@ -3,7 +3,7 @@ site_url: https://Xiaokang2022.github.io/ # 站点链接
 repo_url: https://github.com/Xiaokang2022/Xiaokang2022.github.io # 仓库地址
 repo_name: Xiaokang2022.github.io # 仓库名称
 edit_uri: edit/main/docs # 编辑地址
-edit_uri_template: null # 编辑地址模板
+edit_uri_template: "" # 编辑地址模板
 site_description: 小康的个人笔记网站 # 站点描述
 site_author: Xiaokang2022 # 站点作者
 copyright: <a href="#__consent">修改 Cookie 设置</a><br/>Copyright &copy; 2024 Xiaokang2022 # 版权信息和 Cookie 设置
@@ -121,6 +121,7 @@ markdown_extensions:
       anchor_linenums: true # 用锚链接包装代码行号，便于超链接和共享（就是行号可以像锚点一样被点击）
       line_spans: __span # 这对于高亮功能正常工作至关重要
       pygments_lang_class: true # 对于自定义注释标记的运行至关重要
+      default_lang: python # 默认解析的语言
       # pygments_style: one-dark # 代码高亮风格，见 https://pygments.org/styles/
       # noclasses: true  # 使用 pygments_style 必须开启
       # auto_title: true # 自动为所有代码块添加一个标题
@@ -197,7 +198,7 @@ theme: # 此项各个设定因主题而异
     - media: "(prefers-color-scheme: light)" # 亮色主题
       scheme: default
       primary: white
-      accent: green
+      accent: light blue
       toggle:
         icon: material/weather-sunny
         name: 明亮主题
@@ -219,6 +220,10 @@ theme: # 此项各个设定因主题而异
       default: material/tag
 
 extra: # 额外设定
+  alternate:
+    - name: 简体中文
+      link: .
+      lang: zh
   generator: false # 页面底部不显示生成信息
   status: # 元信息状态标识
     new: 最近添加
@@ -236,6 +241,9 @@ extra: # 额外设定
     - icon: fontawesome/solid/paper-plane
       link: mailto:2951256653@qq.com
       name: 联系我
+  version:
+    provider: mike
+    alias: true
   consent:
     actions:
       - accept
@@ -270,7 +278,7 @@ extra_javascript:
   - js/click-colorful.js # 鼠标点击效果
   - js/shortcuts.js # 绑定左右键换页的键盘快捷键
   - js/katex.js # 数学表达式
-  - js/thebe.js
+  - js/thebe.js # Thebe 实时运行环境
   - js/tablesort.js # 表格排序功能
   - https://unpkg.com/katex@latest/dist/katex.min.js # 数学表达式
   - https://unpkg.com/katex@latest/dist/contrib/auto-render.min.js # 自动渲染数学表达式
@@ -288,7 +296,7 @@ extra_css:
   - css/extra.css # 加载自定义的样式
   - https://unpkg.com/katex@latest/dist/katex.min.css # 数学表达式
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css # 图标字体库
-  - https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.5.0/style.min.css # 设置字体（霞鹜文楷）【版本不能再更高了，会导致公式字体变小】
+  - https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css # 设置字体（霞鹜文楷）
 
 plugins:
   # 内置插件
@@ -301,6 +309,7 @@ plugins:
       pagination_keep_content: true
       pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
   # 第三方插件
+  - mike:
   - macros:
   - markdown-exec:
   - statistics:
@@ -324,12 +333,15 @@ plugins:
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
       theme:
-        light: material/green-light
+        light: material/blue-light
         dark: material/amber-dark
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
-  - git-committers:
+  - git-authors: # 通过本地 git 存储库获取贡献者
+      add_co_authors: true
+      sort_authors_by: contribution
+  - git-committers: # 通过云端 git 存储库获取贡献者
       repository: Xiaokang2022/Xiaokang2022.github.io
       branch: main
       token: !ENV GH_TOKEN # 需要自行在终端中设置临时环境变量，强烈不建议显式地在此处设置 token
@@ -337,6 +349,48 @@ plugins:
         - web-flow
   - autorefs:
       resolve_closest: true
+  - literate-nav:
+      nav_file: summary.md
+  # - gen-files:
+  #     scripts:
+  #     - scripts/gen_doc_pages.py
+  - mkdocstrings:
+      handlers:
+        python:
+          inventories:  # 无法联网的话必须删除这个
+          - https://docs.python.org/3/objects.inv
+          options:
+            show_bases: true
+            show_source: false
+            heading_level: 2
+            parameter_headings: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            members_order: source
+            summary: true
+            docstring_section_style: spacy
+            separate_signature: true
+            show_signature_annotations: true
+            annotations_path: source
+            line_length: 100
+            overloads_only: true
+            merge_init_into_class: true
+            signature_crossrefs: true
+            filters: ["!^_"]
+            show_root_full_path: false
+            extensions:
+            - griffe_sphinx:
+            - griffe_inherited_docstrings:
+            - griffe_pydantic:
+                schema: true
+            - griffe_typingdoc:
+            - griffe_warnings_deprecated:
+            - griffe_modernized_annotations:
+  - print-site:
+      print_page_title: Documentation
+      print_page_basename: downloads
+      enumerate_headings: false
+      enumerate_figures: false
   - minify:
       minify_html: true
       htmlmin_opts:
