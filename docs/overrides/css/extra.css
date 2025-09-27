@@ -167,3 +167,8 @@ div.mkdocs-markmap {
 .arithmatex {
     font-size: small;
 }
+
+/*mkdocstrings 设置 pkg*/
+.doc-symbol.doc-symbol-nav.doc-symbol-parameter::after {
+    content: "pkg";
+}

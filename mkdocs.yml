@@ -230,7 +230,7 @@ extra: # 额外设定
     deprecated: 已废弃
   homepage: . # 左上角徽标链接的地址
   tags:
-    _: _
+    _:
   social: # 社交联系方式（页面右下角内容）
     - icon: fontawesome/brands/github
       link: https://github.com/Xiaokang2022/
@@ -357,8 +357,8 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          inventories:  # 无法联网的话必须删除这个
-          - https://docs.python.org/3/objects.inv
+          inventories: # 无法联网的话必须删除这个
+            - https://docs.python.org/3/objects.inv
           options:
             show_bases: true
             show_source: false
@@ -379,13 +379,12 @@ plugins:
             filters: ["!^_"]
             show_root_full_path: false
             extensions:
-            - griffe_sphinx:
-            - griffe_inherited_docstrings:
-            - griffe_pydantic:
-                schema: true
-            - griffe_typingdoc:
-            - griffe_warnings_deprecated:
-            - griffe_modernized_annotations:
+              - griffe_inherited_docstrings:
+              - griffe_pydantic:
+                  schema: true
+              - griffe_typingdoc:
+              - griffe_warnings_deprecated:
+              - griffe_modernized_annotations:
   - minify:
       minify_html: true
       htmlmin_opts:
