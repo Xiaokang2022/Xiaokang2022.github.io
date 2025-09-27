@@ -313,7 +313,7 @@ plugins:
   - macros:
   - markdown-exec:
   - statistics:
-      page_template: overrides\statistics_template.html
+      page_template: overrides/statistics_template.html
   - markmap:
       d3_version: ""
       lib_version: ""
