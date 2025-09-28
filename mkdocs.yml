@@ -311,6 +311,7 @@ plugins:
   # 第三方插件
   - mike:
   - macros:
+  - table-reader:
   - markdown-exec:
   - statistics:
       page_template: overrides/statistics_template.html
