@@ -1,5 +1,4 @@
 ---
-statistics: true
 comments: true
 icon: material/home
 hide:
@@ -57,8 +56,4 @@ hide:
 
 </div>
 
-/// quote |
-
-<p align="center" markdown>《小康笔记本》目前共有 `{{ pages }}` 页，字数 `{{ words }}` 个，代码 `{{ codes }}` 行，图片 `{{ images }}` 张</p>
-
-///
+<!-- RECENTLY_UPDATED_DOCS -->

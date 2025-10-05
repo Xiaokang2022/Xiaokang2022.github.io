@@ -295,8 +295,9 @@ extra_javascript:
 extra_css:
   - css/extra.css # 加载自定义的样式
   - https://unpkg.com/katex@latest/dist/katex.min.css # 数学表达式
+  - https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css # 代码字体
+  - https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css # 文本字体
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css # 图标字体库
-  - https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css # 设置字体
 
 plugins:
   # 内置插件
@@ -314,7 +315,10 @@ plugins:
   - table-reader:
   - markdown-exec:
   - statistics:
-      page_template: overrides/statistics_template.html
+      page_template: overrides/templates/statistics.html
+  - recently-updated:
+      limit: 4
+      template: overrides/templates/recently_updated.html
   - markmap:
       d3_version: ""
       lib_version: ""
