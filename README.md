@@ -1,5 +1,7 @@
 <h1 align="center">小康笔记本</h1>
 
+<p align="center"><a href="https://github.com/Xiaokang2022"><img src="https://avatars.githubusercontent.com/u/100004682?v=4" width="192" /></a></p>
+
 <p align="center"><a href="https://xiaokang2022.github.io/">https://xiaokang2022.github.io/</a></p>
 
 <p align="center">基于 <a href="https://github.com/mkdocs/mkdocs">Mkdocs</a> 框架和 <a href="https://github.com/squidfunk/mkdocs-material">Material</a> 主题，依托 <a href="https://docs.github.com/zh/pages">Pages</a> 构建</p>
