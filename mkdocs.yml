@@ -38,7 +38,7 @@ markdown_extensions:
   - wikilinks # 快捷链接
 
   - toc: # 目录
-      marker: "" # 目录替换文本，空字符串则不替换，缺省为 [TOC]
+      # marker: "" # 目录替换文本，空字符串则不替换，缺省为 [TOC]
       # title: "" # 目录标题，material 主题会自动根据语言计算
       anchorlink: false # 锚点链接（默认值），给标题自身锚定链接
       permalink: ¶ # 锚点符号
@@ -241,9 +241,9 @@ extra: # 额外设定
     - icon: fontawesome/solid/paper-plane
       link: mailto:2951256653@qq.com
       name: 联系我
-  version:
-    provider: mike
-    alias: true
+  # version:
+  #   provider: mike
+  #   alias: true
   consent:
     actions:
       - accept
@@ -296,7 +296,7 @@ extra_css:
   - css/extra.css # 加载自定义的样式
   - https://unpkg.com/katex@latest/dist/katex.min.css # 数学表达式
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css # 图标字体库
-  - https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css # 设置字体（霞鹜文楷）
+  - https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css # 设置字体
 
 plugins:
   # 内置插件
@@ -309,7 +309,7 @@ plugins:
       pagination_keep_content: true
       pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
   # 第三方插件
-  - mike:
+  # - mike:
   - macros:
   - table-reader:
   - markdown-exec:
