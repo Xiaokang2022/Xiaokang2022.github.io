@@ -16,7 +16,7 @@
             <p>
                 {%- for mtime, rel_path, title, url in recent_docs %}
                 <div>
-                    <a href="{{ url }}" target="_blank">{{ title }}</a>
+                    <a href="{{ url }}">{{ title }}</a>
                     <span style="float:right"><small>{{ mtime[:10] }}</small></span>
                 </div>
                 {%- endfor %}
