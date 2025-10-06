@@ -318,6 +318,8 @@ plugins:
       page_template: overrides/templates/statistics.html
   - recently-updated:
       limit: 4
+      exclude:
+        - tags.md
       template: overrides/templates/recently_updated.html
   - markmap:
       d3_version: ""
@@ -394,11 +396,11 @@ plugins:
       minify_html: true
       htmlmin_opts:
         remove_comments: true
-  - print-site:
-      print_page_title: Documentation
-      print_page_basename: downloads
-      enumerate_headings: false
-      enumerate_figures: false
+  # - print-site:
+  #     print_page_title: Documentation
+  #     print_page_basename: downloads
+  #     enumerate_headings: false
+  #     enumerate_figures: false
 
 nav:
   - 主页:

@@ -2,7 +2,7 @@
 comments: true
 date:
     created: 2024-03-17
-    updated: 2025-07-26
+    updated: 2025-10-06
 authors:
     - Xiaokang2022
 categories:
@@ -10,10 +10,11 @@ categories:
 tags:
     - 开源
     - 工具
-    - 网络相关
+    - 网络
+    - 文件传输
 ---
 
-# 神器 Rclone：使用 SSH 或 SFTP 挂载任意远程目录到本地
+# 开源工具 Rclone：使用 SSH 或 SFTP 挂载任意远程目录到本地
 
 有搞过云服务器的朋友肯定会经常在服务器与服务器之间，服务器与本地之间传输各种文件，但是传输文件非常麻烦，Windows Server 可以通过 Windows 自带的工具以 3389 端口进行远程桌面连接，传输文件稍微会方便一些，但对于 Linux，传输文件就稍显有些麻烦了。对于熟悉 Linux 的朋友来说当然其实无所谓，但对于 Linux 新手而言，这是一个比较麻烦的操作。
 
