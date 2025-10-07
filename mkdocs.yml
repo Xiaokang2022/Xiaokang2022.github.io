@@ -345,9 +345,9 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
-  - git-authors: # 通过本地 git 存储库获取贡献者
-      add_co_authors: true
-      sort_authors_by: contribution
+  # - git-authors: # 通过本地 git 存储库获取贡献者
+  #     add_co_authors: true
+  #     sort_authors_by: contribution
   - git-committers: # 通过云端 git 存储库获取贡献者
       repository: Xiaokang2022/Xiaokang2022.github.io
       branch: main
