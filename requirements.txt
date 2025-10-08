@@ -21,7 +21,6 @@ mkdocs-macros-plugin
 mkdocs-rss-plugin
 mkdocs-table-reader-plugin
 mkdocs-print-site-plugin
-mkdocs-recently-updated-docs
 mkdocs-markmap
 mkdocs_puml
 markdown-exec

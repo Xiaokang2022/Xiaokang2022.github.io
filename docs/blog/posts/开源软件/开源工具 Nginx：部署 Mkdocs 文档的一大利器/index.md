@@ -54,7 +54,7 @@ draft: true
 
 <div markdown class="grid cards">
 
--   :material-github:{ .lg .middle } <https://github.com/nginx/nginx>
+-   :material-github: <https://github.com/nginx/nginx>
 
     ---
 

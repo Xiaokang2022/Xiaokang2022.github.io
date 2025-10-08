@@ -317,11 +317,6 @@ plugins:
   - markdown-exec:
   - statistics:
       page_template: overrides/templates/statistics.html
-  - recently-updated:
-      limit: 4
-      exclude:
-        - tags.md
-      template: overrides/templates/recently_updated.html
   - markmap:
       d3_version: ""
       lib_version: ""

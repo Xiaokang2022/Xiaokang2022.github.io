@@ -56,4 +56,18 @@ hide:
 
 </div>
 
-<!-- RECENTLY_UPDATED_DOCS -->
+<div class="grid cards" markdown>
+
+-   :material-update: [**最近更新**](./blog/2025/10/07/开源工具-nginx部署-mkdocs-文档的一大利器/)<small>（✍️创作中）</small>
+
+    ---
+
+    [开源工具 Nginx：部署 Mkdocs 文档的一大利器（草稿）](./blog/2025/10/07/开源工具-nginx部署-mkdocs-文档的一大利器/) <small style="float:right">2025-10-09</small>
+
+    [开源工具 Rclone：使用 SSH 或 SFTP 挂载任意远程目录到本地](./blog/2024/03/17/开源工具-rclone使用-ssh-或-sftp-挂载任意远程目录到本地/) <small style="float:right">2025-10-06</small>
+
+    [我的项目](./projects.md) <small style="float:right">2025-09-27</small>
+
+    [排序](./algorithm/sort/index.md) <small style="float:right">2025-10-09</small>
+
+</div>
