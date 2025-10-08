@@ -305,6 +305,7 @@ plugins:
   - meta:
   - tags:
   - blog:
+      draft: true
       blog_toc: true
       post_readtime: false
       pagination_keep_content: true
