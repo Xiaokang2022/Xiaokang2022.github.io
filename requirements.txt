@@ -23,7 +23,7 @@ mkdocs-table-reader-plugin
 mkdocs-print-site-plugin
 mkdocs-markmap
 mkdocs_puml
-markdown-exec
+markdown-exec[ansi]
 
 # search
 jieba
