@@ -405,6 +405,7 @@ nav:
       - 我的项目: projects.md
       - 友情链接: friends.md
       - 开源许可: copying.md
+      - 知识共享许可: license.md
   - 博客:
       - blog/index.md
   - 设计模式:

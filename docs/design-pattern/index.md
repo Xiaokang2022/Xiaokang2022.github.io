@@ -14,7 +14,7 @@ icon: material/tools
 下面是 23 种设计模式的链接（没有链接的表示还没有写，红色标识的不在 23 种范围内）：
 
 - 创建型模式
-    - 工厂模式
+    - [工厂模式](./creational-pattern/factory-pattern/index.md)
     - 抽象工厂模式
     - [单例模式](./creational-pattern/singleton-pattern/index.md)
     - 建造者模式
