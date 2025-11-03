@@ -212,3 +212,5 @@ print(Foo() is Foo())
 print(Bar() is Bar())
 print(Foo() is Bar())
 ```
+
+!!! success "一句话总结：单例模式就是无论怎么实例化都只有唯一的实例"
