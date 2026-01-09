@@ -36,9 +36,9 @@
 /*顶栏磨砂玻璃效果*/
 .md-header {
     transition: none;
-    backdrop-filter: saturate(180%) blur(10px);
     /* Gaussian blur */
     -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
     /* Safari */
     background-color: var(--md-header-bg-color);
 }
