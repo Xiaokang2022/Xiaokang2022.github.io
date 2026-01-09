@@ -51,6 +51,7 @@ markdown_extensions:
         !!python/object/apply:pymdownx.slugs.slugify # 锚点链接 URL 格式（小写）
         kwds:
           case: lower
+          percent_encode: true
 
   ###### PyMdown Extensions 配置（markdown 扩展语法）
 
