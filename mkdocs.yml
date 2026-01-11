@@ -314,6 +314,7 @@ extra_javascript:
 
 extra_css:
   - css/extra.css # 加载自定义的样式
+  - css/color.css # 加载自定义的颜色
   - https://unpkg.com/katex@latest/dist/katex.min.css # 数学表达式
   - https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css # 代码字体
   - https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css # 文本字体
