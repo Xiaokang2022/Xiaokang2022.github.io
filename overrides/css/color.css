@@ -1,0 +1,267 @@
+/* 参考 https://github.com/pygments/pygments/blob/master/pygments/token.py */
+
+:root>* {
+    .highlight {
+        .o {
+            color: #000000;
+        }
+
+        .ow {
+            color: #af00db;
+        }
+
+        .p,
+        .pm {
+            color: #000000;
+        }
+
+        .c,
+        .ch,
+        .cm,
+        .c1 {
+            color: #008000;
+        }
+
+        .cp {
+            color: #af00db;
+        }
+
+        .cpf {
+            color: #a31515;
+        }
+
+        .m,
+        .mb,
+        .mf,
+        .mh,
+        .mi,
+        .il,
+        .mo {
+            color: #098658;
+        }
+
+        .s,
+        .s1,
+        .s2,
+        .sc,
+        .sd {
+            color: #a31515;
+        }
+
+        .sa {
+            color: #0000ff;
+        }
+
+        .si {
+            color: #0431fa;
+        }
+
+        .se {
+            color: #ee0000;
+        }
+
+        .k,
+        .kn {
+            color: #af00db;
+        }
+
+        .kd,
+        .kt {
+            color: #0000ff;
+        }
+
+        .kc {
+            color: #0000ff;
+        }
+
+        .kp {
+            color: #000000;
+        }
+
+        .n {
+            color: #3b3b3b;
+        }
+
+        .nb,
+        .nc,
+        .ne,
+        .nn {
+            color: #267f99;
+        }
+
+        .nd,
+        .nf,
+        .fm {
+            color: #795e26;
+        }
+
+        .na {
+            color: #e50000;
+        }
+
+        .nt {
+            color: #800000;
+        }
+
+        .nv {
+            color: #001080;
+        }
+
+        .vm {
+            color: #001080;
+        }
+
+        .l {
+            color: #0000ff;
+        }
+
+        /* .esc,
+        .err,
+        .kr,
+        .bp,
+        .no,
+        .ni,
+        .py,
+        .nl,
+        .vc,
+        .vg,
+        .vi,
+        .ld,
+        .sb,
+        .dl,
+        .sh,
+        .sx,
+        .sr,
+        .ss,
+        .cs,
+        .g,
+        .gd,
+        .ge,
+        .gr,
+        .gh,
+        .gi,
+        .go,
+        .gp,
+        .gs,
+        .gu,
+        .ges,
+        .gt,
+        .x {
+            color: #ff0000 !important;
+        } */
+    }
+}
+
+[data-md-color-scheme="slate"] {
+    .highlight {
+        .o {
+            color: #d4d4d4;
+        }
+
+        .ow {
+            color: #c586c0;
+        }
+
+        .p,
+        .pm {
+            color: #d4d4d4;
+        }
+
+        .c,
+        .ch,
+        .cm,
+        .c1 {
+            color: #6a9955;
+        }
+
+        .cp {
+            color: #c586c0;
+        }
+
+        .cpf {
+            color: #ce9178;
+        }
+
+        .m,
+        .mb,
+        .mf,
+        .mh,
+        .mi,
+        .il,
+        .mo {
+            color: #b5cea8;
+        }
+
+        .s,
+        .s1,
+        .s2,
+        .sc,
+        .sd {
+            color: #ce9178;
+        }
+
+        .sa {
+            color: #569cd6;
+        }
+
+        .si {
+            color: #ffd700;
+        }
+
+        .se {
+            color: #d7ba7d;
+        }
+
+        .k,
+        .kn {
+            color: #c586c0;
+        }
+
+        .kd,
+        .kt {
+            color: #569cd6;
+        }
+
+        .kc {
+            color: #569cd6;
+        }
+
+        .kp {
+            color: #d4d4d4;
+        }
+
+        .n {
+            color: #cccccc;
+        }
+
+        .nb,
+        .nc,
+        .ne,
+        .nn {
+            color: #4ec9b0;
+        }
+
+        .nd,
+        .nf,
+        .fm {
+            color: #dcdcaa;
+        }
+
+        .nt {
+            color: #569cd6;
+        }
+
+        .na,
+        .nv {
+            color: #9cdcfe;
+        }
+
+        .vm {
+            color: #9cdcfe;
+        }
+
+        .l {
+            color: #ce9178;
+        }
+    }
+}
